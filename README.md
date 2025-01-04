@@ -38,18 +38,15 @@ Our supported relayers - [https://relayers.smartstake.io/relayer/A0B5FF00B546015
 * Celestia&#x20;
 * [Dymension (Genesis validator)](https://exp.utsa.tech/dymension/staking/dymvaloper1taava3hdv33ps7es7yvwjx7x08lzz3s2mqfp6v)
 * [Dora](https://exp.utsa.tech/dora/staking/doravaloper12yk434ut3un4wx0rult2aww89rsrel8nhmp387)
-* [Nois (Genesis validator)](https://exp.utsa.tech/nois/staking/noisvaloper10hmy2yhwhqqe8p7ax0hrdt4uxkumlhcf7tkkk2)
 * [Nibiru (Genesis validator)](https://exp.utsa.tech/nibiru/staking/nibivaloper1he44du3wsg3qgysyj0wlclq20apj880k72m8ks)
 * [Realio (Genesis validator)](https://explorer.stavr.tech/realio-mainnet/staking/realiovaloper1pgpx7sqfh5tnuktlhjj39u4hc85wc6jelk9t74)
 * [Teritori (Genesis validator)](https://exp.utsa.tech/teritori/staking/torivaloper1kunzrdg6u8gql4faj33lstghhqdtp59e0xgggy)
 * [Gitopia (Genesis validator)](https://explorer.stavr.tech/gitopia-m/staking/gitopiavaloper1ae4aurwv0jeccztqgr0s2znyrqlm4jj8hxv908)
 * [HAQQ](https://ping.pub/haqq/staking/haqqvaloper1ld747ks23dqheenk3pjth57claqqpfnxax6cea)
 * [Uptick](https://exp.utsa.tech/uptick/staking/uptickvaloper1wfaarzcy2rpxr9564tlsyktcf9c75gf0zc57p2)
-* [KYVE](https://explorer.kyve.network/kyve/staking/kyvevaloper1gwrhgrlpzkpcx06fkwhd6swuy688xjca38xmsw)
 * [Jackal](https://explorer.nodestake.top/jackal/staking/jklvaloper1ejrn54x9wpxarmp7ux2a7mtgt4f8vp5xum9q4p)
 * [Qiucksilver](https://explorer.stavr.tech/quicksilver-mainnet/staking/quickvaloper1sztng2ln0wq7thqqyrjd02tc4hh6yu36m4l67x)
 * [L1](https://exp.utsa.tech/genesis/staking/genesisvaloper1afvvw56w2uq64qmsurawkxdhu9r98e5ue2kthq)
-* [Lava](https://exp.utsa.tech/lava/staking/lava@valoper1rnm6qh4yvgl26etln8dv4gelkcfs3lt64tp7zl)
 * [Provenance](https://www.mintscan.io/provenance/validators/pbvaloper19r822ud3e6j7vv4llk569fxlt3778kw7ynlmve)
 
 ### Active testnets <a href="#oae4" id="oae4"></a>

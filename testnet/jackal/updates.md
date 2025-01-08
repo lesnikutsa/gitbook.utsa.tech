@@ -477,3 +477,22 @@ canined version --long | grep -e version -e commit
 
 systemctl restart canined &#x26;&#x26; journalctl -u canined -f -o cat
 </code></pre>
+
+## UPD 🕊 on v4.4.0-rc.1 (Update Height: 11744600)
+
+<pre class="language-shell"><code class="lang-shell">cd $HOME/canine-chain
+git pull
+git checkout v4.4.0-rc.1
+make build
+$HOME/canine-chain/build/canined version --long | grep -e version -e commit -e build
+#version: v4.4.0-rc.1
+#commit: c489b7724f39a3d47087a6ca0af9f6da1bb40f3b
+
+# AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
+<strong>systemctl stop canined
+</strong>mv $HOME/canine-chain/build/canined $(which canined)
+canined version --long | grep -e version -e commit
+# 
+
+systemctl restart canined &#x26;&#x26; journalctl -u canined -f -o cat
+</code></pre>

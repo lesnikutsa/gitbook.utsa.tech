@@ -84,6 +84,4 @@ Our supported relayers - [https://relayers.smartstake.io/relayer/A0B5FF00B546015
 * **Twitter** - @lesnik13utsa
 * **Github** - [https://github.com/lesnikutsa](https://github.com/lesnikutsa)
 
-check - robert.zaremba
-
 \

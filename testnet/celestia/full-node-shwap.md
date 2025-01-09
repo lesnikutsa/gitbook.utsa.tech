@@ -100,7 +100,7 @@ After=network-online.target
 User=$USER
 ExecStart=$(which celestia) full start --archival \
   --p2p.network mocha \
-  --metrics.tls=true --metrics --metrics.endpoint otel.celestia-mocha.com \
+  --metrics.tls=true --metrics --metrics.endpoint otel.mocha.celestia.observer \
   --keyring.keyname full_wallet
   
 Restart=on-failure

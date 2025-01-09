@@ -100,7 +100,7 @@ After=network-online.target
 User=$USER
 ExecStart=$(which celestia) light start \
   --p2p.network mocha \
-  --metrics.tls=true --metrics --metrics.endpoint otel.celestia-mocha.com \
+  --metrics.tls=true --metrics --metrics.endpoint otel.mocha.celestia.observer \
   --keyring.keyname light_wallet
   
 Restart=on-failure

@@ -55,9 +55,13 @@ sysctl net.ipv4.tcp_congestion_control | awk '{print $3}'
 Starting from version 3.0.0-mocha there should be the following parameters in config.toml
 
 ```bash
+#config.toml
 recv_rate 10485760
 send_rate 10485760
 ttl-num-blocks 12
+
+#app.toml
+max-recv-msg-size 20971520
 ```
 
 ```bash

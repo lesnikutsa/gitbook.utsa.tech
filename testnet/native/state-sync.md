@@ -16,26 +16,31 @@ Important - different blockchains need a different amount of RAM to successfully
 
 ```shell
 # stop the service and clear the database
-systemctl stop noisd
-noisd tendermint unsafe-reset-all --home $HOME/.noisd --keep-addr-book
+systemctl stop gonatived
+rm -rf $HOME/.gonative/data/{application.db,evidence.db,snapshots,tx_index.db,blockstore.db,state.db,cs.wal}
 ```
 
 ```shell
-download wasm if necessary
-curl -L https://share.utsa.tech/nois/wasm-nois.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.noisd --strip-components 2
+# install lz4
+apt update
+apt install snapd -y
+snap install lz4
+
+# download wasm if necessary
+
 ```
 
 ```shell
 # add peer
-peers="9b873fbb5afeb97eb1fb2ed5cbac1142445e161f@144.76.29.90:61456"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.noisd/config/config.toml
+peers="f82c497af58874eac7c862c362df9659d95f5332@5.9.87.231:60756"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.gonative/config/config.toml
 ```
 
 ```shell
-SNAP_RPC=https://m-nois.rpc.utsa.tech:443
+SNAP_RPC=https://t-native.rpc.utsa.tech:443
 
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
 
 echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
@@ -44,7 +49,7 @@ sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
 s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.noisd/config/config.toml
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.gonative/config/config.toml
 ```
 
 {% hint style="info" %}
@@ -55,12 +60,8 @@ after echo <mark style="color:blue;">$LATEST\_HEIGHT $BLOCK\_HEIGHT $TRUST\_HASH
 
 ```shell
 # restart node
-systemctl restart noisd && journalctl -u noisd -f -o cat
+systemctl restart gonatived && journalctl -u gonatived -f -o cat
 ```
 
-{% hint style="warning" %}
-Attention. You may see the following errors **ERR snapshot manager not configured ERR State sync failed err="state sync aborted" module=statesync**
 
-In this case, set the value of snapshot-interval to be greater than zero
-{% endhint %}
 

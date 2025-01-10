@@ -62,7 +62,7 @@ Our supported relayers - [https://relayers.smartstake.io/relayer/A0B5FF00B546015
 * Entrypoint
 * Galactica
 * [Hyper](https://explorer.stavr.tech/hypersign/staking/hidvaloper1vy7j9kwge6gl3kl2445ysgdy2m9eg29e36cv79)
-* [Nois](https://explorer.stavr.tech/nois/staking/noisvaloper1zkezs74uqn97u54ncdky2slv8n79zq598z5e9j)
+* Native
 * Story
 * Warden
 * Zenrock

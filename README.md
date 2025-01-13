@@ -34,6 +34,7 @@ Our supported relayers - [https://relayers.smartstake.io/relayer/A0B5FF00B546015
 
 <mark style="color:orange;">**COSMOS**</mark>
 
+* [Atomone](https://exp.utsa.tech/atomone/staking/atonevaloper1982jsr4msdppq0azc3qhf80ngkrsjyqmgepkyk)
 * [Aura (Genesis validator)](https://exp.utsa.tech/aura/staking/auravaloper1vy9qvad4rpczx6r5rwlqvn43l4mkl283m8gk4p)
 * Celestia&#x20;
 * [Dymension (Genesis validator)](https://exp.utsa.tech/dymension/staking/dymvaloper1taava3hdv33ps7es7yvwjx7x08lzz3s2mqfp6v)

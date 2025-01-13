@@ -12,6 +12,11 @@
 
 ## Mainnet
 
+* [Atomone](mainnet/atomone/README.md)
+  * [💻 Installation](mainnet/atomone/installation.md)
+  * [⌚ State sync](mainnet/atomone/state-sync.md)
+  * [⌚ Snapshots](mainnet/atomone/snapshots.md)
+  * [📬 Updates](mainnet/atomone/updates.md)
 * [Aura](mainnet/aura/README.md)
   * [💻 Installation](mainnet/aura/installation.md)
   * [⌚ State sync](mainnet/aura/state-sync.md)

@@ -34,7 +34,7 @@ systemctl restart celestia-appd-test && journalctl -u celestia-appd-test -f -o c
 
 time: **every 3 days** **|** pruning: **nothing |** indexer: **kv**
 
-🌐 [**https://share106-4.utsa.tech/celestia/**](https://share106-4.utsa.tech/celestia/)
+🌐 [**https://share106-1.utsa.tech/celestia/**](https://share106-1.utsa.tech/celestia/)
 {% endhint %}
 
 ```shell
@@ -47,7 +47,7 @@ cp $HOME/.celestia-app-test/data/priv_validator_state.json $HOME/.celestia-app-t
 rm -rf $HOME/.celestia-app-test/data 
 
 # скачиваем snapshot
-curl -o - -L https://share106-4.utsa.tech/celestia/celestia_archive_testnet.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.celestia-app-test/
+curl -o - -L https://share106-1.utsa.tech/celestia/celestia_archive_testnet.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.celestia-app-test/
 
 mv $HOME/.celestia-app-test/priv_validator_state.json.backup $HOME/.celestia-app-test/data/priv_validator_state.json
 

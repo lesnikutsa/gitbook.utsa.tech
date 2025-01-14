@@ -14,7 +14,7 @@ The 1KV program is ending and the Decentralized Nodes (DN) program is starting i
 * Need to identity the main wallet that will be stashed. At a minimum, the Email and Matrix handle must be specified. Go to https://polkadot.polkassembly.io/ to complete verification of your Matrix descriptor ![](<../../.gitbook/assets/image (66).png>)
 * Need own BOND tokens required for kusama 150 KSM and 7500 DOT for polkadot
 * A validator can charge a fee of up to 5% on Polkadot and up to 15% on Kusama
-* Validator reward assignment must be set to "staked" (increase your own stake)
+* Validator reward assignment must be set to "staked" (increase your own stake). Alternatively, a validator can set the reward receipt parameter to “stash” if they have their own stake of 11500 DOT or 250 KSM.
 * Nodes must connect to public telemetry [https://telemetry.w3f.community/](https://telemetry.w3f.community/) No data should be hidden from telemetry. In particular, nodes should exchange at least the following information: (CPU, RAM, number of cores and whether the machine is virtual)
 * Servers must meet the minimum hardware requirements described [here](https://wiki.polkadot.network/docs/maintain-guides-how-to-validate-polkadot#requirements)
 * Each node must run on a separate server. There may be exceptions, but they are not recommended and must be justified

@@ -47,19 +47,19 @@ mv story-geth $(which story-geth)
 systemctl restart story-geth && journalctl -u story-geth -f -o cat
 ```
 
-## UPD story 🕊 on v0.13.0 (Update Height: 858000)
+## UPD story 🕊 on v0.13.2 (Update Height: 858000)
 
 ```shell
 cd $HOME/story
 git pull
-git checkout v0.13.0
+git checkout v0.13.2
 go build -o story ./client
 
 $HOME/story/story version
-# Version       v0.13.0-stable
-# Git Commit    daaa395
+# Version       v0.13.2-stable
+# Git Commit    c9c57b2
 
-# AFTER STOPPING THE NETWORK ON THE REQUIRED BLOCK!!!
+# ПОСЛЕ ОСТАНОВКИ СЕТИ НА НУЖНОМ БЛОКЕ!!!
 systemctl stop story
 mv $HOME/story/story $(which story)
 story version

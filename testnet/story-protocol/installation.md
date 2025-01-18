@@ -75,13 +75,13 @@ story-geth version
 ```bash
 cd
 git clone https://github.com/piplabs/story && cd story
-git checkout v0.13.0
+git checkout v0.13.2
 go build -o story ./client
 mv $HOME/story/story $HOME/go/bin/
 
 story version
-# Version       v0.13.0-stable
-# Git Commit    daaa395
+# Version       v0.13.2-stable
+# Git Commit    c9c57b2
 ```
 
 

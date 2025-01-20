@@ -50,19 +50,19 @@ mkdir -p zenrock && cd zenrock
 
 ```bash
 cd $HOME/zenrock
-wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v5.5.0/zenrockd
+wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v5.3.8/zenrockd
 chmod +x zenrockd
 mv $HOME/zenrock/zenrockd $HOME/go/bin/
 
 zenrockd version --long | grep -e version -e commit
-# version: 5.5.0
-# commit: 1c5e92e50435c334cf814377254367392a4dfda5
+# version: 5.3.8
+# commit: 8dd87f173727be414d6eb2a113dcf999b7b18958
 ```
 
 **Initialize the node to create the necessary configuration files**
 
 ```bash
-zenrockd init UTSA_guide --chain-id gardia-2
+zenrockd init UTSA_guide --chain-id gardia-3
 ```
 
 **Genesis**
@@ -72,19 +72,19 @@ curl -s https://rpc.gardia.zenrocklabs.io/genesis | jq .result.genesis > $HOME/.
 
 # check genesis
 sha256sum ~/.zrchain/config/genesis.json
-# 85baddb3e1cb6b349aee2d79050b88f781ee34c0d0fc51d9ee2fecd04877ca3c
+# 0a43001a0a55a5ce41d1faa31811394cf8dfdb9c0a6d4b21f677d88ec9bce783
 ```
 
 **Download Addr book**
 
 ```bash
-wget -O $HOME/.zrchain/config/addrbook.json "https://share106-7.utsa.tech/zenrock/addrbook.json"
+#wget -O $HOME/.zrchain/config/addrbook.json "https://share106-7.utsa.tech/zenrock/addrbook.json"
 ```
 
 **Setting up the node configuration**
 
 ```shell
-zenrockd config set client chain-id gardia-2
+zenrockd config set client chain-id gardia-3
 #zenrockd config set client keyring-backend test
 
 sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "0urock"|g' $HOME/.zrchain/config/app.toml
@@ -92,9 +92,9 @@ sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "0urock"|g' $HOME/.zrchain
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.zrchain/config/config.toml
 
-peers="5458b7a316ab673afc34404e2625f73f0376d9e4@zenrock-testnet-peer.itrocket.net:11656,1dfbd854bab6ca95be652e8db078ab7a069eae6f@52.30.152.47:26656,6ef43e8d5be8d0499b6c57eb15d3dd6dee809c1e@52.30.152.47:26656"
+peers=""6ef43e8d5be8d0499b6c57eb15d3dd6dee809c1e@sentry-1.gardia.zenrocklabs.io:26656,1dfbd854bab6ca95be652e8db078ab7a069eae6f@sentry-2.gardia.zenrocklabs.io:36656,63014f89cf325d3dc12cc8075c07b5f4ee666d64@sentry-3.gardia.zenrocklabs.io:46656,12f0463250bf004107195ff2c885be9b480e70e2@sentry-4.gardia.zenrocklabs.io:56656""
 sed -i -e "s|^persistent_peers *=.*|persistent_peers = \"$peers\"|" $HOME/.zrchain/config/config.toml
-seeds="50ef4dd630025029dde4c8e709878343ba8a27fa@zenrock-testnet-seed.itrocket.net:56656"
+seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.zrchain/config/config.toml
 
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.zrchain/config/config.toml

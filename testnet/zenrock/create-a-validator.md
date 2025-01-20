@@ -44,7 +44,7 @@ nano $HOME/.zrchain/validator.json
 ```bash
 zenrockd tx validation create-validator $HOME/.zrchain/validator.json \
     --from=<key-name> \
-    --chain-id=gardia-2 \
+    --chain-id=gardia-3 \
     --gas auto --gas-adjustment 1.5 --gas-prices 27urock
 ```
 

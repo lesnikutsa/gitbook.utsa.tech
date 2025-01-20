@@ -184,8 +184,6 @@
   * [💻 Installation](testnet/zenrock/installation.md)
   * [💻 Sidecar (✔️Oracle)](testnet/zenrock/sidecar-oracle.md)
   * [💻 Create a validator](testnet/zenrock/create-a-validator.md)
-  * [⌚ State sync](testnet/zenrock/state-sync.md)
-  * [⌚ Snapshot](testnet/zenrock/snapshot.md)
   * [📬 Updates](testnet/zenrock/updates.md)
 
 ## OTHER PROJECTS

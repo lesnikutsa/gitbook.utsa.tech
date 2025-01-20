@@ -24,7 +24,7 @@ description: >-
 * **Guide (RU)**:&#x20;
 * **RPC:**&#x20;
 * **API:**&#x20;
-* **EXP:** [https://explorer.gardia.zenrocklabs.io/](https://explorer.gardia.zenrocklabs.io/)
+* **EXP:** [https://explorer.gardia.zenrocklabs.io/](https://explorer.gardia.zenrocklabs.io/) | [https://testnet.itrocket.net/zenrock/uptime](https://testnet.itrocket.net/zenrock/uptime)
 
 ## Peering
 

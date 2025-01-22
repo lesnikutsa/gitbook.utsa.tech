@@ -17,7 +17,7 @@ mkdir -p $HOME/.zrchain/sidecar/keys
 **Install the binary file**
 
 ```shell
-wget -O $HOME/.zrchain/sidecar/bin/zenrock-sidecar https://github.com/zenrocklabs/zrchain/releases/download/v5.3.10/validator_sidecar
+wget -O $HOME/.zrchain/sidecar/bin/zenrock-sidecar https://github.com/zenrocklabs/zrchain/releases/download/v5.8.7/validator_sidecar
 chmod +x $HOME/.zrchain/sidecar/bin/zenrock-sidecar
 ```
 
@@ -99,8 +99,8 @@ BLS_KEY_PATH=$bls_output_file
 **Copy the original configuration files**
 
 ```bash
-cp $HOME/zenrock-validators/scaffold_setup/configs/eigen_operator_config.yaml $HOME/.zrchain/sidecar/
-cp $HOME/zenrock-validators/scaffold_setup/configs/config.yaml $HOME/.zrchain/sidecar/
+cp $HOME/zenrock-validators/scaffold_setup/configs_testnet/eigen_operator_config.yaml $HOME/.zrchain/sidecar/
+cp $HOME/zenrock-validators/scaffold_setup/configs_testnet/config.yaml $HOME/.zrchain/sidecar/
 ```
 
 **Change data in config.yaml**

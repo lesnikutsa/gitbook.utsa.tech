@@ -101,24 +101,3 @@ lz4 -dc celestia_full_mainnet.tar.lz4 - | tar -xvf - -C /root/.celestia-full/
 
 
 
-## Light Node
-
-{% hint style="success" %}
-### Snapshot
-
-every 1 day **|** /root/.celestia-light **|** archive
-
-🌐 [**https://share106-4.utsa.tech/celestia/**](https://share106-4.utsa.tech/celestia/)
-{% endhint %}
-
-```shell
-cd $HOME
-systemctl stop celestia-light
-
-rm -rf ~/.celestia-light/{data,.lock}
-
-curl -o - -L https://share106-4.utsa.tech/celestia/celestia_light_mainnet.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.celestia-light/
-
-systemctl restart celestia-light && journalctl -u celestia-light -f -o cat
-```
-

@@ -31,7 +31,9 @@ go version
 ufw allow 2121 comment bridge_node
 ```
 
-
+{% hint style="warning" %}
+**IMPORTANT - you must use XFS file system. Please do not use ext4, but migrate to XFS/ZFS**
+{% endhint %}
 
 ## Node installation
 

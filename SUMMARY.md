@@ -89,6 +89,9 @@
 
 ## TESTNET
 
+* [Atomone](testnet/atomone/README.md)
+  * [💻 Installation](testnet/atomone/installation.md)
+  * [📬 Updates](testnet/atomone/updates.md)
 * [Airchains](testnet/airchains/README.md)
   * [💻 Installation](testnet/airchains/installation.md)
   * [⌚ State sync](testnet/airchains/state-sync.md)

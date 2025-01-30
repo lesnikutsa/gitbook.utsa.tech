@@ -47,13 +47,13 @@ Both protocols will work side by side during a month-long transition period from
 cd $HOME
 rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node && cd celestia-node
-git checkout tags/v0.20.4-mocha
+git checkout tags/v0.21.3-mocha
 make build
 make install
 
 celestia version
-#Semantic version: v0.20.4
-#Commit: 51b79431533576a5cddf1235bdf3751e4c014212
+#Semantic version: v0.21.3-mocha
+#Commit: 5a5d450e58dbf4154338ba9fa247e96f2ae5fa01
 ```
 
 ```shell
@@ -75,9 +75,7 @@ cel-key list --node.type full --keyring-backend test --p2p.network mocha
 
 **--p2p.network** use the chain id of our network
 
-**--core.rpc.port** use the RPC port from our RPC node
-
-**--core.grpc.port** use the gRPC port from our RPC node
+**--core.port** use the gRPC port from our RPC node
 
 **--keyring.keyname** use the name of the wallet we created
 
@@ -85,8 +83,7 @@ cel-key list --node.type full --keyring-backend test --p2p.network mocha
 celestia full init \
   --core.ip <RPC_NODE_IP> \
   --p2p.network mocha \
-  --core.rpc.port 26657 \
-  --core.grpc.port 9090 \
+  --core.port 9090 \
   --keyring.keyname full_wallet
 ```
 

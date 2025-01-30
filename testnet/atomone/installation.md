@@ -47,7 +47,7 @@ atomoned init UTSA_guide --chain-id atomone-testnet-1
 wget -O $HOME/.atomone/config/genesis.json "https://atomone.fra1.digitaloceanspaces.com/atomone-testnet-1/genesis.json"
 
 sha256sum ~/.atomone/config/genesis.json
-# e8014c92b9ff3f67dce7158754c07004fce3947c33d6a2c9eee350d01370d430
+# 5bd5d327fd294d8e9653ab97f28703df7d7e59d84238249bdd8dc7ed33408100
 ```
 
 #### At this stage, we can download the address book

@@ -209,10 +209,10 @@ nano /usr/local/bin/genesis.json
 **Download the binary file**
 
 ```bash
-wget -O /usr/local/bin/uomi "https://github.com/Uomi-network/uomi-node/releases/download/v0.1.5/uomi_0.1.5_ubuntu_24"
+wget -O /usr/local/bin/uomi "https://github.com/Uomi-network/uomi-node/releases/download/v0.1.7/uomi_0.1.7_ubuntu_24"
 chmod +x /usr/local/bin/uomi
 uomi --version
-#uomi 0.1.5-8c9ffb26d08
+#uomi 0.1.7-c7f05ffe3b6
 ```
 
 **Create a wallet and save the output**

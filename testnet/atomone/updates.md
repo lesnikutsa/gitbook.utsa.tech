@@ -26,12 +26,23 @@ Updates are available for information. Boot via State sync or Snapshot to avoid 
 <mark style="color:green;">**With full synchronization, start from**</mark> v1.0.0
 {% endhint %}
 
-## UPD 🕊 on  v (Update Height: )
+## UPD 🕊 on  v1.0.1 (Update Height: )
 
 ```shell
-
+cd $HOME/atomone
+git pull
+git checkout v1.0.1
+make build
+$HOME/atomone/build/atomoned version --long | grep -e version -e commit
+# version: v1.0.1
+# commit: 97d21d3686aa79b977ff89ddfedf6ca0f1b1b162
 
 # AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
+systemctl stop atomoned
+mv $HOME/atomone/build/atomoned $(which atomoned)
+atomoned version --long | grep -e version -e commit
+#
 
+systemctl restart atomoned && journalctl -u atomoned -f -o cat
 ```
 

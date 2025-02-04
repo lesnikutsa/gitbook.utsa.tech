@@ -184,27 +184,12 @@ systemctl restart uomi-ai.service && journalctl -u uomi-ai.service -f
 **Download genesis**
 
 ```bash
-wget -O /usr/local/bin/genesis.json "https://github.com/Uomi-network/uomi-node/releases/download/v0.1.3/genesis.json"
+wget -O /usr/local/bin/genesis.json "https://github.com/Uomi-network/uomi-node/releases/download/v0.1.7/genesis.json"
 chmod +x /usr/local/bin/genesis.json
 
 sha256sum /usr/local/bin/genesis.json
-#665b84710dcd499e476b576e2abd94ba9654033b643018174d281f130da202ee
+#ac62c78e9465fdb25fce6e98138fd497089042785ac4bac70d75d379efddfb49
 ```
-
-{% hint style="warning" %}
-Open genesis and add the following peers
-
-```bash
-nano /usr/local/bin/genesis.json
-```
-
-```
---reserved-nodes "/ip4/65.109.142.4/tcp/30333/p2p/12D3KooWSGp485hkoGXUucjWRDKf9AXaYQy9aLzMWpqhPFw816rZ",
---reserved-nodes "/ip4/138.199.152.43/tcp/30333/p2p/12D3KooWAz8V3VCrW2RwoyLRMSeoHhqcAHJtEFi4vtFhpWART5Ya"
-```
-
-![](<../../.gitbook/assets/image (70).png>)
-{% endhint %}
 
 **Download the binary file**
 

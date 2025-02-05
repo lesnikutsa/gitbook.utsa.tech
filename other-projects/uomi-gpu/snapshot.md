@@ -1,9 +1,11 @@
 # ⌚ Snapshot
 
+
+
 {% hint style="success" %}
 ### Snapshot
 
-**Every** `24 hours`; **pruning:** `1000`
+**Every** `48 hours`; **pruning:** `1000`
 
 🌐 [https://share102.utsa.tech/uomi/](https://share102.utsa.tech/uomi/)
 {% endhint %}

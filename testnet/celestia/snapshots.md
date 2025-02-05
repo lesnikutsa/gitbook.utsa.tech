@@ -108,24 +108,3 @@ systemctl restart celestia-full && journalctl -u celestia-full -f -o cat
 
 
 
-## Light Node
-
-{% hint style="success" %}
-### Snapshot
-
-every 1 day **|** /root/.celestia-light-mocha-4
-
-🌐 [**https://share106-3.utsa.tech/celestia/**](https://share106-3.utsa.tech/celestia/)
-{% endhint %}
-
-```shell
-cd $HOME
-systemctl stop celestia-light
-
-rm -rf ~/.celestia-light-mocha-4/{data,.lock}
-
-curl -o - -L https://share106-3.utsa.tech/celestia/celestia_light_testnet.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.celestia-light-mocha-4/
-
-systemctl restart celestia-light && journalctl -u celestia-light -f -o cat
-```
-

@@ -46,3 +46,22 @@ quicksilverd version --long | grep -e version -e commit -e build_tags
 
 systemctl restart quicksilverd &#x26;&#x26; journalctl -u quicksilverd -f -o cat
 </code></pre>
+
+## UPD 🕊 on  v1.7.6-testnet (before 1863000)
+
+<pre class="language-sh"><code class="lang-sh"><strong>cd $HOME/quicksilver
+</strong>wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.7.6-testnet/quicksilverd-v1.7.6-testnet-amd64
+chmod +x $HOME/quicksilver/quicksilverd
+<strong>$HOME/quicksilver/quicksilverd version --long | grep -e version -e commit -e build_tags
+</strong># version: v1.7.6-testnet
+# build_tags: netgo ledger muslc,
+# commit: 402cb0b2974f0fd1ec4e5a071b6e85122ca598d2
+
+# AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
+<strong>systemctl stop quicksilverd
+</strong>mv $HOME/quicksilver/quicksilverd $(which quicksilverd)
+quicksilverd version --long | grep -e version -e commit -e build_tags
+#
+
+systemctl restart quicksilverd &#x26;&#x26; journalctl -u quicksilverd -f -o cat
+</code></pre>

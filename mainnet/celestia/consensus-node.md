@@ -77,13 +77,13 @@ celestia-appd query signal upgrade --home $HOME/.celestia-app-main
 {% endhint %}
 
 ```bash
-git checkout v3.2.0
+git checkout v3.3.1
 make build
 mv $HOME/celestia-app/build/celestia-appd $HOME/go/bin/celestia-appd
 
 celestia-appd version --long --home $HOME/.celestia-app-main
-#version: 3.2.0
-#commit: 91f4c700
+#version: 3.3.1
+#commit: addcd77c
 ```
 
 

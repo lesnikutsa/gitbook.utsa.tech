@@ -67,17 +67,14 @@ cel-key list --node.type full --keyring-backend test
 
 **--p2p.network** use the chain id of our network
 
-**--core.rpc.port** use the RPC port from our RPC node
-
-**--core.grpc.port** use the gRPC port from our RPC node
+**--core.port** use the gRPC port from our RPC node
 
 **--keyring.keyname** use the name of the wallet we created
 
 ```shell
 celestia full init \
   --core.ip <RPC_NODE_IP> \
-  --core.rpc.port 26657 \
-  --core.grpc.port 9090 \
+  --core.port 9090 \
   --keyring.keyname full_wallet
 ```
 

@@ -60,8 +60,8 @@ parity/polkadot:v1.9.0 --base-path /data --chain kusama \
 --validator --name "<moniker>" \
 --public-addr /ip4/$(wget -qO- eth0.me)/tcp/30333 \
 --port 30333 --rpc-port 9933 --prometheus-port 9615 \
---telemetry-url 'wss://telemetry.polkadot.io/submit/ 1' \
---telemetry-url 'wss://telemetry-backend.w3f.community/submit 1'
+--telemetry-url "wss://telemetry-backend.w3f.community/submit/ 1" \
+--telemetry-url "wss://telemetry.polkadot.io/submit/ 0"
 ```
 
 Now the node should appear in telemetry

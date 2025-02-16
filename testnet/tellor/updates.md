@@ -7,7 +7,7 @@
 {% endhint %}
 
 ```shell
-FOLDER=.nibid
+FOLDER=.layer
 
 # find out RPC port
 echo -e "\033[0;32m$(grep -A 3 "\[rpc\]" ~/$FOLDER/config/config.toml | egrep -o ":[0-9]+")\033[0m"
@@ -26,14 +26,22 @@ Updates are available for information. Boot via State sync or Snapshot to avoid 
 
 
 
-## UPD 🕊 on v0.21.11 (Update Height: )
+## UPD 🕊 on v (Update Height: )
 
 ```shell
-curl -s https://get.nibiru.fi/@v0.21.10! | bash
+cd $HOME/layer
+git pull
+git checkout v
+make build
+$HOME/layer/build/layerd version --long | grep -e version -e commit
+# version: 
+# commit: 
 
-nibid version --long | grep -e version -e commit
-# v0.21.11
-# commit: b5fc784f8fb31628df639fcc23d80621e437f044
+# # ПОСЛЕ ОСТАНОВКИ СЕТИ НА НУЖНОМ БЛОКЕ!!!
+systemctl stop layerd
+mv $HOME/layer/build/layerd $(which layerd)
+layerd version --long | grep -e version -e commit
+#
 
-systemctl restart nibid && journalctl -u nibid -f -o cat
+systemctl restart layerd && journalctl -u layerd -f -o cat
 ```

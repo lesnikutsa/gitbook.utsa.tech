@@ -185,7 +185,9 @@
   * [📬 Oracle](testnet/warden-protocol/oracle.md)
 * [Zenrock](testnet/zenrock/README.md)
   * [💻 Installation](testnet/zenrock/installation.md)
-  * [💻 Sidecar (✔️Oracle)](testnet/zenrock/sidecar-oracle.md)
+  * [💻 Sidecar (✔️Install)](testnet/zenrock/sidecar-install.md)
+  * [💻 ✔️config.yaml](testnet/zenrock/config.yaml.md)
+  * [💻 ✔️eigen\_operator\_config.yaml](testnet/zenrock/eigen_operator_config.yaml.md)
   * [💻 Create a validator](testnet/zenrock/create-a-validator.md)
   * [📬 Updates](testnet/zenrock/updates.md)
 

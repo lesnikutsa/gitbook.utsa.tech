@@ -4,7 +4,7 @@ description: >-
   the CometBFT consensus process
 ---
 
-# 💻 Sidecar (✔️Oracle)
+# 💻 Sidecar (✔️Install)
 
 **Install the sidecar**
 
@@ -17,7 +17,7 @@ mkdir -p $HOME/.zrchain/sidecar/keys
 **Install the binary file**
 
 ```shell
-wget -O $HOME/.zrchain/sidecar/bin/zenrock-sidecar https://github.com/zenrocklabs/zrchain/releases/download/v5.8.7/validator_sidecar
+wget -O $HOME/.zrchain/sidecar/bin/zenrock-sidecar https://github.com/zenrocklabs/zrchain/releases/download/v5.16.9/validator_sidecar
 chmod +x $HOME/.zrchain/sidecar/bin/zenrock-sidecar
 ```
 

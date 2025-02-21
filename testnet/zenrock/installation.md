@@ -50,19 +50,19 @@ mkdir -p zenrock && cd zenrock
 
 ```bash
 cd $HOME/zenrock
-wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v5.10.5/zenrockd
+wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v5.3.8/zenrockd
 chmod +x zenrockd
 mv $HOME/zenrock/zenrockd $HOME/go/bin/
 
 zenrockd version --long | grep -e version -e commit
-# version: 5.10.4
-# commit: 30ff6dcae5e1279c338f948cd8754530cd05b452
+# version: 5.3.8
+# commit: 8dd87f173727be414d6eb2a113dcf999b7b18958
 ```
 
 **Initialize the node to create the necessary configuration files**
 
 ```bash
-zenrockd init UTSA_guide --chain-id gardia-3
+zenrockd init UTSA_guide --chain-id gardia-4
 ```
 
 **Genesis**
@@ -72,7 +72,7 @@ curl -s https://rpc.gardia.zenrocklabs.io/genesis | jq .result.genesis > $HOME/.
 
 # check genesis
 sha256sum ~/.zrchain/config/genesis.json
-# 0a43001a0a55a5ce41d1faa31811394cf8dfdb9c0a6d4b21f677d88ec9bce783
+# 5730b7b7417b5199c07290527830019011a2ccaaa8b8865210f56188b307e16a
 ```
 
 **Download Addr book**
@@ -84,7 +84,7 @@ sha256sum ~/.zrchain/config/genesis.json
 **Setting up the node configuration**
 
 ```shell
-zenrockd config set client chain-id gardia-3
+zenrockd config set client chain-id gardia-4
 #zenrockd config set client keyring-backend test
 
 sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "0urock"|g' $HOME/.zrchain/config/app.toml

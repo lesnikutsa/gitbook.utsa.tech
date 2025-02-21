@@ -14,7 +14,7 @@ description: >-
 
 ## **Details**
 
-* **Network Chain ID**: gardia-3
+* **Network Chain ID**: gardia-4
 * **Binary**: `zenrockd` `zenrock-sidecar`
 * **Denom**: urock
 * **Working directory**: .zrchain

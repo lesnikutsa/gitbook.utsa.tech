@@ -87,7 +87,7 @@ sha256sum ~/.zrchain/config/genesis.json
 zenrockd config set client chain-id gardia-4
 #zenrockd config set client keyring-backend test
 
-sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "0urock"|g' $HOME/.zrchain/config/app.toml
+sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "2.5urock"|g' $HOME/.zrchain/config/app.toml
 
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.zrchain/config/config.toml

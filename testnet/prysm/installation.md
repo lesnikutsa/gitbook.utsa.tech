@@ -61,7 +61,7 @@ wget -O $HOME/.prysm/config/addrbook.json "https://share101.utsa.tech/prysm/addr
 ```shell
 prysmd config set client chain-id prysm-devnet-1 
 prysmd config set client keyring-backend os
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.001uprysm\"/;" ~/.prysm/config/app.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.025uprysm\"/;" ~/.prysm/config/app.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.prysm/config/config.toml
 peers=""

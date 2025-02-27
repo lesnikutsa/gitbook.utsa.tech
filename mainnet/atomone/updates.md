@@ -26,16 +26,16 @@ Updates are available for information. Boot via State sync or Snapshot to avoid 
 <mark style="color:green;">**With full synchronization, start from**</mark>**&#x20;aura\_v0.4.4**
 {% endhint %}
 
-## UPD 🕊 on  v1.0.1 (Update Height: )
+## UPD 🕊 on  v1.1.0 (Update Height: )
 
 ```shell
 cd $HOME/atomone
 git pull
-git checkout v1.0.1
+git checkout v1.1.0
 make build
 $HOME/atomone/build/atomoned version --long | grep -e version -e commit
-# version: v1.0.1
-# commit: 97d21d3686aa79b977ff89ddfedf6ca0f1b1b162
+# version: v1.1.0
+# commit: 7b30d89a2f695d9022a84313fe6bc7c47c4e9e7f
 
 # AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
 systemctl stop atomoned

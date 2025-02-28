@@ -188,14 +188,34 @@ systemctl restart nibid && journalctl -u nibid -f -o cat
 
 ```shell
 cd $HOME/nibiru
-wget https://github.com/NibiruChain/nibiru/releases/download/v2.0.0/nibid_2.0.0_linux_amd64.tar.gz
-tar -zxvf nibid_2.0.0_linux_amd64.tar.gz
+wget https://github.com/NibiruChain/nibiru/releases/download/v2.0.0-p1/nibid_2.0.0-p1_linux_amd64.tar.gz
+tar -zxvf nibid_2.0.0-p1_linux_amd64.tar.gz
 chmod +x ./nibid
-rm nibid_2.0.0_linux_amd64.tar.gz
+rm nibid_2.0.0-p1_linux_amd64.tar.gz
 
 $HOME/nibiru/nibid version --long | grep -e version -e commit
-# version: 2.0.0
-# commit: d8a10921ff014d1ecf9e096f2dbdc21d6f521c4b
+# version: 2.0.0-p1
+# commit: fbcca386905d33051c7c5946d7d8338cef964062
+
+# AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
+systemctl stop nibid
+mv $HOME/nibiru/nibid $HOME/go/bin/
+
+systemctl restart nibid && journalctl -u nibid -f -o cat
+```
+
+## UPD 🕊 on 2.1.0 (Update Height: 19562174)
+
+```shell
+cd $HOME/nibiru
+wget https://github.com/NibiruChain/nibiru/releases/download/v2.1.0/nibid_2.1.0_linux_amd64.tar.gz
+tar -zxvf nibid_2.1.0_linux_amd64.tar.gz
+chmod +x ./nibid
+rm nibid_2.1.0_linux_amd64.tar.gz
+
+$HOME/nibiru/nibid version --long | grep -e version -e commit
+# version: 2.1.0
+# commit: 8cae09bf69878939d6fd0361302876b9366d1aa4
 
 # AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
 systemctl stop nibid

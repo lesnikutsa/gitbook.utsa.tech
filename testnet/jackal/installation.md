@@ -29,14 +29,14 @@ go version
 
 ```shell
 git clone https://github.com/JackalLabs/canine-chain && cd canine-chain
-git checkout v4.4.0-rc.1
+git checkout v4.5.0-rc.2
 make install
 ```
 
 ```shell
 canined version --long | grep -e version -e commit
-#version: v4.4.0-rc.1
-#commit: c489b7724f39a3d47087a6ca0af9f6da1bb40f3b
+#version: v4.5.0-rc.2
+#commit: 35b7b300ef25242b95f47bd1f1b30ee1531dd6de
 ```
 
 #### We initialize the node to create the necessary configuration files

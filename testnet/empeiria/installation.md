@@ -28,14 +28,14 @@ go version
 ```shell
 #mkdir -p ~/go/bin
 mkdir -p empe-chain && cd empe-chain
-curl -LO https://github.com/empe-io/empe-chain-releases/raw/master/v0.2.2/emped_v0.2.2_linux_amd64.tar.gz
-tar -xvf emped_v0.2.2_linux_amd64.tar.gz
+curl -LO https://github.com/empe-io/empe-chain-releases/raw/master/v0.3.0/emped_v0.3.0_linux_amd64.tar.gz
+tar -xvf emped_v0.3.0_linux_amd64.tar.gz
 mv emped ~/go/bin
 chmod u+x ~/go/bin/emped
 
 emped version --long | grep -e version -e commit
-# version: v0.2.2
-# commit: 89a4061fa99a171bb2a15a5c23f0c61749511abd
+# version: v0.3.0
+# commit: 8d602e7c6502db75b47369bbbd885cd12256e71a
 ```
 
 #### We initialize the node to create the necessary configuration files

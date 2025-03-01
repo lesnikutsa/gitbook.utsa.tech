@@ -46,3 +46,24 @@ emped version --long | grep -e version -e commit
 
 systemctl restart emped && journalctl -u emped -f -o cat
 ```
+
+## UPD 🕊 on v0.3.0  (Update Height: 3871292)
+
+```shell
+cd $HOME/empe-chain
+curl -LO https://github.com/empe-io/empe-chain-releases/raw/master/v0.3.0/emped_v0.3.0_linux_amd64.tar.gz
+tar -xvf emped_v0.3.0_linux_amd64.tar.gz
+rm -r emped_*
+chmod 744 $HOME/empe-chain/emped
+$HOME/empe-chain/emped version --long | grep -e version -e commit
+# version: v0.3.0
+# commit: 8d602e7c6502db75b47369bbbd885cd12256e71a
+
+# AFTER STOPPING THE NETWORK ON THE REQUIRED BLOCK!!!
+systemctl stop emped
+mv $HOME/empe-chain/emped $(which emped)
+emped version --long | grep -e version -e commit
+# 
+
+systemctl restart emped && journalctl -u emped -f -o cat
+```

@@ -24,11 +24,15 @@ curl -s localhost:$PORT/consensus_state | jq '.result.round_state.height_vote_se
 Updates are available for information. Boot via State sync or Snapshot to avoid installing all updates. In this case, you must use the actual version of the binary file and genesis
 {% endhint %}
 
-## UPD 🕊 on v (Update Height: )
+## UPD 🕊 on v0.6.1 (Update Height: 1968800)
 
 ```shell
 cd $HOME/wardenprotocol
-
+wget -O $HOME/wardenprotocol/wardend "https://github.com/warden-protocol/wardenprotocol/releases/download/v0.6.1/wardend-0.6.1-linux-amd64"
+chmod +x $HOME/wardenprotocol/wardend
+$HOME/wardenprotocol/wardend version --long | grep -e version -e commit
+# version: 0.6.1
+# commit: c0401ff5c3373b4e0a91a3ff7698c97ab2fc30f7
 
 # AFTER STOPPING THE NETWORK ON THE REQUIRED BLOCK!
 systemctl stop wardend

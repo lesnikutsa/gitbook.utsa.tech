@@ -49,6 +49,18 @@ systemctl restart emped && journalctl -u emped -f -o cat
 
 ## UPD 🕊 on v0.3.0  (Update Height: 3871292)
 
+```bash
+# LIB
+mkdir ~/.empe-chain/lib
+wget https://github.com/CosmWasm/wasmvm/releases/download/v1.5.2/libwasmvm.x86_64.so -P $HOME/.empe-chain/lib
+echo 'export LD_LIBRARY_PATH=/root/.empe-chain/lib:$LD_LIBRARY_PATH' >> ~/.profile
+source ~/.profile
+
+# add to service
+nano /etc/systemd/system/emped.service
+Environment="LD_LIBRARY_PATH=/root/.empe-chain/lib:$LD_LIBRARY_PATH"
+```
+
 ```shell
 cd $HOME/empe-chain
 curl -LO https://github.com/empe-io/empe-chain-releases/raw/master/v0.3.0/emped_v0.3.0_linux_amd64.tar.gz

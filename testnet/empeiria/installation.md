@@ -38,7 +38,15 @@ emped version --long | grep -e version -e commit
 # commit: 8d602e7c6502db75b47369bbbd885cd12256e71a
 ```
 
-#### We initialize the node to create the necessary configuration files
+```bash
+# LIB
+mkdir ~/.empe-chain/lib
+wget https://github.com/CosmWasm/wasmvm/releases/download/v1.5.2/libwasmvm.x86_64.so -P $HOME/.empe-chain/lib
+echo 'export LD_LIBRARY_PATH=/root/.empe-chain/lib:$LD_LIBRARY_PATH' >> ~/.profile
+source ~/.profile
+```
+
+**We initialize the node to create the necessary configuration files**
 
 ```shell
 emped init UTSA_guide --chain-id empe-testnet-2
@@ -108,6 +116,7 @@ ExecStart=$(which emped) start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
+Environment="LD_LIBRARY_PATH=/root/.empe-chain/lib:$LD_LIBRARY_PATH"
 
 [Install]
 WantedBy=multi-user.target

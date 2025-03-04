@@ -81,13 +81,13 @@ celestia-appd-test query signal upgrade --home $HOME/.celestia-app-test
 
 
 ```bash
-git checkout v3.3.1-mocha
+git checkout v3.4.0-mocha
 make build
 mv $HOME/celestia-app/build/celestia-appd $HOME/go/bin/celestia-appd-test
 
 celestia-appd-test version --long --home $HOME/.celestia-app-test
-#version: 3.3.1
-#commit: addcd77c
+#version: 3.4.0-mocha
+#commit: f8c4c743
 ```
 
 #### We initialize the node to create the necessary configuration files

@@ -8,7 +8,7 @@
 
 ## **Details**
 
-* **Network Chain ID**: [https://teletype.in/@lesnik13utsa/r9Z\_bQwRqdd](https://teletype.in/@lesnik13utsa/r9Z_bQwRqdd)
+* **Network Chain ID**: xrplevm\_1449000-1
 * **Binary**: exrpd
 * **Denom**: axrp
 * **Working directory**: axrp
@@ -16,19 +16,19 @@
 ## Public services
 
 * **Guide (RU)**: [https://teletype.in/@lesnik13utsa/r9Z\_bQwRqdd](https://teletype.in/@lesnik13utsa/r9Z_bQwRqdd)
-* **RPC**: [https://d-xrpl.rpc.utsa.tech/](https://d-xrpl.rpc.utsa.tech/)
-* **API**: [https://d-xrpl.api.utsa.tech/](https://d-xrpl.api.utsa.tech/)
-* **gRPC:** `d-xrpl.grpc.utsa.tech:433`
-* **EVM RPC:** [https://d-xrpl.evm.utsa.tech/](https://d-xrpl.evm.utsa.tech/)
-* **EVM WSS:** `wss://d-xrpl.wss.utsa.tech:443`
-* **Explorer**: [https://exp.utsa.tech/xrpl-devnet/staking](https://exp.utsa.tech/xrpl-devnet/staking)
+* **RPC**: xrplevm\_1449000-1
+* **API**: [https://t-xrpl.api.utsa.tech/](https://t-xrpl.api.utsa.tech/)
+* **gRPC:** t-xrpl.grpc.utsa.tech:433
+* **EVM RPC:** t-xrpl.evm.utsa.tech
+* **EVM WSS:** t-xrpl.evm.utsa.tech
+* **Explorer**: [https://exp.utsa.tech/xrpl-testnet/staking](https://exp.utsa.tech/xrpl-testnet/staking)
 
 ## Peering
 
 You can use peer **lesnik | UTSA** for fast connection or state sync
 
 ```shell
-peers="196748bd1e1a3b2e2e2f22b54588d1545be0ecf9@5.9.87.231:26656"
+peers="4a132daa35f22194e332cea80f5e25e7b28f2786@5.9.87.231:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.exrpd/config/config.toml
 ```
 

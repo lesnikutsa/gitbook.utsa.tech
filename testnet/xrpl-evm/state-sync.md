@@ -22,12 +22,12 @@ rm -rf $HOME/.exrpd/data
 
 ```shell
 # add peer
-peers="196748bd1e1a3b2e2e2f22b54588d1545be0ecf9@5.9.87.231:26656"
+peers="4a132daa35f22194e332cea80f5e25e7b28f2786@5.9.87.231:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.exrpd/config/config.toml
 ```
 
 ```shell
-SNAP_RPC=https://d-xrpl.rpc.utsa.tech:443
+SNAP_RPC=https://t-xrpl.rpc.utsa.tech:443
 
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \

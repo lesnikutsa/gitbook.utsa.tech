@@ -38,16 +38,16 @@ exrpd version --long | grep -e version -e commit
 #### We initialize the node to create the necessary configuration files
 
 ```shell
-exrpd init UTSA_guide --chain-id exrp_1440002-1
+exrpd init UTSA_guide --chain-id xrplevm_1449000-1
 ```
 
 #### Download Genesis
 
 ```shell
-wget -O $HOME/.exrpd/config/genesis.json "https://raw.githubusercontent.com/Peersyst/xrp-evm-archive/main/poa-devnet/genesis.json"
+wget -O $HOME/.exrpd/config/genesis.json "https://raw.githubusercontent.com/xrplevm/networks/refs/heads/main/testnet/genesis.json"
 
 sha256sum ~/.exrpd/config/genesis.json
-# 62493470151a1014034a9b3ea163c22154b98b4d3fe304298534e8b7705dcc61
+# 3431b691e99742921d9b092ae7796a791f4a3df0fd532fd3e876245a05e15ea9
 ```
 
 #### At this stage, we can download the address book
@@ -59,13 +59,13 @@ wget -O $HOME/.exrpd/config/addrbook.json "https://share102.utsa.tech/xrpl/addrb
 #### Set up node configuration
 
 ```shell
-sed -i.bak -e "s/^chain-id *=.*/chain-id = \"exrp_1440002-1\"/;" ~/.exrpd/config/client.toml
+sed -i.bak -e "s/^chain-id *=.*/chain-id = \"xrplevm_1449000-1\"/;" ~/.exrpd/config/client.toml
 sed -i.bak -e "s/^keyring-backend *=.*/keyring-backend = \"os\"/;" ~/.exrpd/config/client.toml
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0025axrp\"/;" ~/.exrpd/config/app.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.exrpd/config/config.toml
-peers="166f7e48e1c756cc663fee5be96ab2bbdb4db970@xrplevm-devnet-peer.itrocket.net:13656,3cd0dcc0ae9bf7fdb1dc1ed69ce869aac9fcbf64@135.181.132.239:26656,da71733c1bb240cfdc79e59217e86d51aa2a5544@65.108.250.207:26656,d11e135f63913934724112ab75b9e5ed52d2b4ac@95.216.13.161:13656,35b1cfb4b9339ce0954225f647d14ea0e67be723@95.216.229.29:26656,191f3bc3a10ed33de950597c2735bfd4a0e1000d@23.129.20.122:30056"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.exrpd/config/config.toml
+PEERS=`curl -sL https://raw.githubusercontent.com/xrplevm/networks/main/testnet/peers.txt | sort -R | head -n 10 | awk '{print $1}' | paste -s -d, -`
+sed -i.bak -e "s/^seeds *=.*/seeds = \"$PEERS\"/" ~/.exrpd/config/config.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.exrpd/config/config.toml
 ```
 

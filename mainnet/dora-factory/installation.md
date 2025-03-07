@@ -33,11 +33,11 @@ go version
 
 ```shell
 git clone https://github.com/DoraFactory/doravota && cd doravota
-git checkout 0.4.1
+git checkout 0.4.2
 make install
 
 dorad version --long | grep -e version -e commit -e build
-# version: 0.4.1
+# version: 0.4.2
 # commit: 
 ```
 

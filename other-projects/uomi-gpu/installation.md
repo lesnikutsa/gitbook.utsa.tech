@@ -153,7 +153,7 @@ nano /etc/systemd/system/uomi-ai.service
 ```
 
 ```shell
-Unit]
+[Unit]
 Description=UOMI AI API Server
 After=network.target
 

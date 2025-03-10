@@ -22,7 +22,7 @@ rm -rf $HOME/.celestia-app-main/data
 
 ```shell
 # add peer
-peers="1f93b7a58025ab3349d764d7c8829730297c1a04@138.201.122.61:46656"
+peers="9d80179e85443b78627caac6c31bdd16ef2776cf@148.251.90.250:46656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.celestia-app-main/config/config.toml
 ```
 

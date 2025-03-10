@@ -100,7 +100,7 @@ celestia-appd init UTSA_guide --chain-id celestia --home $HOME/.celestia-app-mai
 cd
 git clone https://github.com/celestiaorg/networks
 cp $HOME/networks/celestia/genesis.json $HOME/.celestia-app-main/config
-wget -O $HOME/.celestia-app-main/config/genesis.json "https://share103.utsa.tech/celestia-mainnet/genesis.json"
+wget -O $HOME/.celestia-app-main/config/genesis.json "https://share106.00.utsa.tech/celestia-mainnet/genesis.json"
 
 sha256sum ~/.celestia-app-main/config/genesis.json
 # 9727aac9bbfb021ce7fc695a92f901986421283a891b89e0af97bc9fad187793
@@ -109,7 +109,7 @@ sha256sum ~/.celestia-app-main/config/genesis.json
 #### At this stage, we can download the address book
 
 ```shell
-wget -O $HOME/.celestia-app-main/config/addrbook.json "https://share103.utsa.tech/celestia-mainnet/addrbook.json"
+wget -O $HOME/.celestia-app-main/config/addrbook.json "https://share106.00.utsa.tech/celestia-mainnet/addrbook.json"
 ```
 
 #### Set up node configuration

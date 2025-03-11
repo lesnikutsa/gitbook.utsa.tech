@@ -27,12 +27,12 @@ go version
 
 ```shell
 git clone https://github.com/tellor-io/layer && cd layer
-git checkout v3.0.3
+git checkout v3.0.4
 make install
 
 layerd version --long | grep -e version -e commit
-# version: HEAD
-# commit: e5d129c1be6bdddae713f8570e60ea834ea14b42
+# version: v3.0.4
+# commit: 0f1046a0d35df404c01dcb29b09b275301982f45
 ```
 
 #### We initialize the node to create the necessary configuration files

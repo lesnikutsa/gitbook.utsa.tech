@@ -26,16 +26,16 @@ Updates are available for information. Boot via State sync or Snapshot to avoid 
 
 
 
-## UPD 🕊 on v (Update Height: )
+## UPD 🕊 on v3.0.1 (Update Height: 1185570)
 
 ```shell
 cd $HOME/layer
 git pull
-git checkout v
+git checkout v3.0.4
 make build
 $HOME/layer/build/layerd version --long | grep -e version -e commit
-# version: 
-# commit: 
+# version: v3.0.4
+# commit: 0f1046a0d35df404c01dcb29b09b275301982f45
 
 # # ПОСЛЕ ОСТАНОВКИ СЕТИ НА НУЖНОМ БЛОКЕ!!!
 systemctl stop layerd

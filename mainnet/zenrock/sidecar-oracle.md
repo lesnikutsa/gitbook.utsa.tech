@@ -17,8 +17,14 @@ mkdir -p $HOME/.zrchain/sidecar/keys
 **Install the binary file**
 
 ```shell
-wget -O $HOME/.zrchain/sidecar/bin/zenrock-sidecar https://github.com/zenrocklabs/zrchain/releases/download/v5.3.10/validator_sidecar
+wget -O $HOME/.zrchain/sidecar/bin/zenrock-sidecar https://github.com/Zenrock-Foundation/zrchain/releases/download/v5.16.21/validator_sidecar
 chmod +x $HOME/.zrchain/sidecar/bin/zenrock-sidecar
+```
+
+**Set a password for sidecar wallets**
+
+```shell
+read -p "Enter password for the keys: " key_pass
 ```
 
 **Copy zenrock-validators**
@@ -28,11 +34,7 @@ cd $HOME
 git clone https://github.com/zenrocklabs/zenrock-validators
 ```
 
-**Set a password for sidecar wallets**
 
-```shell
-read -p "Enter password for the keys: " key_pass
-```
 
 **Build BLS binary**
 
@@ -71,55 +73,99 @@ echo "ecdsa address: $ecdsa_address"
 ```
 
 {% hint style="warning" %}
-**IMPORTANT** - to continue, you need to top up the generated ecdsa key with Ethereum Holesky test tokens You can use the faucet - [https://stakely.io/faucet/ethereum-holesky-testnet-eth](https://stakely.io/faucet/ethereum-holesky-testnet-eth)
-{% endhint %}
-
-{% hint style="warning" %}
 **IMPORTANT** - to continue you need to register on https://app.infura.io and get the following endpoints:&#x20;
 
-* mainnet eth: https://xxx&#x20;
-* holesky eth: https://xxx&#x20;
-* holesky eth: wss://xxx
+* mainnet eth: [https://xxx](https://xxx)
+* mainnet eth: wss://xxx
+* holesky eth: [https://xxx](https://xxx)
 {% endhint %}
 
-**Set variables**
+**Create a configuration file config.yaml**
+
+Replace the following variables with your values:
+
+* <[https://rpc-endpoint-holesky-here](https://rpc-endpoint-holesky-here)>
+* <[https://rpc-endpoint-mainnet-here](https://rpc-endpoint-mainnet-here)>
 
 ```shell
-EIGEN_OPERATOR_CONFIG="$HOME/.zrchain/sidecar/eigen_operator_config.yaml"
-TESTNET_HOLESKY_ENDPOINT="<HTTPS_TESTNET_HOLESKY_ENDPOINT>"
-MAINNET_ENDPOINT="<HTTPS_MAINNET_ENDPOINT>"
-OPERATOR_VALIDATOR_ADDRESS_TBD="<ADDR_zenrockVALOPER>"
-OPERATOR_ADDRESS_TBU=$ecdsa_address
-ETH_RPC_URL="<HTTPS_TESTNET_HOLESKY_ENDPOINT>"
-ETH_WS_URL="<WSS_TESTNET_HOLESKY_ENDPOINT>"
-ECDSA_KEY_PATH=$ecdsa_output_file
-BLS_KEY_PATH=$bls_output_file
+nano $HOME/.zrchain/sidecar/config.yaml
 ```
 
-**Copy the original configuration files**
-
 ```bash
-cp $HOME/zenrock-validators/scaffold_setup/configs/eigen_operator_config.yaml $HOME/.zrchain/sidecar/
-cp $HOME/zenrock-validators/scaffold_setup/configs/config.yaml $HOME/.zrchain/sidecar/
+enabled: true
+grpc_port: 9191
+zrchain_rpc: "localhost:9190"
+state_file: "cache.json"
+operator_config: "/root/.zrchain/sidecar/eigen_operator_config.yaml"
+network: "mainnet"
+eth_oracle:
+  rpc:
+    local: "http://127.0.0.1:8545"
+    testnet: "<https://rpc-endpoint-holesky-here> "
+    mainnet: "<https://rpc-endpoint-mainnet-here>"
+  contract_addrs:
+    service_manager: "0x4ca852BD78D9B7295874A7D223023Bff011b7EB3"
+    price_feeds:
+      btc: "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c"
+      eth: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"
+    zenbtc:
+      controller:
+        mainnet: "0xa87bE298115bE701A12F34F9B4585586dF052008"
+      token:
+        ethereum:
+          mainnet: "0x2fE9754d5D28bac0ea8971C0Ca59428b8644C776"
+  network_name:
+    mainnet: "Ethereum Mainnet"
+    testnet: "Holešky Ethereum Testnet"
+solana_rpc:
+  testnet: "https://api.testnet.solana.com"
+  mainnet: "https://api.mainnet-beta.solana.com/"
+proxy_rpc:
+  url:
+  user:
+  password:
+neutrino:
+  path: "/root/.zrchain/sidecar/root-data/neutrino"
 ```
 
-**Change data in config.yaml**
+**Create a configuration file eigen\_operator\_config.yaml**
+
+Replace the following variables with your values:
+
+* \<ETH MAIN ENDPOINT HERE>
+* \<ETH MAIN WSS ENDPOINT HERE>
+* \<VALUE FROM STEP - ECDSA key>
+* \<VALUE FROM STEP - zenvaloper address>
 
 ```bash
-sed -i "s|EIGEN_OPERATOR_CONFIG|$EIGEN_OPERATOR_CONFIG|g" "$HOME/.zrchain/sidecar/config.yaml"
-sed -i "s|TESTNET_HOLESKY_ENDPOINT|$TESTNET_HOLESKY_ENDPOINT|g" "$HOME/.zrchain/sidecar/config.yaml"
-sed -i "s|MAINNET_ENDPOINT|$MAINNET_ENDPOINT|g" "$HOME/.zrchain/sidecar/config.yaml"
+nano $HOME/.zrchain/sidecar/eigen_operator_config.yaml
 ```
 
-**Change data in eigen\_operator\_config.yaml**
-
 ```bash
-sed -i "s|OPERATOR_VALIDATOR_ADDRESS_TBD|$OPERATOR_VALIDATOR_ADDRESS_TBD|g" "$HOME/.zrchain/sidecar/eigen_operator_config.yaml"
-sed -i "s|OPERATOR_ADDRESS_TBU|$OPERATOR_ADDRESS_TBU|g" "$HOME/.zrchain/sidecar/eigen_operator_config.yaml"
-sed -i "s|ETH_RPC_URL|$ETH_RPC_URL|g" "$HOME/.zrchain/sidecar/eigen_operator_config.yaml"
-sed -i "s|ETH_WS_URL|$ETH_WS_URL|g" "$HOME/.zrchain/sidecar/eigen_operator_config.yaml"
-sed -i "s|ECDSA_KEY_PATH|$ECDSA_KEY_PATH|g" "$HOME/.zrchain/sidecar/eigen_operator_config.yaml"
-sed -i "s|BLS_KEY_PATH|$BLS_KEY_PATH|g" "$HOME/.zrchain/sidecar/eigen_operator_config.yaml"
+register_operator_on_startup: true
+register_on_startup: true
+production: true
+
+ecdsa_private_key_store_path: /root/.zrchain/sidecar/keys/ecdsa.key.json
+bls_private_key_store_path: /root/.zrchain/sidecar/keys/bls.key.json
+
+aggregator_server_ip_port_address: avs-aggregator.diamond.zenrocklabs.io:8090
+
+eth_rpc_url: <ETH MAIN ENDPOINT HERE>
+eth_ws_url: <ETH MAIN WSS ENDPOINT HERE>
+
+enable_metrics: true
+eigen_metrics_ip_port_address: 0.0.0.0:9292
+enable_node_api: true
+node_api_ip_port_address: 0.0.0.0:9191
+
+operator_address: <VALUE FROM STEP - ECDSA key>
+operator_validator_address: <VALUE FROM STEP - zenvaloper address>
+
+avs_registry_coordinator_address: 0xFbFECE8f29f499c32206d8bFfA57da2b124790C7
+operator_state_retriever_address: 0x03d0452e70711f169eB6B6F5Ab33d8571c313ef6
+
+token_strategy_addr: 0xa5430Ca83713F877B77b54d5A24FD3D230DF854B
 ```
 
 **Create a service file**

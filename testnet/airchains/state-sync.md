@@ -17,7 +17,7 @@ Important - different blockchains need a different amount of RAM to successfully
 ```shell
 # stop the service and clear the database
 systemctl stop junctiond
-junctiond tendermint unsafe-reset-all --home $HOME/.junction --keep-addr-book
+junctiond tendermint unsafe-reset-all --home $HOME/.junctiond --keep-addr-book
 ```
 
 ```shell
@@ -28,7 +28,7 @@ junctiond tendermint unsafe-reset-all --home $HOME/.junction --keep-addr-book
 ```shell
 # add peer
 peers="38ffaf594a80b88ffaa0ecb3847bf0f77e5c52fe@5.9.87.231:36656"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.junction/config/config.toml
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.junctiond/config/config.toml
 ```
 
 ```shell
@@ -44,7 +44,7 @@ sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
 s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.junction/config/config.toml
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.junctiond/config/config.toml
 ```
 
 {% hint style="info" %}

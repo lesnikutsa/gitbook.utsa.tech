@@ -7,7 +7,7 @@
 {% endhint %}
 
 ```shell
-FOLDER=.junction
+FOLDER=.junctiond
 
 echo -e "\033[0;32m$(grep -A 3 "\[rpc\]" ~/$FOLDER/config/config.toml | egrep -o ":[0-9]+")\033[0m"
 
@@ -24,7 +24,7 @@ curl -s localhost:$PORT/consensus_state | jq '.result.round_state.height_vote_se
 Updates are available for information. Boot via State sync or Snapshot to avoid installing all updates. In this case, you must use the actual version of the binary file and genesis
 {% endhint %}
 
-## UPD 🕊 on v0.2.0 (Update Height: 2383911)
+## UPD 🕊 on v (Update Height: )
 
 ```shell
 mkdir -p $HOME/airchains && cd airchains

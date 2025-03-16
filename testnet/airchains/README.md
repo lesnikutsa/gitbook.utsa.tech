@@ -12,10 +12,10 @@ description: zkRollups Made Easy For Everyone
 
 ## **Details**
 
-* **Network Chain ID**: junction
+* **Network Chain ID**: varanasi-1
 * **Binary**: junctiond
-* **Denom**: amf
-* **Working directory**: .junction
+* **Denom**: umaf
+* **Working directory**: .junctiond
 
 ## Public services
 
@@ -26,16 +26,16 @@ description: zkRollups Made Easy For Everyone
 
 ## Peering
 
-You can use peer **lesnik | UTSA** for fast connection or state sync
+You can use peer **UTSA** for fast connection or state sync
 
 ```shell
 peers="38ffaf594a80b88ffaa0ecb3847bf0f77e5c52fe@5.9.87.231:36656"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.junction/config/config.toml
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.junctiond/config/config.toml
 ```
 
 The address book is updated once an hour. You can use it for quick launch
 
 ```shell
-wget -O $HOME/.junction/config/addrbook.json "https://share102.utsa.tech/airchains/addrbook.json"
+wget -O $HOME/.junctiond/config/addrbook.json "https://share102.utsa.tech/airchains/addrbook.json"
 ```
 

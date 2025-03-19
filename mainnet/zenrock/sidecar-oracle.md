@@ -86,6 +86,7 @@ Replace the following variables with your values:
 
 * <[https://rpc-endpoint-holesky-here](https://rpc-endpoint-holesky-here)>
 * <[https://rpc-endpoint-mainnet-here](https://rpc-endpoint-mainnet-here)>
+* zrchain\_rpc: ''localhost:HERE\_IS\_YOUR\_GRPC\_PORT''
 
 ```shell
 nano $HOME/.zrchain/sidecar/config.yaml

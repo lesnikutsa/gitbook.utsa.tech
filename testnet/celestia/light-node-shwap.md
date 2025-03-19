@@ -45,13 +45,13 @@ Both protocols will work side by side during a month-long transition period from
 cd $HOME
 rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node && cd celestia-node
-git checkout tags/v0.21.8-mocha
+git checkout tags/v0.21.9-mocha
 make build
 make install
 
 celestia version
-#Semantic version: v0.21.8-mocha
-#Commit: a5ac1ef1219e6ce1816b811e4b5f6cdc1226f393
+#Semantic version: v0.21.9-mocha
+#Commit: f9698d454bb76f85d9110d0107016cb00684a9c7
 ```
 
 ```shell

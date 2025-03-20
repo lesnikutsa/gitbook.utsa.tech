@@ -41,13 +41,13 @@ ufw allow 2121 comment bridge_node
 cd $HOME
 rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node && cd celestia-node
-git checkout tags/v0.20.4
+git checkout tags/v0.21.9
 make build
 make install
 
 celestia version
-#Semantic version: v0.20.4
-#Commit: 51b79431533576a5cddf1235bdf3751e4c014212
+#Semantic version: v0.21.9
+#Commit: 3d8fb74bc073fb23303dcfc2804ab85ce316fa24
 ```
 
 ```shell

@@ -16,7 +16,7 @@ docker rm polkadot_node
 
 rm -r $HOME/.polkadot/chains/polkadot/db/
 
-curl -o - -L https://share106-3.utsa.tech/polkadot/polkadot_pruned.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.polkadot/chains/polkadot/
+curl -o - -L https://share.utsa.tech/polkadot/polkadot_pruned.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.polkadot/chains/polkadot/
 
 # we launch as usual
 ```

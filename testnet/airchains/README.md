@@ -29,7 +29,7 @@ description: zkRollups Made Easy For Everyone
 You can use peer **UTSA** for fast connection or state sync
 
 ```shell
-peers="38ffaf594a80b88ffaa0ecb3847bf0f77e5c52fe@5.9.87.231:36656"
+peers="d4fd89f3e5b96be9c1ebf86fb5f3d5dd4059332f@5.9.87.231:36656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.junctiond/config/config.toml
 ```
 

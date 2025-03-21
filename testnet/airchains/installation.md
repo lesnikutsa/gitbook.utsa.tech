@@ -30,13 +30,15 @@ go version
 ```shell
 mkdir -p $HOME/go/bin
 
-wget https://github.com/airchains-network/junction/releases/download/v0.1.0/junctiond
+mkdir -p $HOME/airchains && cd airchains
+
+wget -O junctiond https://github.com/airchains-network/junction/releases/download/v0.3.1/junctiond-linux-amd64
 chmod +x junctiond
-mv junctiond $HOME/go/bin/
+mv $HOME/airchains/junctiond $HOME/go/bin/
 
 junctiond version --long | grep -e version -e commit
-# version: 
-# commit: aab9725fd6fb760a3477229f08394fccbd1e2bbe
+# version: v0.3.1
+# commit: 4e7ded5ecb7d8bcbe9976f74db87c33a679a165e
 ```
 
 #### We initialize the node to create the necessary configuration files
@@ -47,11 +49,12 @@ junctiond init UTSA_guide --chain-id varanasi-1
 
 #### Download Genesis
 
-<pre class="language-shell"><code class="lang-shell"><strong>#wget -O $HOME/.junctiond/config/genesis.json "https://raw.githubusercontent.com/111STAVR111/props/main/Airchains/genesis.json"
-</strong>
+```shell
+wget -O $HOME/.junctiond/config/genesis.json "https://raw.githubusercontent.com/airchains-network/junction-resources/refs/heads/main/varanasi-testnet/genesis/genesis.json"
+
 sha256sum ~/.junctiond/config/genesis.json
-# 
-</code></pre>
+# 2ed96ef2262d9f089a972ceaff36c416ff382ef7a26494b1d588da93713dd15c
+```
 
 #### At this stage, we can download the address book
 
@@ -65,7 +68,7 @@ wget -O $HOME/.junctiond/config/addrbook.json "https://share102.utsa.tech/aircha
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.00025umaf\"/;" ~/.junctiond/config/app.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.junctiond/config/config.toml
-peers=""
+peers="cfb052e64e508f4b40f0ec07b52a31abfda82270@95.217.62.179:11956,db686fcfdf0b4676d601d5beb11faee5ad96bff1@37.27.71.199:28656,ec7d3566e70f479a4a6dd98d1e02e8827cf34f76@72.251.3.24:56256,f84b41b95e828ee915aea19dd656cca7d39cf47b@37.17.244.207:33656,306e1cc0936111831eedfa861abe3989d04acc19@158.220.114.0:26656,c0f3abcd838aeb72f6c7a1c817407bfe021547f3@135.181.139.249:26656"
 sed -i -e "s|^persistent_peers *=.*|persistent_peers = \"$peers\"|" $HOME/.junctiond/config/config.toml
 ```
 

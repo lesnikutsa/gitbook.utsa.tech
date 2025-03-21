@@ -16,7 +16,7 @@ docker rm kusama_node
 
 rm -r /root/.kusama/chains/ksmcc3/db/
 
-curl -o - -L https://share106-3.utsa.tech/kusama/kusama_pruned.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.kusama/chains/ksmcc3/
+curl -o - -L https://share.utsa.tech/kusama/kusama_pruned.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.kusama/chains/ksmcc3/
 
 # we launch as usual
 ```

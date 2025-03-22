@@ -38,5 +38,5 @@ sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.z
 The address book is updated once an hour. You can use it for quick launch
 
 ```shell
-wget -O $HOME/.zrchain/config/addrbook.json "https://share106-7.utsa.tech/zenrock/addrbook.json"
+wget -O $HOME/.zrchain/config/addrbook.json "https://share.utsa.tech/zenrock/addrbook.json"
 ```

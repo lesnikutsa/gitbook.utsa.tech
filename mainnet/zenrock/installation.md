@@ -79,7 +79,7 @@ sha256sum ~/.zrchain/config/genesis.json
 **Download Addr book**
 
 ```bash
-wget -O $HOME/.zrchain/config/addrbook.json "https://share106-7.utsa.tech/zenrock/addrbook.json"
+wget -O $HOME/.zrchain/config/addrbook.json "https://share.utsa.tech/zenrock/addrbook.json"
 ```
 
 **Setting up the node configuration**

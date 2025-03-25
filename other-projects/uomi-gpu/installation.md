@@ -105,46 +105,15 @@ nvcc --version
 **Install additional dependencies**
 
 ```shell
-# Install Optimum
-pip install -U "optimum>=1.20.0"
-
-# Install AutoGPTQ
-pip install auto-gptq --no-build-isolation
-
-# Install Transformers
-pip install transformers
-
-# Install specific NumPy version
 conda install numpy=1.24
-
-# Install Flash Attention
-pip install flash-attn --no-build-isolation
-
-# Install Flask
 pip install flask
+pip install psutil
+pip install transformers
+pip install 'accelerate>=0.26.0'
+pip install autoawq
+pip install 'triton==3.2.0'
+pip install diffuser
 ```
-
-{% hint style="warning" %}
-Let's check if the dependencies are installed correctly
-
-```bash
-nano my_script.py
-
-import torch
-import transformers
-import auto_gptq
-import flash_attn
-import flask
-
-print(f"PyTorch version: {torch.__version__}")
-print(f"CUDA available: {torch.cuda.is_available()}")
-print(f"CUDA version: {torch.version.cuda}")
-print(f"Transformers version: {transformers.__version__}")
-
-python my_script.py
-#true
-```
-{% endhint %}
 
 #### Create a service file
 
@@ -194,10 +163,10 @@ sha256sum /usr/local/bin/genesis.json
 **Download the binary file**
 
 ```bash
-wget -O /usr/local/bin/uomi "https://github.com/Uomi-network/uomi-node/releases/download/v0.1.9/uomi_0.1.9_ubuntu_24"
+wget -O /usr/local/bin/uomi "https://github.com/Uomi-network/uomi-node/releases/download/v0.2.0/uomi_ubuntu_22"
 chmod +x /usr/local/bin/uomi
 uomi --version
-#uomi 0.1.9-b6c1f0c690c
+#uomi 0.2.0-cb36b469c43
 ```
 
 **Create a wallet and save the output**

@@ -248,6 +248,16 @@ systemctl enable uomi.service
 systemctl restart uomi.service && journalctl -u uomi.service -f
 ```
 
+{% hint style="warning" %}
+IMPORTANT - if the node cannot connect to peers, then add a backup peer to the service file
+
+```
+--reserved-nodes "/ip4/5.9.87.231/tcp/30333/p2p/12D3KooWCAChuDHHpNER855r6NpAGDeLrSZ4U3sP6FocSWWJZDf5"
+```
+{% endhint %}
+
+
+
 **Adding Keys STEP 1**
 
 Once your node is up and running, paste your keys

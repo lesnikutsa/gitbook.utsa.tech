@@ -26,3 +26,26 @@ mv $HOME/.exrpd/priv_validator_state.json.backup $HOME/.exrpd/data/priv_validato
 
 systemctl restart exrpd && journalctl -u exrpd -f -o cat
 ```
+
+{% hint style="success" %}
+### Snapshot ARCHIVE
+
+time: **every 48 hours** **|** indexer: **kv |** pruning: **archive**
+
+🌐 [**https://share.utsa.tech/xrpl/**](https://share.utsa.tech/xrpl/)
+{% endhint %}
+
+```bash
+cd $HOME
+systemctl stop exrpd
+
+cp $HOME/.exrpd/data/priv_validator_state.json $HOME/.exrpd/priv_validator_state.json.backup
+
+rm -rf $HOME/.exrpd/data/{application.db,evidence.db,snapshots,tx_index.db,blockstore.db,state.db,cs.wal}
+
+curl -o - -L https://share.utsa.tech/xrpl/xrpl-archive.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.exrpd/
+
+mv $HOME/.exrpd/priv_validator_state.json.backup $HOME/.exrpd/data/priv_validator_state.json
+
+systemctl restart exrpd && journalctl -u exrpd -f -o cat
+```

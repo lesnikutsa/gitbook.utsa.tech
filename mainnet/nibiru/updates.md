@@ -228,14 +228,14 @@ systemctl restart nibid && journalctl -u nibid -f -o cat
 
 ```shell
 cd $HOME/nibiru
-wget https://github.com/NibiruChain/nibiru/releases/download/v2.2.0/nibid_2.2.0_linux_amd64.tar.gz
-tar -zxvf nibid_2.2.0_linux_amd64.tar.gz
+wget https://github.com/NibiruChain/nibiru/releases/download/v2.2.0-p1/nibid_2.2.0-p1_linux_amd64.tar.gz
+tar -zxvf nibid_2.2.0-p1_linux_amd64.tar.gz
 chmod +x ./nibid
-rm nibid_2.2.0_linux_amd64.tar.gz
+rm nibid_2.2.0-p1_linux_amd64.tar.gz
 
 $HOME/nibiru/nibid version --long | grep -e version -e commit
-# version: 2.2.0
-# commit: 22529625baeb6f9732b7230bd047d55996c0327
+# version: 2.2.0-p1
+# commit: 02795698b047305b8f557d04b8fcbb2ec1c27749
 
 # AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
 systemctl stop nibid

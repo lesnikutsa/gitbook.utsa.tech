@@ -21,11 +21,11 @@ apt install curl iptables build-essential git wget jq make gcc nano tmux htop nv
 ```shell
 mkdir -p $HOME/.tangle && cd $HOME/.tangle
 
-wget -O tangle https://github.com/webb-tools/tangle/releases/download/v1.0.12/tangle-default-linux-amd64
+wget -O tangle https://github.com/tangle-network/tangle/releases/download/v1.3.0/tangle-default-linux-amd64
 chmod 744 tangle
 mv tangle /usr/bin/
 tangle --version
-# tangle 1.0.12-ff0251a-x86_64-linux-gnu
+# tangle 1.3.0-b1ca77e909f
 ```
 
 **Download json**

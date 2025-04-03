@@ -12,6 +12,11 @@
 
 ## Mainnet
 
+* [Arkeo](mainnet/arkeo/README.md)
+  * [💻 Installation](mainnet/arkeo/installation.md)
+  * [⌚ State sync](mainnet/arkeo/state-sync.md)
+  * [📬 Updates](mainnet/arkeo/updates.md)
+  * [📬 Providers](mainnet/arkeo/providers.md)
 * [Atomone](mainnet/atomone/README.md)
   * [💻 Installation](mainnet/atomone/installation.md)
   * [⌚ State sync](mainnet/atomone/state-sync.md)

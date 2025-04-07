@@ -26,9 +26,13 @@ go version
 ## Node installation
 
 ```shell
+cd
+rm -r $HOME/layer
 git clone https://github.com/tellor-io/layer && cd layer
-git checkout v3.0.4
-make install
+
+wget https://github.com/tellor-io/layer/releases/download/4.0.1/layer_Linux_x86_64.tar.gz
+tar -xvzf layer_Linux_x86_64.tar.gz
+mv $HOME/layer/layerd /root/go/bin/
 
 layerd version --long | grep -e version -e commit
 # version: v3.0.4
@@ -38,16 +42,16 @@ layerd version --long | grep -e version -e commit
 #### We initialize the node to create the necessary configuration files
 
 ```shell
-layerd init UTSA_guide --chain-id layertest-3
+layerd init UTSA_guide --chain-id layertest-4
 ```
 
 #### Download Genesis
 
 ```shell
-curl https://tellor.test.rpc.nodeshub.online/genesis | jq '.result.genesis' > ~/.layer/config/genesis.json
+curl https://node-palmito.tellorlayer.com/rpc/genesis | jq '.result.genesis' > ~/.layer/config/genesis.json
 
 sha256sum ~/.layer/config/genesis.json
-# 1639247cf3c14117dc9cb5b555500fd62fe55fbe9f0410e610f6daef02c53ec9
+# b65ea5530e3ab666005b67103245b0f07603660c67656b7a6a057ada10212885
 ```
 
 #### At this stage, we can download the address book
@@ -59,15 +63,16 @@ wget -O $HOME/.layer/config/addrbook.json "https://share102.utsa.tech/tellor/add
 #### Set up node configuration
 
 ```shell
-sed -i.bak -e "s/^chain-id *=.*/chain-id = \"layertest-3\"/;" ~/.layer/config/client.toml
+sed -i.bak -e "s/^chain-id *=.*/chain-id = \"layertest-4\"/;" ~/.layer/config/client.toml
 sed -i.bak -e "s/^keyring-backend *=.*/keyring-backend = \"test\"/;" ~/.layer/config/client.toml
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.000025loya\"/;" ~/.layer/config/app.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.layer/config/config.toml
 
-peers="59fd40b86c9b65ca717b29ce37b08fdb82c8e61d@3.144.113.220:26656,b26e162aaae52c917f03afd0e09889c1a9f1da13@18.224.20.250:26656,fc1caebd2550a4172bcdc073d0f18e630c44cc26@3.140.238.60:26656"
+peers="c7b175a5bafb35176cdcba3027e764a0dbd0811c@34.219.95.82:26656,05105e8bb28e8c5ace1cecacefb8d4efb0338ec6@18.218.114.74:26656,705f6154c6c6aeb0ba36c8b53639a5daa1b186f6@3.80.39.230:26656,1f6522a346209ee99ecb4d3e897d9d97633ae146@3.101.138.30:26656,3822fa2eb0052b36360a7a6e285c18cc92e26215@175.41.188.192:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.layer/config/config.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.layer/config/config.toml
+sed -i 's/timeout_commit = "5s"/timeout_commit = "1s"/' ~/.layer/config/config.toml
 ```
 
 #### (OPTIONAL) Set up pruning

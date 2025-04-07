@@ -14,8 +14,8 @@ It is assumed that you already have a node and validator running
 1. **Run the create-reporter command**
 
 ```shell
-# layerd tx reporter create-reporter [commission-rate] [min-tokens-required] [flags]
-layerd tx reporter create-reporter 0.25 1000000 --from <name_wallet> --chain-id layertest-3 --fees 5loya --yes
+# layerd tx reporter create-reporter 0.25 1000000 REPORTER_MONIKER --from YOUR_ACCOUNT_NAME --chain-id layertest-4 --fees 10loya --yes
+layerd tx reporter create-reporter 0.25 1000000 UTSA_guide--from <name_wallet> --chain-id layertest-4 --fees 5loya --yes
 ```
 
 2. **Check if your reporter has been created successfully. If you see your address in the list, then your reporter has been created successfully**
@@ -44,7 +44,7 @@ LimitNOFILE=65535
 Environment="WITHDRAW_FREQUENCY=21600"
 Environment="REPORTERS_VALIDATOR_ADDRESS=<tellorvaloper1k8v...>"
 Environment="ETH_RPC_URL=<wss://a.good.sepolia.rpc.url>"
-Environment="TOKEN_BRIDGE_CONTRACT=0x6ac02f3887b358591b8b2d22cfb1f36fa5843867"
+Environment="TOKEN_BRIDGE_CONTRACT=0x5acb5977f35b1A91C4fE0F4386eB669E046776F2"
 
 [Install]
 WantedBy=multi-user.target

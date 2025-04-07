@@ -8,7 +8,7 @@
 
 ## **Details**
 
-* **Network Chain ID**: layertest-3
+* **Network Chain ID**: layertest-4
 * **Binary**: layerd
 * **Denom**: loya
 * **Working directory**: .layer
@@ -27,7 +27,7 @@
 You can use peer **UTSA** for fast connection or state sync
 
 ```shell
-peers="3b15e1da275828c3fa52ab8ce1a0444bdddc958b@5.9.87.231:56656"
+peers="18a60772ed3b2e06a780f5701a5fe17d95955566@5.9.87.231:56656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.layer/config/config.toml
 ```
 

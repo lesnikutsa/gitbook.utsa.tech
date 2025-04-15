@@ -13,7 +13,7 @@ apt install curl iptables build-essential git wget jq make gcc nano tmux htop nv
 #### Install GO
 
 ```shell
-ver="1.20.3"
+ver="1.23.3"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
@@ -25,16 +25,14 @@ go version
 
 ## Node installation
 
-
-
 ```shell
 git clone https://github.com/JackalLabs/canine-chain && cd canine-chain
-git checkout v4.5.0
+git checkout v4.6.0
 make install
 
 canined version --long | grep -e version -e commit
-# version: 4.5.0
-# commit: 35b7b300ef25242b95f47bd1f1b30ee1531dd6de
+# version: 4.6.0
+# commit: 09d64dcbab0a96da1da1605acfc4914069022ba4
 ```
 
 #### We initialize the node to create the necessary configuration files

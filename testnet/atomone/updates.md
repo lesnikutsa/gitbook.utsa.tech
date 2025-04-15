@@ -26,7 +26,7 @@ Updates are available for information. Boot via State sync or Snapshot to avoid 
 <mark style="color:green;">**With full synchronization, start from**</mark> v1.0.0
 {% endhint %}
 
-## UPD 🕊 on  v2.0.0-rc1 (Update Height: 1140000)
+## UPD 🕊 on  v2.0.0-rc1 (Update Height: 1240000)
 
 ```shell
 cd $HOME/atomone

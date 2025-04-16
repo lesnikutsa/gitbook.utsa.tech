@@ -27,12 +27,13 @@ go version
 
 ```shell
 git clone https://github.com/ingenuity-build/quicksilver && cd quicksilver
-git checkout v1.8.0-rc.0
+git checkout v1.8.0-rc.1
 make install
 
 quicksilverd version --long | grep -e version -e commit -e build_tags
-#version: v1.8.0-rc.0
-#commit: e082f944ba31cc82ab8e857cd69a5fbb91b00910
+# version: v1.8.0-rc.1
+# build_tags: netgo ledger muslc,
+# commit: 044d63e5b802ed1a66c76927e8a760354984cb37
 ```
 
 #### We initialize the node to create the necessary configuration files

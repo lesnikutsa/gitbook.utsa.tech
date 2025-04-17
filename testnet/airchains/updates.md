@@ -24,15 +24,15 @@ curl -s localhost:$PORT/consensus_state | jq '.result.round_state.height_vote_se
 Updates are available for information. Boot via State sync or Snapshot to avoid installing all updates. In this case, you must use the actual version of the binary file and genesis
 {% endhint %}
 
-## UPD 🕊 on v (Update Height: )
+## UPD 🕊 on v0.3.2 (Update Height: 451850)
 
 ```shell
 mkdir -p $HOME/airchains && cd airchains
-wget -O junctiond https://github.com/airchains-network/junction/releases/download/v0.2.0/junctiond-linux-amd64
+wget -O junctiond https://github.com/airchains-network/junction/releases/download/v0.3.2/junctiond-linux-amd64
 chmod +x junctiond
 $HOME/airchains/junctiond version --long | grep -e version -e commit
-# version: v0.1.0
-# commit: e3dd056fd17970e2e3a032afb0f2e293d222f2fe
+# version: v0.3.2
+# commit: e897160cebbb7ca4991353dcb6b42a571dfe793d
 
 # AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
 systemctl stop junctiond

@@ -32,13 +32,13 @@ mkdir -p $HOME/go/bin
 
 mkdir -p $HOME/airchains && cd airchains
 
-wget -O junctiond https://github.com/airchains-network/junction/releases/download/v0.3.1/junctiond-linux-amd64
+wget -O junctiond https://github.com/airchains-network/junction/releases/download/v0.3.2/junctiond-linux-amd64
 chmod +x junctiond
 mv $HOME/airchains/junctiond $HOME/go/bin/
 
 junctiond version --long | grep -e version -e commit
-# version: v0.3.1
-# commit: 4e7ded5ecb7d8bcbe9976f74db87c33a679a165e
+# version: v0.3.2
+# commit: e897160cebbb7ca4991353dcb6b42a571dfe793d
 ```
 
 #### We initialize the node to create the necessary configuration files

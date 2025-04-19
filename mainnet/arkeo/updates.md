@@ -24,22 +24,19 @@ curl -s localhost:$PORT/consensus_state | jq '.result.round_state.height_vote_se
 Updates are available for information. Boot via State sync or Snapshot to avoid installing all updates. In this case, you must use the actual version of the binary file and genesis
 {% endhint %}
 
-## UPD 🕊 on  (Update Height: )
+## UPD 🕊 on v1.0.11 (Update Height: 252000)
 
 ```shell
 cd $HOME/arkeo
 git pull
-git checkout 
-make build
-$HOME/arkeo/build/arkeod version --long | grep -e version -e commit
+git checkout v1.0.11
+make install
+arkeod version --long | grep -e version -e commit
 # version: 
-# commit: 
+# commit: 45599cd830e353a788e991d51dbabc84fd77ea4f
 
 # AFTER STOPPING THE NETWORK ON THE NECESSARY BLOCK!!!
 systemctl stop arkeod
-mv $HOME/arkeo/build/arkeod $(which arkeod)
-arkeod version --long | grep -e version -e commit
-# 
 
 systemctl restart arkeod && journalctl -u arkeod -f -o cat
 ```

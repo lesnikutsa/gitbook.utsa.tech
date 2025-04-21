@@ -28,8 +28,7 @@ Updates are available for information. Boot via State sync or Snapshot to avoid 
 
 ## UPD 🕊 on  v2.0.0-rc1 (Update Height: 1240000)
 
-```shell
-cd $HOME/atomone
+<pre class="language-shell"><code class="lang-shell">cd $HOME/atomone
 git pull
 git checkout v2.0.0-rc1
 make build
@@ -38,11 +37,11 @@ $HOME/atomone/build/atomoned version --long | grep -e version -e commit
 # commit: aa7aeb7fcbf0c627d53d408ad80562c70c084826
 
 # AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
-systemctl stop atomoned
-mv $HOME/atomone/build/atomoned $(which atomoned)
+<strong>systemctl stop atomoned
+</strong>mv $HOME/atomone/build/atomoned $(which atomoned)
 atomoned version --long | grep -e version -e commit
 #
 
-systemctl restart atomoned && journalctl -u atomoned -f -o cat
-```
+systemctl restart atomoned &#x26;&#x26; journalctl -u atomoned -f -o cat
+</code></pre>
 

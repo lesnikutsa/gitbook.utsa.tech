@@ -45,3 +45,25 @@ layerd version --long | grep -e version -e commit
 
 systemctl restart layerd && journalctl -u layerd -f -o cat
 ```
+
+## UPD 🕊 on v3.0.4 (Update Height: 2154000)
+
+```shell
+cd
+rm -r $HOME/layer
+git clone https://github.com/tellor-io/layer && cd layer
+
+wget https://github.com/tellor-io/layer/releases/download/v4.0.3/layer_Linux_x86_64.tar.gz
+tar -xvzf layer_Linux_x86_64.tar.gz
+$HOME/layer/layerd version --long | grep -e version -e commit
+# version: 4.0.3
+# commit: 683b709191e1342b8722f62b0f9bb897b525a92f
+
+# # ПОСЛЕ ОСТАНОВКИ СЕТИ НА НУЖНОМ БЛОКЕ!!!
+systemctl stop layerd
+mv $HOME/layer/build/layerd $(which layerd)
+layerd version --long | grep -e version -e commit
+#
+
+systemctl restart layerd && journalctl -u layerd -f -o cat
+```

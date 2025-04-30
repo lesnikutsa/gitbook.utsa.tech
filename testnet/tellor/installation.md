@@ -26,17 +26,18 @@ go version
 ## Node installation
 
 ```shell
-cd
-rm -r $HOME/layer
 git clone https://github.com/tellor-io/layer && cd layer
+#git checkout v4.0.0
+#make install
 
-wget https://github.com/tellor-io/layer/releases/download/4.0.1/layer_Linux_x86_64.tar.gz
+cd $HOME/layer
+wget https://github.com/tellor-io/layer/releases/download/v4.0.3/layer_Linux_x86_64.tar.gz
 tar -xvzf layer_Linux_x86_64.tar.gz
-mv $HOME/layer/layerd /root/go/bin/
+mv $HOME/layer/layerd $(which layerd)
 
 layerd version --long | grep -e version -e commit
-# version: v3.0.4
-# commit: 0f1046a0d35df404c01dcb29b09b275301982f45
+# version: 4.0.3
+# commit: 683b709191e1342b8722f62b0f9bb897b525a92f
 ```
 
 #### We initialize the node to create the necessary configuration files

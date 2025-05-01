@@ -50,7 +50,7 @@ mkdir -p zenrock && cd zenrock
 
 ```bash
 cd $HOME/zenrock
-wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v6.1.16/zenrockd
+wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v6.1.22/zenrockd
 chmod +x zenrockd
 mv $HOME/zenrock/zenrockd $HOME/go/bin/
 

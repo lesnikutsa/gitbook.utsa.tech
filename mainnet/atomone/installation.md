@@ -27,12 +27,12 @@ go version
 
 ```shell
 git clone https://github.com/atomone-hub/atomone && cd atomone
-git checkout v1.1.2
+git checkout v2.0.0
 make install
 
 atomoned version --long | grep -e version -e commit
-# version: v1.1.2
-# commit: b07127b42c91c8709a8b7335ae8a1176e0fd1ece
+# version: v2.0.0
+# commit: 90526ee07358a4f34b579e6a1d4573acb830d17b
 ```
 
 #### We initialize the node to create the necessary configuration files
@@ -60,7 +60,7 @@ wget -O $HOME/.atomone/config/addrbook.json "https://share102.utsa.tech/atomone/
 
 ```shell
 atomoned config chain-id atomone-1
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.025uatone\"/;" ~/.atomone/config/app.toml
+#minimum-gas-prices = "0.01uatone,0.09uphoton"
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.atomone/config/config.toml
 peers=""

@@ -28,15 +28,14 @@ go version
 #### Setup validator name
 
 ```shell
-
 git clone https://github.com/ingenuity-build/quicksilver && cd quicksilver
-wget https://github.com/quicksilver-zone/quicksilver/releases/download/v1.7.6/quicksilverd-v1.7.7-amd64
-chmod +x quicksilverd-v1.7.7-amd64
-mv quicksilverd-v1.7.7-amd64 /root/go/bin/quicksilverd
+https://github.com/quicksilver-zone/quicksilver/releases/download/v1.8.0/quicksilverd-v1.8.0-rc.0-amd64
+chmod +x quicksilverd-v1.8.0-rc.0-amd64
+mv quicksilverd-v1.8.0-rc.0-amd64 /root/go/bin/quicksilverd
 
 quicksilverd version --long | grep -e version -e commit -e build_tags
-#version: v1.7.7
-#commit: bd187e1a9e75b397877f75ea9d3e107eb76c2dae
+#version: v1.8.0
+#commit: e082f944ba31cc82ab8e857cd69a5fbb91b00910
 ```
 
 #### We initialize the node to create the necessary configuration files

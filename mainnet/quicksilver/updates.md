@@ -636,3 +636,21 @@ quicksilverd version --long | grep -e version -e commit
 
 systemctl restart quicksilverd &#x26;&#x26; journalctl -u quicksilverd -f -o cat
 </code></pre>
+
+## UPD 🕊 on v1.8.1  (Update Height: 12627500)
+
+<pre class="language-shell"><code class="lang-shell"><strong>
+</strong>wget -O $HOME/quicksilver/build/quicksilverd "https://github.com/quicksilver-zone/quicksilver/releases/download/v1.8.1/quicksilverd-v1.8.1-amd64"
+chmod +x $HOME/quicksilver/build/quicksilverd
+$HOME/quicksilver/build/quicksilverd version --long | grep -e version -e commit -e build_tags
+#version: v1.8.1
+#commit: d998af810147d0d45e29e4ae19aff41569d834ca
+
+# ПОСЛЕ ОСТАНОВКИ СЕТИ НА НУЖНОМ БЛОКЕ!!!
+systemctl stop quicksilverd
+mv $HOME/quicksilver/build/quicksilverd $(which quicksilverd)
+quicksilverd version --long | grep -e version -e commit
+# 
+
+systemctl restart quicksilverd &#x26;&#x26; journalctl -u quicksilverd -f -o cat
+</code></pre>

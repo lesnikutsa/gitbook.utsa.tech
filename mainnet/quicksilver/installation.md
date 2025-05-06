@@ -29,13 +29,13 @@ go version
 
 ```shell
 git clone https://github.com/ingenuity-build/quicksilver && cd quicksilver
-wget https://github.com/quicksilver-zone/quicksilver/releases/download/v1.8.0/quicksilverd-v1.8.0-amd64
-chmod +x quicksilverd-v1.8.0-amd64
-mv quicksilverd-v1.8.0-amd64 /root/go/bin/quicksilverd
+wget https://github.com/quicksilver-zone/quicksilver/releases/download/v1.8.1/quicksilverd-v1.8.1-amd64
+chmod +x quicksilverd-v1.8.1-amd64
+mv quicksilverd-v1.8.1-amd64 /root/go/bin/quicksilverd
 
 quicksilverd version --long | grep -e version -e commit -e build_tags
-#version: v1.8.0
-#commit: 4b85b622506c4e145932df04f80ee1c359dd0926
+#version: v1.8.1
+#commit: d998af810147d0d45e29e4ae19aff41569d834ca
 ```
 
 #### We initialize the node to create the necessary configuration files

@@ -115,8 +115,8 @@ cd $HOME/zenrock
 wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v6.3.3/zenrockd
 chmod +x zenrockd
 $HOME/zenrock/zenrockd version --long | grep -e version -e commit
-# version: 6.1.16
-# commit: 6c7047029339dc5798319b7bb705058067d89da1
+# version: 6.3.3
+# commit: e23a950415fde8381e6ff0815f96475369f091ed
 
 #ПОСЛЕ ОСТАНОВКИ СЕТИ НА НУЖНОМ БЛОКЕ!!!
 systemctl stop zenrockd

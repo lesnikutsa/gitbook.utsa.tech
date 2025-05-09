@@ -50,7 +50,7 @@ mkdir -p zenrock && cd zenrock
 
 ```bash
 cd $HOME/zenrock
-wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v6.1.22/zenrockd
+wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v5.3.8/zenrockd
 chmod +x zenrockd
 mv $HOME/zenrock/zenrockd $HOME/go/bin/
 
@@ -62,18 +62,17 @@ zenrockd version --long | grep -e version -e commit
 **Initialize the node to create the necessary configuration files**
 
 ```bash
-zenrockd init UTSA_guide --chain-id gardia-4
+zenrockd init UTSA_guide --chain-id gardia-5
 ```
 
 **Genesis**
 
-```bash
-curl -s https://rpc.gardia.zenrocklabs.io/genesis | jq .result.genesis > $HOME/.zrchain/config/genesis.json
-
+<pre class="language-bash"><code class="lang-bash"><strong>curl -s https://rpc.gardia.zenrocklabs.io/genesis | jq .result.genesis > $HOME/.zrchain/config/genesis.json
+</strong>
 # check genesis
 sha256sum ~/.zrchain/config/genesis.json
-# 5730b7b7417b5199c07290527830019011a2ccaaa8b8865210f56188b307e16a
-```
+# 21c251677aa6c41bcd64308795391987153da4acacce42f3e8941898284dc265
+</code></pre>
 
 **Download Addr book**
 
@@ -84,7 +83,7 @@ sha256sum ~/.zrchain/config/genesis.json
 **Setting up the node configuration**
 
 ```shell
-zenrockd config set client chain-id gardia-4
+zenrockd config set client chain-id gardia-5
 #zenrockd config set client keyring-backend test
 
 sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "2.5urock"|g' $HOME/.zrchain/config/app.toml
@@ -92,7 +91,7 @@ sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "2.5urock"|g' $HOME/.zrcha
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.zrchain/config/config.toml
 
-peers=""6ef43e8d5be8d0499b6c57eb15d3dd6dee809c1e@sentry-1.gardia.zenrocklabs.io:26656,1dfbd854bab6ca95be652e8db078ab7a069eae6f@sentry-2.gardia.zenrocklabs.io:36656,63014f89cf325d3dc12cc8075c07b5f4ee666d64@sentry-3.gardia.zenrocklabs.io:46656,12f0463250bf004107195ff2c885be9b480e70e2@sentry-4.gardia.zenrocklabs.io:56656""
+peers="6ef43e8d5be8d0499b6c57eb15d3dd6dee809c1e@52.30.152.47:26656"
 sed -i -e "s|^persistent_peers *=.*|persistent_peers = \"$peers\"|" $HOME/.zrchain/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.zrchain/config/config.toml

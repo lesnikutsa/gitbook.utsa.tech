@@ -8,7 +8,7 @@ Updates are available for information. Boot via State sync or Snapshot to avoid 
 Genesis starts with version zenrockd-5.3.8
 {% endhint %}
 
-## UPD 🕊 on v5.5.0 (Update Height: 34000)
+## UPD 🕊 on v5.5.0 (Update Height: 200)
 
 ```shell
 cd $HOME/zenrock
@@ -28,7 +28,7 @@ zenrockd version --long | grep -e version -e commit
 systemctl restart zenrockd && journalctl -u zenrockd -f -o cat
 ```
 
-## UPD 🕊 on v5.16.10 (Update Height: 52000)
+## UPD 🕊 on v5.16.10 (Update Height: 470)
 
 ```shell
 cd $HOME/zenrock
@@ -48,7 +48,7 @@ zenrockd version --long | grep -e version -e commit
 systemctl restart zenrockd && journalctl -u zenrockd -f -o cat
 ```
 
-## UPD 🕊 on v5.16.18 (Update Height: 218500)
+## UPD 🕊 on v5.16.18 (Update Height: 600)
 
 ```shell
 cd $HOME/zenrock
@@ -68,7 +68,7 @@ zenrockd version --long | grep -e version -e commit
 systemctl restart zenrockd && journalctl -u zenrockd -f -o cat
 ```
 
-## UPD 🕊 on v5.16.20 (Update Height: 230500)
+## UPD 🕊 on v5.16.20 (Update Height: 600)
 
 ```shell
 cd $HOME/zenrock
@@ -88,11 +88,31 @@ zenrockd version --long | grep -e version -e commit
 systemctl restart zenrockd && journalctl -u zenrockd -f -o cat
 ```
 
-## UPD 🕊 on v6.1.16 (Update Height: 1025100)
+## UPD 🕊 on v6.1.16 (Update Height: 660)
 
 ```shell
 cd $HOME/zenrock
 wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v6.1.16/zenrockd
+chmod +x zenrockd
+$HOME/zenrock/zenrockd version --long | grep -e version -e commit
+# version: 6.1.16
+# commit: 6c7047029339dc5798319b7bb705058067d89da1
+
+#ПОСЛЕ ОСТАНОВКИ СЕТИ НА НУЖНОМ БЛОКЕ!!!
+systemctl stop zenrockd
+mv $HOME/zenrock/zenrockd $(which zenrockd)
+zenrockd version --long | grep -e version -e commit
+#
+#
+
+systemctl restart zenrockd && journalctl -u zenrockd -f -o cat
+```
+
+## UPD 🕊 on v6.3.3 (Update Height: 3000)
+
+```shell
+cd $HOME/zenrock
+wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v6.3.3/zenrockd
 chmod +x zenrockd
 $HOME/zenrock/zenrockd version --long | grep -e version -e commit
 # version: 6.1.16

@@ -55,14 +55,14 @@ chmod +x zenrockd
 mv $HOME/zenrock/zenrockd $HOME/go/bin/
 
 zenrockd version --long | grep -e version -e commit
-# version: 6.1.16
-# commit: 6c7047029339dc5798319b7bb705058067d89da1
+# version: 5.3.8
+# commit: 8dd87f173727be414d6eb2a113dcf999b7b18958
 ```
 
 **Initialize the node to create the necessary configuration files**
 
 ```bash
-zenrockd init UTSA_guide --chain-id gardia-5
+zenrockd init UTSA_guide --chain-id gardia-8
 ```
 
 **Genesis**
@@ -71,7 +71,7 @@ zenrockd init UTSA_guide --chain-id gardia-5
 </strong>
 # check genesis
 sha256sum ~/.zrchain/config/genesis.json
-# 21c251677aa6c41bcd64308795391987153da4acacce42f3e8941898284dc265
+# 56e8614605ce467267c7136df618750683acbba9db74540727ec3d834be4d6d1
 </code></pre>
 
 **Download Addr book**
@@ -83,7 +83,7 @@ sha256sum ~/.zrchain/config/genesis.json
 **Setting up the node configuration**
 
 ```shell
-zenrockd config set client chain-id gardia-5
+zenrockd config set client chain-id gardia-8
 #zenrockd config set client keyring-backend test
 
 sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "2.5urock"|g' $HOME/.zrchain/config/app.toml
@@ -91,7 +91,7 @@ sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "2.5urock"|g' $HOME/.zrcha
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.zrchain/config/config.toml
 
-peers="6ef43e8d5be8d0499b6c57eb15d3dd6dee809c1e@52.30.152.47:26656"
+peers="d76afe7cbe8e6e39f96d67bdf60c7e767893b15e@sentry-1.gardia.zenrocklabs.io:26656,d9927ea0ea2e4bb46d2192f1c94aeb0770ae8f91@sentry-2.gardia.zenrocklabs.io:36656,8f1b7232e8530f7f964ba048270f77e1e90636de@sentry-3.gardia.zenrocklabs.io:46656,9794aa7d5227e05cf997f85bb537ee15f9db425f@sentry-4.gardia.zenrocklabs.io:56656"
 sed -i -e "s|^persistent_peers *=.*|persistent_peers = \"$peers\"|" $HOME/.zrchain/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.zrchain/config/config.toml

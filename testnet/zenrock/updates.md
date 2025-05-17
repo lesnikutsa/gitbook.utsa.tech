@@ -8,7 +8,7 @@ Updates are available for information. Boot via State sync or Snapshot to avoid 
 Genesis starts with version zenrockd-5.3.8
 {% endhint %}
 
-## UPD 🕊 on v5.5.0 (Update Height: 200)
+## UPD 🕊 on v5.5.0 (Update Height: 350)
 
 ```shell
 cd $HOME/zenrock
@@ -28,7 +28,7 @@ zenrockd version --long | grep -e version -e commit
 systemctl restart zenrockd && journalctl -u zenrockd -f -o cat
 ```
 
-## UPD 🕊 on v5.16.10 (Update Height: 470)
+## UPD 🕊 on v5.16.10 (Update Height: 430)
 
 ```shell
 cd $HOME/zenrock
@@ -48,7 +48,7 @@ zenrockd version --long | grep -e version -e commit
 systemctl restart zenrockd && journalctl -u zenrockd -f -o cat
 ```
 
-## UPD 🕊 on v5.16.18 (Update Height: 600)
+## UPD 🕊 on v5.16.18 (Update Height: 490)
 
 ```shell
 cd $HOME/zenrock
@@ -68,11 +68,10 @@ zenrockd version --long | grep -e version -e commit
 systemctl restart zenrockd && journalctl -u zenrockd -f -o cat
 ```
 
-## UPD 🕊 on v5.16.20 (Update Height: 600)
+## UPD 🕊 on v5.16.20 (Update Height: 540)
 
-```shell
-cd $HOME/zenrock
-wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v5.16.20/zenrockd
+<pre class="language-shell"><code class="lang-shell"><strong>cd $HOME/zenrock
+</strong>wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v5.16.20/zenrockd
 chmod +x zenrockd
 $HOME/zenrock/zenrockd version --long | grep -e version -e commit
 # version: 5.16.20
@@ -85,10 +84,10 @@ zenrockd version --long | grep -e version -e commit
 #
 #
 
-systemctl restart zenrockd && journalctl -u zenrockd -f -o cat
-```
+systemctl restart zenrockd &#x26;&#x26; journalctl -u zenrockd -f -o cat
+</code></pre>
 
-## UPD 🕊 on v6.1.16 (Update Height: 660)
+## UPD 🕊 on v6.1.16 (Update Height: 590)
 
 ```shell
 cd $HOME/zenrock
@@ -108,15 +107,15 @@ zenrockd version --long | grep -e version -e commit
 systemctl restart zenrockd && journalctl -u zenrockd -f -o cat
 ```
 
-## UPD 🕊 on v6.3.3 (Update Height: 3000)
+## UPD 🕊 on v6.3.10 (Update Height: 640)
 
 ```shell
 cd $HOME/zenrock
-wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v6.3.3/zenrockd
+wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v6.3.10/zenrockd
 chmod +x zenrockd
 $HOME/zenrock/zenrockd version --long | grep -e version -e commit
-# version: 6.3.3
-# commit: e23a950415fde8381e6ff0815f96475369f091ed
+# version: 6.3.10
+# commit: 02647ce3f42ce335382701f9fb1ba9b17bd555c8
 
 #ПОСЛЕ ОСТАНОВКИ СЕТИ НА НУЖНОМ БЛОКЕ!!!
 systemctl stop zenrockd

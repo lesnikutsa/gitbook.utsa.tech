@@ -62,7 +62,7 @@ zenrockd version --long | grep -e version -e commit
 **Initialize the node to create the necessary configuration files**
 
 ```bash
-zenrockd init UTSA_guide --chain-id gardia-8
+zenrockd init UTSA_guide --chain-id gardia-9
 ```
 
 **Genesis**
@@ -71,7 +71,7 @@ zenrockd init UTSA_guide --chain-id gardia-8
 </strong>
 # check genesis
 sha256sum ~/.zrchain/config/genesis.json
-# 56e8614605ce467267c7136df618750683acbba9db74540727ec3d834be4d6d1
+# 63e066dac87e6b88f158338e325ad3c352a45e2bc9b96b0b82d3cc35432e4715
 </code></pre>
 
 **Download Addr book**
@@ -83,7 +83,7 @@ sha256sum ~/.zrchain/config/genesis.json
 **Setting up the node configuration**
 
 ```shell
-zenrockd config set client chain-id gardia-8
+zenrockd config set client chain-id gardia-9
 #zenrockd config set client keyring-backend test
 
 sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "2.5urock"|g' $HOME/.zrchain/config/app.toml

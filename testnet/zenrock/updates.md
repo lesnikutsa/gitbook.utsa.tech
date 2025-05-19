@@ -107,7 +107,7 @@ zenrockd version --long | grep -e version -e commit
 systemctl restart zenrockd && journalctl -u zenrockd -f -o cat
 ```
 
-## UPD 🕊 on v6.3.10 (Update Height: 640)
+## UPD 🕊 on v6.4.0 (Update Height: 640)
 
 ```shell
 cd $HOME/zenrock

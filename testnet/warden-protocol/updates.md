@@ -38,5 +38,24 @@ $HOME/wardenprotocol/wardend version --long | grep -e version -e commit
 systemctl stop wardend
 mv $HOME/wardenprotocol/wardend $(which wardend)
 wardend version --long | grep -e version -e commit
-# version:
+# version: 
+systemctl restart wardend && journalctl -u wardend -f -o cat
+```
+
+## UPD 🕊 on v0.6.3 (Update Height: 3111000)
+
+```shell
+cd $HOME/wardenprotocol
+wget -O $HOME/wardenprotocol/wardend "https://github.com/warden-protocol/wardenprotocol/releases/download/v0.6.3/wardend-0.6.3-linux-amd64"
+chmod +x $HOME/wardenprotocol/wardend
+$HOME/wardenprotocol/wardend version --long | grep -e version -e commit
+# version: 0.6.3
+# commit: 346fa4ed1c04aa43e4ba52fc502c0e7c842da315
+
+# AFTER STOPPING THE NETWORK ON THE REQUIRED BLOCK!
+systemctl stop wardend
+mv $HOME/wardenprotocol/wardend $(which wardend)
+wardend version --long | grep -e version -e commit
+# version: 
+systemctl restart wardend && journalctl -u wardend -f -o cat
 ```

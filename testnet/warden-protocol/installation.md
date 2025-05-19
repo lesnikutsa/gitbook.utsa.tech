@@ -27,15 +27,15 @@ go version
 
 ```shell
 git clone https://github.com/warden-protocol/wardenprotocol && cd wardenprotocol
-
-wget https://github.com/warden-protocol/wardenprotocol/releases/download/v0.5.4/wardend_Linux_x86_64.zip
+wget https://github.com/warden-protocol/wardenprotocol/releases/download/v0.6.3/wardend_Linux_x86_64.zip
 unzip wardend_Linux_x86_64.zip
 rm -rf wardend_Linux_x86_64.zip
 chmod +x wardend
 mv wardend /root/go/bin
+
 wardend version --long | grep -e commit -e version
-# version: 0.5.4
-# commit: 9b78f9acf51bf7e511a1dc3920e1ff01a73e61fb
+# version: 0.6.3
+# commit: 346fa4ed1c04aa43e4ba52fc502c0e7c842da315
 ```
 
 #### We initialize the node to create the necessary configuration files

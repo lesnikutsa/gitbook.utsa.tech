@@ -27,12 +27,12 @@ go version
 
 ```shell
 git clone https://github.com/xrplevm/node xrpl && cd xrpl
-git checkout v7.0.0
+git checkout v8.0.0
 make install
 
 exrpd version --long | grep -e version -e commit
-# version: v7.0.0
-# commit: 9f634ac204f3fdd882cdc06c33cdf6b245a0e358
+# version: v8.0.0
+# commit: 8d92d087b9a1014de748b8887868e0e90b97b56f
 ```
 
 #### We initialize the node to create the necessary configuration files

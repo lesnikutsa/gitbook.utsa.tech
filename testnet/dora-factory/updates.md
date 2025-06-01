@@ -64,3 +64,23 @@ dorad version --long | grep -e version -e commit
 
 systemctl restart dorad &#x26;&#x26; journalctl -u dorad -f -o cat
 </code></pre>
+
+## UPD 🕊 on 0.4.3 (Update Height: 7578888)
+
+<pre class="language-shell"><code class="lang-shell"><strong>cd
+</strong>rm -rf doravota
+git clone https://github.com/DoraFactory/doravota &#x26;&#x26; cd doravota
+git checkout 0.4.3
+make build
+$HOME/doravota/build/dorad version --long
+# version: 0.4.3
+# commit: 
+
+# AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
+systemctl stop dorad
+mv $HOME/doravota/build/dorad $(which dorad)
+dorad version --long | grep -e version -e commit
+# 
+
+systemctl restart dorad &#x26;&#x26; journalctl -u dorad -f -o cat
+</code></pre>

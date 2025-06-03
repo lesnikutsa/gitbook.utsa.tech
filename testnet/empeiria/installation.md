@@ -28,14 +28,14 @@ go version
 ```shell
 #mkdir -p ~/go/bin
 mkdir -p empe-chain && cd empe-chain
-curl -LO https://github.com/empe-io/empe-chain-releases/raw/master/v0.3.0/emped_v0.3.0_linux_amd64.tar.gz
-tar -xvf emped_v0.3.0_linux_amd64.tar.gz
+curl -LO https://github.com/empe-io/empe-chain-releases/raw/master/v0.4.0/emped_v0.4.0_linux_amd64.tar.gz
+tar -xvf emped_v0.4.0_linux_amd64.tar.gz
 mv emped ~/go/bin
 chmod u+x ~/go/bin/emped
 
 emped version --long | grep -e version -e commit
-# version: v0.3.0
-# commit: 8d602e7c6502db75b47369bbbd885cd12256e71a
+# version: v0.4.0
+# commit: ed3616c08b12bc9fe553b33dcf23625b30376f1f
 ```
 
 ```bash

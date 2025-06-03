@@ -79,3 +79,25 @@ emped version --long | grep -e version -e commit
 
 systemctl restart emped && journalctl -u emped -f -o cat
 ```
+
+## UPD 🕊 on v0.4.0  (Update Height: 5215651)
+
+```shell
+cd $HOME/empe-chain
+curl -LO https://github.com/empe-io/empe-chain-releases/raw/master/v0.4.0/emped_v0.4.0_linux_amd64.tar.gz
+tar -xvf emped_v0.4.0_linux_amd64.tar.gz
+rm -r emped_*
+chmod 744 $HOME/empe-chain/emped
+$HOME/empe-chain/emped version --long | grep -e version -e commit
+# version: v0.4.0
+# commit: ed3616c08b12bc9fe553b33dcf23625b30376f1f
+
+# ПОСЛЕ ОСТАНОВКИ СЕТИ НА НУЖНОМ БЛОКЕ!!!
+systemctl stop emped
+mv $HOME/empe-chain/emped $(which emped)
+emped version --long | grep -e version -e commit
+# 
+
+systemctl daemon-reload
+systemctl restart emped && journalctl -u emped -f -o cat
+```

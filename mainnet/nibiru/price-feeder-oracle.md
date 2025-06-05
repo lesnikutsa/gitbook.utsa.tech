@@ -12,14 +12,14 @@ In this example:&#x20;
 {% endhint %}
 
 ```shell
-# install binary
+
 mkdir -p $HOME/.nibid/pricefeeder && cd $HOME/.nibid/pricefeeder
-wget https://github.com/NibiruChain/pricefeeder/releases/download/v1.0.2/pricefeeder_1.0.2_linux_amd64.tar.gz
-tar -xvf pricefeeder_1.0.2_linux_amd64.tar.gz
+wget https://github.com/NibiruChain/pricefeeder/releases/download/v1.0.5/pricefeeder_1.0.5_linux_amd64.tar.gz
+tar -xvf pricefeeder_1.0.5_linux_amd64.tar.gz
 mv pricefeeder /usr/local/bin/
 
 sha256sum /usr/local/bin/pricefeeder
-# 434810fb913d101f6dd20df96685b2bff909ad19e30e1110a9c202ea11f883a0
+# 7fd3b30ab33def57fb88a54d05fb17fa3e4e32e81b8bcffd574bacdbf6051e7f
 ```
 
 ```shell

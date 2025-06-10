@@ -28,13 +28,13 @@ go version
 ```shell
 export PIO_HOME=~/.provenanced
 git clone https://github.com/provenance-io/provenance.git && cd provenance
-git checkout tags/v1.22.0 -b v1.22.0
+git checkout tags/v1.24.0 -b v1.24.0
 make golangci-lint
 make clean
 make install
 provenanced version --long | grep -e version -e commit
-# v1.22.0
-# commit: 24810d86
+# v1.24.0
+# commit: ca136533
 ```
 
 #### We initialize the node to create the necessary configuration files

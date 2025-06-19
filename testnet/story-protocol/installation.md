@@ -57,15 +57,17 @@ mkdir -p $HOME/go/bin/
 #### Install story-geth
 
 ```bash
-cd
-wget -O story-geth https://github.com/piplabs/story-geth/releases/download/v0.11.0/geth-linux-amd64
-chmod +x story-geth
-mv story-geth $HOME/go/bin/story-geth
+cd $HOME
+rm -rf story-geth
+git clone https://github.com/piplabs/story-geth.git
+cd story-geth
+git checkout v1.1.0
+make geth
+mv build/bin/geth  $HOME/go/bin/story-geth
 
 story-geth version
-# Version: 0.11.0-stable
-# Git Commit: f6503708c29cf9b113d710888c51969ca78d79d1
-# Git Commit Date: 20241205
+# Version: 1.1.0-stable
+# Git Commit: fe0d2f85bdc6d8bf39cdfcdb1579c3e10f9a3654
 ```
 
 
@@ -75,13 +77,13 @@ story-geth version
 ```bash
 cd
 git clone https://github.com/piplabs/story && cd story
-git checkout v0.13.2
+git checkout v1.3.0
 go build -o story ./client
 mv $HOME/story/story $HOME/go/bin/
 
 story version
-# Version       v0.13.2-stable
-# Git Commit    c9c57b2
+# Version v1.3.0-stable
+# Git Commit 3c01046
 ```
 
 
@@ -89,7 +91,7 @@ story version
 #### We initialize the node to create the necessary configuration files
 
 ```shell
-story init --moniker "UTSA_guide" --network odyssey
+story init --moniker "UTSA_guide" --network aeneid
 ```
 
 #### Genesis
@@ -97,13 +99,13 @@ story init --moniker "UTSA_guide" --network odyssey
 ```shell
 # check the genesis
 sha256sum ~/.story/story/config/genesis.json
-# d332e9082222cc0dd6fe4e9943eafc89b2ce5e118a75ffa01b77e549fdd12587
+# bf82e0167f262a91b0332a78c04b77fcdcc88aae4fde0816a3341a9a895d0750
 ```
 
 #### At this stage, we can download the address book
 
 ```shell
-wget -O $HOME/.story/story/config/addrbook.json "https://share102.utsa.tech/story/addrbook.json"
+#wget -O $HOME/.story/story/config/addrbook.json "https://share102.utsa.tech/story/addrbook.json"
 ```
 
 #### Set up node configuration
@@ -111,10 +113,9 @@ wget -O $HOME/.story/story/config/addrbook.json "https://share102.utsa.tech/stor
 ```shell
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.story/story/config/config.toml
-
-peers="c5c214377b438742523749bb43a2176ec9ec983c@176.9.54.69:26656,5dec0b793789d85c28b1619bffab30d5668039b7@150.136.113.152:26656,89a07021f98914fbac07aae9fbb12a92c5b6b781@152.53.102.226:26656,443896c7ec4c695234467da5e503c78fcd75c18e@80.241.215.215:26656,2df2b0b66f267939fea7fe098cfee696d6243cec@65.108.193.224:23656,7cc415203fc4c1a6e534e5fed8292467cf14d291@65.21.29.250:3610,fa294c4091379f84d0fc4a27e6163c956fc08e73@65.108.103.184:26656,81eaee3be00b21d0a124016b62fb7176fa05a4f9@185.198.49.133:33556,3508ef280392bd431ea078dec16dcfae89e8eb78@213.239.192.18:26656,b04bae4f88ca12d45fc14be29ce96837b61a72b8@65.109.49.115:26656"
+peers="01f8a2148a94f0267af919d2eab78452c90d9864@story-testnet-peer.itrocket.net:52656,e1623185b6c5403f77533003b0440fae7c33eeed@15.235.224.129:26656,6d77bba865d84eea83f29c48d4bf034ee3540a11@37.27.127.145:26656,803b0100deb519eebaa16b9a55058d21aa8f8dd9@135.181.240.57:33656,311cd3903e25ab85e5a26c44510fbc747ab61760@152.53.87.97:36656,3d7b3efbe94b84112ec4051693438c91890b09fb@144.76.106.228:62656,2440358221774ba82360a08edd4bf5d43ed441a5@65.109.22.211:52656,83b25d26b8b7dd1d4a6f68182b75097d989dcdd0@88.99.137.138:14656,db6791a8e35dee076de75aebae3c89df8bba3374@65.109.50.22:56656"
 sed -i -e "s|^persistent_peers *=.*|persistent_peers = \"$peers\"|" $HOME/.story/story/config/config.toml
-seeds="434af9dae402ab9f1c8a8fc15eae2d68b5be3387@story-testnet-seed.itrocket.net:29656"
+seeds="46b7995b0b77515380000b7601e6fc21f783e16f@story-testnet-seed.itrocket.net:52656"
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.story/story/config/config.toml
 
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.story/story/config/config.toml
@@ -137,7 +138,7 @@ After=network.target
 
 [Service]
 User=$USER
-ExecStart=$HOME/go/bin/story-geth --odyssey --syncmode full --http --http.api eth,net,web3,engine --http.vhosts '*' --http.addr 127.0.0.1 --http.port 8545 --ws --ws.api eth,web3,net,txpool --ws.addr 127.0.0.1 --ws.port 8546
+ExecStart=$HOME/go/bin/story-geth --aeneid --syncmode full --http --http.api eth,net,web3,engine --http.vhosts '*' --http.addr 127.0.0.1 --http.port 8545 --ws --ws.api eth,web3,net,txpool --ws.addr 127.0.0.1 --ws.port 8546
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535

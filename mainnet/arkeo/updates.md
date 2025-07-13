@@ -57,3 +57,20 @@ systemctl stop arkeod
 
 systemctl restart arkeod && journalctl -u arkeod -f -o cat
 ```
+
+## UPD 🕊 on v1.0.14 (Update Height: 1526000)
+
+```shell
+cd $HOME/arkeo
+git pull
+git checkout v1.0.14
+make build
+arkeod version --long | grep -e version -e commit
+# version: v1.0.14
+# commit: 
+
+# AFTER STOPPING THE NETWORK ON THE NECESSARY BLOCK!!!
+systemctl stop arkeod
+
+systemctl restart arkeod && journalctl -u arkeod -f -o cat
+```

@@ -68,7 +68,7 @@ wget -O $HOME/.dora/config/addrbook.json "https://testnet-files.itrocket.net/dor
 ```shell
 dorad config chain-id vota-testnet
 dorad config keyring-backend os
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"100000000000peaka\"/;" ~/.dora/config/app.toml
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"10000000000peaka\"/;" ~/.dora/config/app.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.dora/config/config.toml
 peers="8d5fa7d2e0f79840de6c10d5e1ba4e1f522237f6@dora-testnet-peer.itrocket.net:43656,cdf3cb078183967cff3a638713384de2c5594ba3@65.108.72.253:42656,36cb190314399eca907131051e7b6691d68d26a6@13.250.122.100:26656,1c070c5b38c716370af9b0d344209821cceeceb3@18.142.245.25:26656"

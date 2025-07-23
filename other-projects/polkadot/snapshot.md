@@ -7,7 +7,7 @@
 
 **every 24 hours** **| pruned | RocksDB**
 
-🌐 [**https://share106-3.utsa.tech/polkadot/**](https://share106-3.utsa.tech/polkadot/)
+🌐 [**https://share.utsa.tech/polkadot/**](https://share.utsa.tech/polkadot/)
 {% endhint %}
 
 ```shell
@@ -22,20 +22,13 @@ curl -o - -L https://share.utsa.tech/polkadot/polkadot_pruned.tar.lz4 | lz4 -c -
 ```
 
 {% hint style="success" %}
-### Snapshot Archive
+### Snapshot KAGOM
 
-**every 7 days** **| archive | RocksDB**
+**every 7 days** **| pruned | KAGOM**
 
-🌐 [**https://share106-7.utsa.tech/polkadot/**](https://share106-7.utsa.tech/polkadot/)
+🌐 **http://205.209.107.2:8000**
 {% endhint %}
 
 ```shell
-docker stop polkadot_node
-docker rm polkadot_node
-
-rm -r $HOME/.polkadot/chains/polkadot/db/
-
-curl -o - -L https://share106-7.utsa.tech/polkadot/polkadot_archive.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.polkadot/chains/polkadot/
-
-# we launch as usual
+curl -o - -L http://205.209.107.2:8000/polkadot/polkadot_kagom_pruned.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.polkadot/chains/polkadot/
 ```

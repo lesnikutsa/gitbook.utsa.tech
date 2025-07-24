@@ -300,3 +300,22 @@ zenrockd version --long | grep -e version -e commit
 
 systemctl restart zenrockd && journalctl -u zenrockd -f -o cat
 ```
+
+## UPD 🕊 on v6.23.0 (Update Height: 1054000)
+
+```shell
+cd $HOME/zenrock
+wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v6.23.0/zenrockd
+chmod +x zenrockd
+$HOME/zenrock/zenrockd version --long | grep -e version -e commit
+# version: 6.23.0
+# commit: 274967224881573796a4e6e1547621eb31a1a4ab
+
+#ПОСЛЕ ОСТАНОВКИ СЕТИ НА НУЖНОМ БЛОКЕ!!!
+systemctl stop zenrockd
+mv $HOME/zenrock/zenrockd $(which zenrockd)
+zenrockd version --long | grep -e version -e commit
+#
+
+systemctl restart zenrockd && journalctl -u zenrockd -f -o cat
+```

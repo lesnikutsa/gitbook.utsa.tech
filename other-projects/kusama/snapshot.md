@@ -24,7 +24,7 @@ curl -o - -L https://share.utsa.tech/kusama/kusama_pruned.tar.lz4 | lz4 -c -d - 
 {% hint style="success" %}
 ### Snapshot KAGOM
 
-**every 7 days** **| pruned | KAGOM**
+**every 7 days** **| --blocks-pruning 4096 | KAGOM**
 
 🌐 **http://205.209.107.2:8000/kusama**
 {% endhint %}

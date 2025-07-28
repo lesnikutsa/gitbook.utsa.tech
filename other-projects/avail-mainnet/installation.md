@@ -23,13 +23,13 @@ apt update && apt upgrade -y
 mkdir -p $HOME/.avail_mainnet && cd $HOME/.avail_mainnet
 chmod 755 $HOME/.avail_mainnet
 
-wget https://github.com/availproject/avail/releases/download/v2.3.1.0/x86_64-ubuntu-2204-avail-node.tar.gz
+wget https://github.com/availproject/avail/releases/download/v2.3.2.0/x86_64-ubuntu-2204-avail-node.tar.gz
 tar -xvf x86_64-ubuntu-2204-avail-node.tar.gz
 mv avail-node /usr/bin/avail
 rm -rf x86_64-ubuntu-2204-avail-node.tar.gz
 
 avail --version
-# avail 2.3.1-f12b293a885
+# avail 2.3.2-5b22f419256
 ```
 
 

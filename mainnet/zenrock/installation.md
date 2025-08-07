@@ -50,14 +50,14 @@ mkdir -p zenrock && cd zenrock
 
 ```bash
 cd $HOME/zenrock
-wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v6.13.0/zenrockd
+wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v6.25.0/zenrockd
 
 chmod +x zenrockd
 mv $HOME/zenrock/zenrockd $HOME/go/bin/
 
 zenrockd version --long | grep -e version -e commit
-# version: 6.13.0
-# commit: 1939c39f3508bac5ffd4564b9c3d7be8ab8d3027
+# version: 6.25.0
+# commit: a57887ad030eb1d27666d20c70d12c2643b034d4
 ```
 
 **Initialize the node to create the necessary configuration files**

@@ -1,6 +1,6 @@
 # ⚒️ Node-exporter + Grafana + Prometheus + Alertmanager
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 In this guide, we will set up a monitoring system that will collect metrics from all our servers and visualize them in Grafana. You can also install Alertmanager to receive notifications about server problems, in our case, in Telegram
 
@@ -14,7 +14,7 @@ We need a separate server for Prometheus, Grafana, Node Exporter, Alertmanager. 
 
 **Grafana** is an open web frontend to various time series DBMSs, such as Graphite, InfluxDB, and, of course, Prometheus. With Grafana, we can see beautiful graphs through our browser. It is characteristic that Prometheus also has its own web interface, but even the Prometheus developers themselves recommend using Grafana
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 **Default ports:**

@@ -15,7 +15,7 @@ description: >-
 
 ## **Details**
 
-* **Network Chain ID**:&#x20;
+* **Network Chain ID**: --networkid 65000000
 * **Binary**: autonity
 * **Binary Oracle**: autoracle
 * **Symbol:** ATN - to carry out transactions

@@ -94,12 +94,12 @@ EOF
 ```shell
 cd
 git clone https://github.com/autonity/autonity && cd autonity
-git checkout tags/v1.1.1 -b v1.1.1
+git checkout tags/v1.1.2 -b v1.1.2
 make autonity
 
 mv $HOME/autonity/build/bin/autonity /usr/local/bin/
 autonity version
-#Version: 1.1.1
+#Version: 1.1.2
 ```
 
 **Create a directory autonity-chaindata to store autonity working data and create the keys we need**
@@ -147,6 +147,10 @@ keyfile=/root/.autonity/keystore/tresure.key
 
 **Create a service file**
 
+{% hint style="info" %}
+As this launch is for the genesis of Mainnet there is no need to include a network specific flag. Optionally, if you wish to be explicit you can set `--networkid 65000000`, whilst removing any `--bakerloo` or `--piccadilly` flag
+{% endhint %}
+
 ```shell
 tee <<EOF >/dev/null /etc/systemd/system/autonity.service
 [Unit]
@@ -156,7 +160,7 @@ After=network.target
 [Service]
 User=$USER
 Type=simple
-ExecStart=$(which autonity) --datadir $HOME/autonity-chaindata --syncmode full --bakerloo --http --http.addr 0.0.0.0 --http.api aut,eth,net,txpool,web3,admin --http.vhosts \*  --ws     --ws.addr 127.0.0.1 --ws.api aut,eth,net,txpool,web3,admin --autonitykeys $HOME/autonity-chaindata/autonity/nodekey --nat extip:$(curl 2ip.ru)
+ExecStart=$(which autonity) --datadir $HOME/autonity-chaindata --syncmode full --http --http.addr 0.0.0.0 --http.api aut,eth,net,txpool,web3,admin --http.vhosts \*  --ws     --ws.addr 127.0.0.1 --ws.api aut,eth,net,txpool,web3,admin --autonitykeys $HOME/autonity-chaindata/autonity/nodekey --nat extip:$(curl 2ip.ru)
 Restart=on-failure
 LimitNOFILE=65535
 

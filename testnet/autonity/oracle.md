@@ -6,12 +6,12 @@
 cd
 git clone https://github.com/autonity/autonity-oracle && cd autonity-oracle
 git fetch --all
-git checkout v0.2.4
+git checkout v0.2.6
 make autoracle-bakerloo
 mv build/bin/autoracle /usr/local/bin
 
 autoracle version
-#v0.2.4
+#v0.2.6
 ```
 
 

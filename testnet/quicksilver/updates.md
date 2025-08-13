@@ -104,7 +104,7 @@ quicksilverd version --long | grep -e version -e commit -e build_tags
 systemctl restart quicksilverd &#x26;&#x26; journalctl -u quicksilverd -f -o cat
 </code></pre>
 
-## UPD 🕊 on  v1.9.1 (before 4728000)
+## UPD 🕊 on  v1.9.0 (before 4728000)
 
 <pre class="language-sh"><code class="lang-sh"><strong>cd $HOME/quicksilver
 </strong>wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.9.0/quicksilverd-v1.9.0-amd64

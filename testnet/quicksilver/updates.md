@@ -104,14 +104,14 @@ quicksilverd version --long | grep -e version -e commit -e build_tags
 systemctl restart quicksilverd &#x26;&#x26; journalctl -u quicksilverd -f -o cat
 </code></pre>
 
-## UPD 🕊 on  v1.9.1 (before 4728000)
+## UPD 🕊 on  v1.9.3 (before 4728000)
 
 <pre class="language-sh"><code class="lang-sh"><strong>cd $HOME/quicksilver
-</strong>wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.9.1/quicksilverd-v1.9.1-amd64
+</strong>wget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.9.3/quicksilverd-v1.9.3-amd64
 chmod +x $HOME/quicksilver/quicksilverd
 <strong>$HOME/quicksilver/quicksilverd version --long | grep -e version -e commit -e build_tags
-</strong># version: v1.9.1
-# commit: a4245fd842418c39050e5b2504cc6e8f089a92de
+</strong># version: v1.9.3
+# commit: 4c17c35aede79f9838b89a284515be908f07386d
 
 # AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
 <strong>systemctl stop quicksilverd

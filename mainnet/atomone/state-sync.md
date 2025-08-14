@@ -16,7 +16,7 @@ Important - different blockchains need a different amount of RAM to successfully
 
 ```shell
 # add peer
-peers="0857c4b03734fb30b2fed2eabb8ba7b6788d6aae@5.9.87.231:61156"
+peers="7e804bdafb01244cbe82c96e768d88238603e1da@144.76.29.90:61156"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.atomone/config/config.toml
 ```
 

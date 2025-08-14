@@ -44,7 +44,7 @@ atomoned init UTSA_guide --chain-id atomone-1
 #### Download Genesis
 
 ```shell
-wget -O $HOME/.atomone/config/genesis.json "https://share102.utsa.tech/atomone/genesis.json"
+wget -O $HOME/.atomone/config/genesis.json "https://share.utsa.tech/atomone/genesis.json"
 
 sha256sum ~/.atomone/config/genesis.json
 # 8ea3f710675dc472beee4e26a76f466f5648b33af5942ae8d6d2f3b5a6d961a6
@@ -53,7 +53,7 @@ sha256sum ~/.atomone/config/genesis.json
 #### At this stage, we can download the address book
 
 ```shell
-wget -O $HOME/.atomone/config/addrbook.json "https://share102.utsa.tech/atomone/addrbook.json"
+wget -O $HOME/.atomone/config/addrbook.json "https://share.utsa.tech/atomone/addrbook.json"
 ```
 
 #### Set up node configuration

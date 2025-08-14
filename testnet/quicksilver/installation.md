@@ -27,12 +27,12 @@ go version
 
 ```shell
 git clone https://github.com/ingenuity-build/quicksilver && cd quicksilver
-git checkout v1.9.0
+git checkout v1.9.1
 make install
 
 quicksilverd version --long | grep -e version -e commit -e build_tags
-# version: v1.9.0
-# commit: 07581780639288412daf62dbf2bbaacdccf79ed9
+# version: v1.9.1
+# commit: a4245fd842418c39050e5b2504cc6e8f089a92de
 ```
 
 #### We initialize the node to create the necessary configuration files

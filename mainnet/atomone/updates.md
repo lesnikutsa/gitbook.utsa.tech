@@ -46,16 +46,16 @@ atomoned version --long | grep -e version -e commit
 systemctl restart atomoned && journalctl -u atomoned -f -o cat
 ```
 
-## UPD 🕊 on  v2.0.0 (Update Height: 3318000)
+## UPD 🕊 on  v2.1.0 (Update Height: 3318000)
 
 ```shell
 cd $HOME/atomone
 git pull
-git checkout v2.0.0
+git checkout v2.1.0
 make build
 $HOME/atomone/build/atomoned version --long | grep -e version -e commit
-# version: v2.0.0
-# commit: 90526ee07358a4f34b579e6a1d4573acb830d17b
+# version: v2.1.0
+# commit: c29e6ecf39ce733fe14e7d703aa28e5aeef5e8f0
 
 # AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
 systemctl stop atomoned

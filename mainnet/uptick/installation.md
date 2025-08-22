@@ -27,15 +27,14 @@ go version
 
 ```shell
 git clone https://github.com/UptickNetwork/uptick && cd uptick
-git checkout v0.2.19
+git checkout v0.3.0
 make build -B
 
 mv $HOME/uptick/build/uptickd $HOME/go/bin/
 
 uptickd version --long | grep -e version -e commit -e build_tags
-# version: v0.2.19
-# build_tags: netgo,ledger
-# commit: 972d58dbe335791b28b6971f1548b4a5e08e9ef5
+# version: v0.3.0
+# commit: c8fec8051a71068bdefa6d6663aace374558eafe
 ```
 
 #### We initialize the node to create the necessary configuration files

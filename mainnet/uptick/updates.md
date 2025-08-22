@@ -123,3 +123,22 @@ mv $HOME/uptick/uptickd $HOME/go/bin/
 
 systemctl restart uptickd && journalctl -u uptickd -f -o cat
 ```
+
+## UPD 🕊 on v0.3.0 Update Height: 13280391
+
+```shell
+cd $HOME
+rm -rf uptick
+git clone https://github.com/UptickNetwork/uptick && cd uptick
+git checkout v0.3.0
+make build -B
+$HOME/uptick/build/uptickd version --long | grep -e version -e commit -e build_tags
+# version: v0.3.0
+# commit: c8fec8051a71068bdefa6d6663aace374558eafe
+
+# AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
+systemctl stop uptickd
+mv $HOME/uptick/uptickd $HOME/go/bin/
+
+systemctl restart uptickd && journalctl -u uptickd -f -o cat
+```

@@ -27,12 +27,12 @@ go version
 
 ```shell
 git clone https://github.com/atomone-hub/atomone && cd atomone
-git checkout v2.0.0-rc2
+git checkout v3.0.1
 make install
 
 atomoned version --long | grep -e version -e commit
-# version: v2.0.0-rc2
-# commit: ac38dd77e6e3efb03890eec9a6bc10ac63ac9db5
+# version: v3.0.1
+# commit: f36cf924f50d7d5c3890b3991c7185e5d41c3ca1
 ```
 
 #### We initialize the node to create the necessary configuration files

@@ -29,12 +29,12 @@ go version
 
 ```shell
 git clone https://github.com/gitopia/gitopia && cd gitopia
-git checkout v5.1.0
+git checkout v6.0.0
 make install
 
 gitopiad version --long | grep -e version -e commit -e build
-# version: 5.1.0
-# commit: 3b1ea32980e79ea74a1398f78a0388867e8d5fd4
+# version: 6.0.0
+# commit: d3d8d4d78dc435420bdacf7e33b6550b845c067a
 # build_tags: netgo,ledger
 ```
 

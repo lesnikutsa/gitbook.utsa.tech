@@ -182,3 +182,25 @@ gitopiad version --long | grep -e version -e commit
 
 systemctl restart gitopiad && journalctl -u gitopiad -f -o cat
 ```
+
+## UPD 🕊 on v6.0.0 (Update Height: 44200946)
+
+```shell
+cd
+rm -r $HOME/gitopia
+git clone https://github.com/gitopia/gitopia && cd gitopia
+git checkout v6.0.0
+make build
+$HOME/gitopia/build/gitopiad version --long | grep -e version -e commit -e build
+# version: 6.0.0
+# commit: d3d8d4d78dc435420bdacf7e33b6550b845c067a
+# build_tags: netgo,ledger
+
+# AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
+systemctl stop gitopiad
+mv $HOME/gitopia/build/gitopiad $(which gitopiad)
+gitopiad version --long | grep -e version -e commit
+# 
+
+systemctl restart gitopiad && journalctl -u gitopiad -f -o cat
+```

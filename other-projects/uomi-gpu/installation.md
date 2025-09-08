@@ -142,20 +142,19 @@ systemctl restart uomi-ai.service && journalctl -u uomi-ai.service -f
 **Download genesis**
 
 ```bash
-wget -O /usr/local/bin/genesis.json "https://github.com/Uomi-network/uomi-node/releases/download/v0.1.7/genesis.json"
+wget -O /usr/local/bin/genesis.json "https://github.com/Uomi-network/uomi-node/releases/download/v0.3.0/genesis.json"
 chmod +x /usr/local/bin/genesis.json
-
 sha256sum /usr/local/bin/genesis.json
-#ac62c78e9465fdb25fce6e98138fd497089042785ac4bac70d75d379efddfb49
+#af55c2c53693a174fc4198bb2e97e1f7aadeabca419040fb75b2d332c1ce6dc3
 ```
 
 **Download the binary file**
 
 ```bash
-wget -O /usr/local/bin/uomi "https://github.com/Uomi-network/uomi-node/releases/download/v0.2.3/uomi_ubuntu_24"
+wget -O /usr/local/bin/uomi "https://github.com/Uomi-network/uomi-node/releases/download/v0.3.0/uomi_ubuntu_24"
 chmod +x /usr/local/bin/uomi
 uomi --version
-#uomi 0.2.3-08ac2217fb9
+#uomi 0.3.0-52875cb70db
 ```
 
 **Create a wallet and save the output**

@@ -7,7 +7,7 @@
 
 **Every** `48 hours`; **pruning:** `1000`
 
-🌐 [https://share102.utsa.tech/uomi/](https://share102.utsa.tech/uomi/)
+🌐 [https://share.utsa.tech/uomi/](https://share102.utsa.tech/uomi/)
 {% endhint %}
 
 ```shell

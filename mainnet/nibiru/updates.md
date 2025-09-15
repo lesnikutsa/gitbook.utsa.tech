@@ -323,3 +323,23 @@ mv $HOME/nibiru/nibid $HOME/go/bin/
 ​
 systemctl restart nibid && journalctl -u nibid -f -o cat
 ```
+
+## UPD 🕊 on 2.7.0 (Update Height: 29328457)
+
+```shell
+cd $HOME/nibiru
+wget https://github.com/NibiruChain/nibiru/releases/download/v2.7.0/nibid_2.7.0_linux_amd64.tar.gz
+tar -zxvf nibid_2.7.0_linux_amd64.tar.gz
+chmod +x ./nibid
+rm nibid_2.7.0_linux_amd64.tar.gz
+​
+$HOME/nibiru/nibid version --long | grep -e version -e commit
+# version: 2.7.0
+# commit: 68b9b71a8619971f1c3560d9cf5e5fb222d0a58d
+​
+# AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
+systemctl stop nibid
+mv $HOME/nibiru/nibid $HOME/go/bin/
+​
+systemctl restart nibid && journalctl -u nibid -f -o cat
+```

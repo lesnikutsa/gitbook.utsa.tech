@@ -13,7 +13,7 @@ apt install curl iptables build-essential git wget jq make gcc nano tmux htop nv
 #### Install GO
 
 ```shell
-ver="1.20.3"
+ver="1.25.1"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
@@ -25,32 +25,31 @@ go version
 
 ## Node installation
 
-```shell
-git clone https://github.com/warden-protocol/wardenprotocol && cd wardenprotocol
-wget https://github.com/warden-protocol/wardenprotocol/releases/download/v0.6.3/wardend_Linux_x86_64.zip
-unzip wardend_Linux_x86_64.zip
-rm -rf wardend_Linux_x86_64.zip
-chmod +x wardend
-mv wardend /root/go/bin
+<pre class="language-shell"><code class="lang-shell">git clone https://github.com/warden-protocol/wardenprotocol &#x26;&#x26; cd wardenprotocol
+git checkout v0.7.0-rc3
+<strong>apt install -y just
+</strong>just wardend
 
+<strong>mv $HOME/wardenprotocol/build/wardend $HOME/go/bin/wardend
+</strong>
 wardend version --long | grep -e commit -e version
-# version: 0.6.3
-# commit: 346fa4ed1c04aa43e4ba52fc502c0e7c842da315
-```
+# version: v0.7.0-rc3
+# commit: 74225da97ccf237cb917d8bab24f235b8eac5502
+</code></pre>
 
 #### We initialize the node to create the necessary configuration files
 
 ```shell
-wardend init UTSA_guide --chain-id chiado_10010-1
+wardend init UTSA_guide --chain-id barra_9191-1
 ```
 
 #### Download Genesis
 
 ```shell
-wget -O $HOME/.warden/config/genesis.json "https://raw.githubusercontent.com/warden-protocol/networks/main/testnets/chiado/genesis.json"
+wget -O $HOME/.warden/config/genesis.json "https://raw.githubusercontent.com/warden-protocol/networks/main/testnets/barra/genesis.json"
 
 sha256sum ~/.warden/config/genesis.json
-# 8d6bff68b3c709f4d29c1ddae0d4b8394498911efcfdae16350c400c0e54e686
+#49f3b64f9e6ac92d13d25a38daab311ef65a11a966758e1f08e77e7b07ef2c3b
 ```
 
 #### At this stage, we can download the address book
@@ -62,21 +61,28 @@ wget -O $HOME/.warden/config/addrbook.json "https://share.utsa.tech/warden/addrb
 #### Set up node configuration
 
 ```shell
-wardend config set client chain-id chiado_10010-1
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"25000000award\"/;" ~/.warden/config/app.toml
-external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.warden/config/config.toml
-peers="b14f35c07c1b2e58c4a1c1727c89a5933739eeea@warden-testnet-peer.itrocket.net:18656,2d2c7af1c2d28408f437aef3d034087f40b85401@52.51.132.79:26656,fcaffd41eb7e3647fa953607449ff5e371c236b8@195.26.245.67:31656,5461e7642520a1f8427ffaa57f9d39cf345fcd47@54.72.190.0:26656,e1ea15d3c460eb9ace279b0b7665015d3c5d2b9e@135.181.210.171:21406"
-sed -i -e "s|^persistent_peers *=.*|persistent_peers = \"$peers\"|" $HOME/.warden/config/config.toml
-seeds="8288657cb2ba075f600911685670517d18f54f3b@warden-testnet-seed.itrocket.net:18656"
-sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.warden/config/config.toml
+
+cd $HOME/.warden/config
+sed -i.bak 's|^\s*chain-id\s*=.*|chain-id = "barra_9191-1"|' client.toml
+sed -i.bak 's|^\s*evm-chain-id\s*=.*|evm-chain-id = 9191|' app.toml
+sed -i.bak 's|^\s*minimum-gas-prices\s*=.*|minimum-gas-prices = "10award"|' app.toml
+sed -i.bak 's|^\s*seeds\s*=.*|seeds = "c489c003b7c72298840bd4411ffc98ce13e07c27@54.194.136.183:26656,4564c91423a923eaba7982e69e33aec6185d362f@54.72.5.234:26656"|' config.toml
+sed -i.bak 's|^\s*timeout_propose\s*=.*|timeout_propose = "1s"|' config.toml
+sed -i.bak 's|^\s*timeout_propose_delta\s*=.*|timeout_propose_delta = "200ms"|' config.toml
+sed -i.bak 's|^\s*timeout_prevote\s*=.*|timeout_prevote = "500ms"|' config.toml
+sed -i.bak 's|^\s*timeout_prevote_delta\s*=.*|timeout_prevote_delta = "200ms"|' config.toml
+sed -i.bak 's|^\s*timeout_precommit\s*=.*|timeout_precommit = "500ms"|' config.toml
+sed -i.bak 's|^\s*timeout_precommit_delta\s*=.*|timeout_precommit_delta = "200ms"|' config.toml
+sed -i.bak 's|^\s*timeout_commit\s*=.*|timeout_commit = "2s"|' config.toml
+sed -i.bak 's|^\s*create_empty_blocks\s*=.*|create_empty_blocks = true|' config.toml
 ```
 
 #### (OPTIONAL) Set up pruning
 
 ```shell
 pruning="custom"
-pruning_keep_recent="1000"
+pruning_keep_recent="100"
 pruning_interval="10"
 sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.warden/config/app.toml
 sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.warden/config/app.toml
@@ -164,8 +170,8 @@ nano $HOME/.warden/validator.json
 ```
 wardend tx staking create-validator $HOME/.warden/validator.json \
     --from=<key-name> \
-    --chain-id=chiado_10010-1 \
-    --fees 250000000000000award -y  --gas auto --gas-adjustment 1.6
+    --chain-id=barra_9191-1 \
+    --fees 2500award -y  --gas auto --gas-adjustment 1.6
 ```
 
 {% hint style="info" %}

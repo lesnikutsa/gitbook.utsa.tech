@@ -4,12 +4,12 @@
 
 ```shell
 cd $HOME/wardenprotocol
-curl -Ls https://github.com/skip-mev/slinky/releases/download/v1.0.5/slinky-1.0.5-linux-amd64.tar.gz > slinky-1.0.5-linux-amd64.tar.gz
-tar -xzf slinky-1.0.5-linux-amd64.tar.gz
-mv slinky-1.0.5-linux-amd64/slinky $HOME/go/bin/slinky
+curl -Ls https://github.com/skip-mev/slinky/releases/download/v1.0.12/slinky-1.0.12-linux-amd64.tar.gz > slinky-1.0.12-linux-amd64.tar.gz
+tar -xzf slinky-1.0.12-linux-amd64.tar.gz
+mv slinky-1.0.12-linux-amd64/slinky $HOME/go/bin/slinky
 
 slinky version
-1.0.5
+1.0.12
 ```
 
 **Defining our GRPC port**

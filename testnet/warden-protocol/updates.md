@@ -24,15 +24,15 @@ curl -s localhost:$PORT/consensus_state | jq '.result.round_state.height_vote_se
 Updates are available for information. Boot via State sync or Snapshot to avoid installing all updates. In this case, you must use the actual version of the binary file and genesis
 {% endhint %}
 
-## UPD 🕊 on v0.6.2 (Update Height: 2041100)
+## UPD 🕊 on v(Update Height: )
 
 ```shell
 cd $HOME/wardenprotocol
 wget -O $HOME/wardenprotocol/wardend "https://github.com/warden-protocol/wardenprotocol/releases/download/v0.6.2/wardend-0.6.2-linux-amd64"
 chmod +x $HOME/wardenprotocol/wardend
 $HOME/wardenprotocol/wardend version --long | grep -e version -e commit
-# version: 0.6.2
-# commit: 0f3f752e27e4d86594edfd98a98c12e8eba28568
+# version: 
+# commit: 
 
 # AFTER STOPPING THE NETWORK ON THE REQUIRED BLOCK!
 systemctl stop wardend
@@ -42,20 +42,3 @@ wardend version --long | grep -e version -e commit
 systemctl restart wardend && journalctl -u wardend -f -o cat
 ```
 
-## UPD 🕊 on v0.6.3 (Update Height: 3111000)
-
-```shell
-cd $HOME/wardenprotocol
-wget -O $HOME/wardenprotocol/wardend "https://github.com/warden-protocol/wardenprotocol/releases/download/v0.6.3/wardend-0.6.3-linux-amd64"
-chmod +x $HOME/wardenprotocol/wardend
-$HOME/wardenprotocol/wardend version --long | grep -e version -e commit
-# version: 0.6.3
-# commit: 346fa4ed1c04aa43e4ba52fc502c0e7c842da315
-
-# AFTER STOPPING THE NETWORK ON THE REQUIRED BLOCK!
-systemctl stop wardend
-mv $HOME/wardenprotocol/wardend $(which wardend)
-wardend version --long | grep -e version -e commit
-# version: 
-systemctl restart wardend && journalctl -u wardend -f -o cat
-```

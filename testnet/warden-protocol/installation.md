@@ -138,7 +138,7 @@ systemctl restart wardend && journalctl -u wardend -f -o cat
 1. Get your pubkey
 
 ```
-wardend tendermint show-validator
+wardend comet show-validator
 ```
 
 2. Create validator.json
@@ -158,9 +158,9 @@ nano $HOME/.warden/validator.json
   "website": "",
   "security": "",
   "details": "",
-  "commission-rate": "0.05",
-  "commission-max-rate": "0.5",
-  "commission-max-change-rate": "0.5",
+  "commission-rate": "0.1",
+  "commission-max-rate": "0.2",
+  "commission-max-change-rate": "0.01",
   "min-self-delegation": "1"
 }
 ```

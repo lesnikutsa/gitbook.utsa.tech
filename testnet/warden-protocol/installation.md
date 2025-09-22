@@ -61,6 +61,7 @@ wget -O $HOME/.warden/config/addrbook.json "https://share.utsa.tech/warden/addrb
 #### Set up node configuration
 
 ```shell
+external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.warden/config/config.toml
 
 cd $HOME/.warden/config

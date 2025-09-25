@@ -1,10 +1,4 @@
----
-description: 'Officially stated requirements: 2/4/100 ubuntu 22.04'
----
-
 # 💻 Installation
-
-
 
 ## Server preparation
 

@@ -1,10 +1,4 @@
----
-description: 'Officially stated requirements: 2/4/100 ubuntu 22.04'
----
-
 # 💻 Installation
-
-
 
 ## Server preparation
 
@@ -131,8 +125,6 @@ You will need to top up this wallet with 10,000 Star
 {% endhint %}
 
 Now our node has started to synchronize. We can check our node in [telemetry](https://telemetry.polkadot.io/#list/0x983a1a72503d6cc3636776747ec627172b51272bf45e50a355348facb67a820a)
-
-
 
 
 

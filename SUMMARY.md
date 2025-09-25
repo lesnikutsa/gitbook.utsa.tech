@@ -192,8 +192,6 @@
   * [📬 Validator migration](other-projects/tanssi-mainnet/validator-migration.md)
 * [Tanssi testnet](other-projects/tanssi-testnet/README.md)
   * [💻 Installation](other-projects/tanssi-testnet/installation.md)
-  * [⌚ Snapshot](other-projects/tanssi-testnet/snapshot.md)
-  * [📬 Validator migration](other-projects/tanssi-testnet/validator-migration.md)
 * [UOMI (GPU)](other-projects/uomi-gpu/README.md)
   * [💻 Installation](other-projects/uomi-gpu/installation.md)
   * [⌚ Snapshot](other-projects/uomi-gpu/snapshot.md)

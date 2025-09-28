@@ -66,7 +66,7 @@ sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:2
 
 cd $HOME/.warden/config
 sed -i.bak 's|^\s*chain-id\s*=.*|chain-id = "warden_8765-1"|' client.toml
-sed -i.bak 's|^\s*evm-chain-id\s*=.*|evm-chain-id = 9191|' app.toml
+sed -i.bak 's|^\s*evm-chain-id\s*=.*|evm-chain-id = 8765|' app.toml
 sed -i.bak 's|^\s*minimum-gas-prices\s*=.*|minimum-gas-prices = "10award"|' app.toml
 sed -i.bak 's|^\s*seeds\s*=.*|seeds = "c489c003b7c72298840bd4411ffc98ce13e07c27@54.194.136.183:26656,4564c91423a923eaba7982e69e33aec6185d362f@54.72.5.234:26656"|' config.toml
 sed -i.bak 's|^\s*timeout_propose\s*=.*|timeout_propose = "1s"|' config.toml

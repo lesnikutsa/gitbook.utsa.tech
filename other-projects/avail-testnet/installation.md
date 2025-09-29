@@ -22,13 +22,13 @@ apt update && apt upgrade -y
 ```shell
 mkdir -p $HOME/.avail && cd $HOME/.avail
 
-wget https://github.com/availproject/avail/releases/download/v2.3.2.0/x86_64-ubuntu-2204-avail-node.tar.gz
+wget https://github.com/availproject/avail/releases/download/v2.3.4.0/x86_64-ubuntu-2204-avail-node.tar.gz
 tar -xvf x86_64-ubuntu-2204-avail-node.tar.gz
 mv avail-node /usr/bin/avail
 rm -rf x86_64-ubuntu-2204-avail-node.tar.gz
 
 avail --version
-# avail 2.3.2-5b22f419256
+# avail 2.3.4-0ad548d4817
 ```
 
 {% hint style="warning" %}

@@ -46,10 +46,10 @@ wardend init UTSA_guide --chain-id warden_8765-1
 #### Download Genesis
 
 ```shell
-wget -O $HOME/.warden/config/genesis.json ""
+wget -O $HOME/.warden/config/genesis.json "https://raw.githubusercontent.com/warden-protocol/networks/refs/heads/main/mainnet/genesis.json"
 
 sha256sum ~/.warden/config/genesis.json
-#
+#c64cf5e8031374f93e203cc9b34424c4313eece7e430a520fb14d3e435d0ce29
 ```
 
 #### At this stage, we can download the address book
@@ -68,7 +68,7 @@ cd $HOME/.warden/config
 sed -i.bak 's|^\s*chain-id\s*=.*|chain-id = "warden_8765-1"|' client.toml
 sed -i.bak 's|^\s*evm-chain-id\s*=.*|evm-chain-id = 8765|' app.toml
 sed -i.bak 's|^\s*minimum-gas-prices\s*=.*|minimum-gas-prices = "10award"|' app.toml
-sed -i.bak 's|^\s*seeds\s*=.*|seeds = "c489c003b7c72298840bd4411ffc98ce13e07c27@54.194.136.183:26656,4564c91423a923eaba7982e69e33aec6185d362f@54.72.5.234:26656"|' config.toml
+sed -i.bak 's|^\s*seeds\s*=.*|seeds = "7dbf2c58286b59aae1d9c121f1cee59fc21a59ef@54.220.127.230:26656,02810bc9ed25af587213a4ddb1fa4ab3a0e9978d@54.74.49.211:26656,e5ce023918478f61a3606e93b9642ca24e027328@63.33.179.20:26656"|' config.toml
 sed -i.bak 's|^\s*timeout_propose\s*=.*|timeout_propose = "1s"|' config.toml
 sed -i.bak 's|^\s*timeout_propose_delta\s*=.*|timeout_propose_delta = "200ms"|' config.toml
 sed -i.bak 's|^\s*timeout_prevote\s*=.*|timeout_prevote = "500ms"|' config.toml
@@ -171,7 +171,7 @@ nano $HOME/.warden/validator.json
 ```
 wardend tx staking create-validator $HOME/.warden/validator.json \
     --from=<key-name> \
-    --chain-id=barra_9191-1 \
+    --chain-id=warden_8765-1 \
     --fees 2500award -y  --gas auto --gas-adjustment 1.6
 ```
 

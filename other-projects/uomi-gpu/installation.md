@@ -151,10 +151,10 @@ sha256sum /usr/local/bin/genesis.json
 **Download the binary file**
 
 ```bash
-wget -O /usr/local/bin/uomi "https://github.com/Uomi-network/uomi-node/releases/download/v0.3.4/uomi_ubuntu_24_v0.3.4"
+wget -O /usr/local/bin/uomi "https://github.com/Uomi-network/uomi-node/releases/download/v0.3.6/uomi_ubuntu_24_v0.3.6"
 chmod +x /usr/local/bin/uomi
 uomi --version
-#uomi uomi 0.3.4-21d4e7cbaba
+#uomi uomi 0.3.6-d4be41f647b
 ```
 
 **Create a wallet and save the output**

@@ -1,11 +1,9 @@
 # 💻 Installation
 
-{% hint style="info" %}
-This guide uses the RocksDB database, which is the default option
+{% hint style="warning" %}
+Important: Default deployment via docker-compose is extremely insecure, so ensure that only you can access your wallet at http://wallet.localhost/
 
-In the future, it is recommended to switch to the faster and more efficient ParityDB option. Please note that ParityDB is still experimental and should not be used in production. If you want to test ParityDB, you can add the --database paritydb flag
-
-Switching between backend databases will require resyncing
+If you leave ports open, anyone can access your wallet with your IP address. Please create an auth token or close the ports in Docker!
 {% endhint %}
 
 ## Server preparation
@@ -15,7 +13,7 @@ apt update && apt upgrade -y
 ```
 
 ```shell
-apt install curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev libgmp3-dev tar clang bsdmainutils ncdu unzip llvm libudev-dev make protobuf-compiler lz4 -y
+apt install curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
 ```
 
 **Install Docker**
@@ -24,48 +22,64 @@ apt install curl iptables build-essential git wget jq make gcc nano tmux htop nv
 . <(wget -qO- https://raw.githubusercontent.com/SecorD0/utils/main/installers/docker.sh)
 ```
 
-
-
 ## Installing
 
+**Create the necessary directories. We'll use a new directory for each new version**
+
 ```shell
-mkdir -p $HOME/.polkadot
-
-chown -R $(id -u):$(id -g) $HOME/.polkadot
-
-# open the ports used
-ufw allow 30333
+mkdir -p ~/.canton
+mkdir -p ~/.canton/0.4.19
+cd ~/.canton/0.4.19
 ```
 
-Polkadot/kusama versions - [https://hub.docker.com/r/parity/polkadot/tags](https://hub.docker.com/r/parity/polkadot/tags)
-
-{% hint style="info" %}
-Keep in mind that when running polkadot in docker, the process by default listens only on localhost. If you want to connect to your node services (rpc, websockets and prometheus), then you need to make sure you start your node using --rpc-external --ws-external and --prometheus-external
-{% endhint %}
-
-{% hint style="info" %}
-IMPORTANT - ⚠️ BEEFY is enabled on Westend and Kusama ⚠️ https://github.com/paritytech/polkadot/pull/7661 BEEFY is a consensus protocol that will help with connecting to ethereum or kusama <> polkadot bridging. BEEFY is currently enabled by default and conflicts with sync warp when the --validator flag is enabled Validators using sync warp for Kusama and Westend need to disable BEEFY by adding the --no-beefy flag or remove the --sync=warp flag
-{% endhint %}
-
-**Launch docker after specifying the name of the validator**
+**Download the archive from docker-compose**
 
 ```bash
- docker run -dit \
---name polkadot_node \
---restart always \
---network host \
--v $HOME/.polkadot:/data -u $(id -u ${USER}):$(id -g ${USER}) \
-parity/polkadot:latest --base-path /data \
---validator --name "<moniker>" \
---public-addr /ip4/$(wget -qO- eth0.me)/tcp/30333 \
---port 30333 --rpc-port 9933 --prometheus-port 9615 \
---telemetry-url "wss://telemetry-backend.w3f.community/submit/ 1" \
---telemetry-url "wss://telemetry.polkadot.io/submit/ 0"
+wget https://github.com/digital-asset/decentralized-canton-sync/releases/download/v0.4.19/0.4.19_splice-node.tar.gz
+tar xzvf 0.4.19_splice-node.tar.gz
+cd ~/.canton/0.4.19/splice-node/docker-compose/validator
 ```
 
-Now the node should appear in telemetry
+**We explicitly specify the version for correct assembly**
 
+```bash
+export IMAGE_TAG=0.4.19
+```
 
+To launch a node, we need to obtain an access token. For Devnet, we can obtain one ourselves; for Testnet and Mainnet, we need to obtain one from a sponsor
 
+Getting a token for DEVNET (valid for 1 hour)
 
+We use it the first time we run it. For subsequent launches, we delete the token and leave the -o ""
+
+```bash
+curl -X POST https://sv.sv-1.dev.global.canton.network.sync.global/api/sv/v0/devnet/onboard/validator/prepare
+```
+
+**Launching the node**
+
+```bash
+./start.sh -s "<SPONSOR_SV_URL>" -o "<ONBOARDING_SECRET>" -p "<party_hint>" -m "<MIGRATION_ID>" -w
+```
+
+{% hint style="success" %}
+**Where:**
+
+**\<SPONSOR\_SV\_URL>** = https://sv.sv-1.dev.global.canton.network.sync.global
+
+**\<ONBOARDING\_SECRET>** = Your Devnet token \<party\_hint> = Your validator name (example: Val-validator-1)
+
+**\<MIGRATION\_ID>** = 0 for Devnet (see here - https://sync.global/sv-network/)
+{% endhint %}
+
+**After a successful launch, you can check the logs**
+
+```bash
+cd ~/.canton/0.4.19/splice-node/docker-compose/validator
+docker compose logs -f validator
+```
+
+<figure><img src="../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
+
+Please note that the validator can be stopped with the `./stop.sh` command and restarted with the same start.sh command as above. Subsequent invocations can omit the token and leave the field blank, but the `-o` flag is still required, so you must specify the `-o ""` argument
 

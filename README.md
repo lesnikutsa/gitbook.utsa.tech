@@ -14,7 +14,7 @@ In addition to protecting the networks in the mainnet through validation, we run
 
 * [Atomone](https://exp.utsa.tech/atomone/staking/atonevaloper1982jsr4msdppq0azc3qhf80ngkrsjyqmgepkyk)
 * [Aura (Genesis validator)](https://exp.utsa.tech/aura/staking/auravaloper1vy9qvad4rpczx6r5rwlqvn43l4mkl283m8gk4p)
-* Canton networ
+* Canton Network
 * [Dora](https://exp.utsa.tech/dora/staking/doravaloper12yk434ut3un4wx0rult2aww89rsrel8nhmp387)
 * [Dymension (Genesis validator)](https://exp.utsa.tech/dymension/staking/dymvaloper1taava3hdv33ps7es7yvwjx7x08lzz3s2mqfp6v)
 * [Gitopia (Genesis validator)](https://explorer.stavr.tech/gitopia-m/staking/gitopiavaloper1ae4aurwv0jeccztqgr0s2znyrqlm4jj8hxv908)

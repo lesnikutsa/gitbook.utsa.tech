@@ -14,7 +14,7 @@ In addition to protecting the networks in the mainnet through validation, we run
 
 * [Atomone](https://exp.utsa.tech/atomone/staking/atonevaloper1982jsr4msdppq0azc3qhf80ngkrsjyqmgepkyk)
 * [Aura (Genesis validator)](https://exp.utsa.tech/aura/staking/auravaloper1vy9qvad4rpczx6r5rwlqvn43l4mkl283m8gk4p)
-* Canton Network
+* [Canton Network](https://lighthouse.devnet.cantonloop.com/validator/UTSA-validator-1%3A%3A12206ca905c382c4df72fd9bbaa54648c88e7d5a45b06a873a3a70858d5c6a1d1965)
 * [Dora](https://exp.utsa.tech/dora/staking/doravaloper12yk434ut3un4wx0rult2aww89rsrel8nhmp387)
 * [Dymension (Genesis validator)](https://exp.utsa.tech/dymension/staking/dymvaloper1taava3hdv33ps7es7yvwjx7x08lzz3s2mqfp6v)
 * [Gitopia (Genesis validator)](https://explorer.stavr.tech/gitopia-m/staking/gitopiavaloper1ae4aurwv0jeccztqgr0s2znyrqlm4jj8hxv908)
@@ -25,14 +25,14 @@ In addition to protecting the networks in the mainnet through validation, we run
 * [Qiucksilver](https://explorer.stavr.tech/quicksilver-mainnet/staking/quickvaloper1sztng2ln0wq7thqqyrjd02tc4hh6yu36m4l67x)
 * [Provenance](https://www.mintscan.io/provenance/validators/pbvaloper19r822ud3e6j7vv4llk569fxlt3778kw7ynlmve)
 * [Realio (Genesis validator)](https://explorer.stavr.tech/realio-mainnet/staking/realiovaloper1pgpx7sqfh5tnuktlhjj39u4hc85wc6jelk9t74)
-* Somnia
+* [Somnia](https://testnet.somnia.exploreme.pro/validators/0x54f8a9012dac90dc2314bb1d00f2d6a73aef9557)
 * [Teritori (Genesis validator)](https://exp.utsa.tech/teritori/staking/torivaloper1kunzrdg6u8gql4faj33lstghhqdtp59e0xgggy)
 * [Uptick](https://exp.utsa.tech/uptick/staking/uptickvaloper1wfaarzcy2rpxr9564tlsyktcf9c75gf0zc57p2)
 * [Zenrock](https://exp.utsa.tech/zenrock/staking/zenvaloper13lk3aefur4847rvkgzzfje5ff9uwwmtkkl5sq9)
 
 
 
-<mark style="color:orange;">**POLKADOT**</mark>
+<mark style="color:orange;">**Polkadot**</mark>
 
 * **Polkadot** - 15wnPRex2QwgWNCMRVSqgqp2syDn8Gf6LPGGabRhA8zoohpt
 * **Kusama** - D5khA3qGvd8SDXepSrCGmYRWbNUzdJpjEyg6m1mFT7VtHpw

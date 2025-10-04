@@ -6,8 +6,6 @@
 
 In addition to protecting the networks in the mainnet through validation, we run IBC, provide RPC, API, Statesync, Addrbook, Explorer, write manuals, maintain high uptime and help the community
 
-Our supported relayers - [https://relayers.smartstake.io/relayer/A0B5FF00B5460153](https://relayers.smartstake.io/relayer/A0B5FF00B5460153)&#x20;
-
 **lesnik | UTSA** validator is ready for long-term cooperation and offers!
 
 ***

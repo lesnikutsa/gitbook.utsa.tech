@@ -29,12 +29,12 @@ go version
 
 ```shell
 git clone https://github.com/arkeonetwork/arkeo && cd arkeo
-git checkout v1.0.14
+git checkout v1.0.15
 make install
 
 arkeod version --long | grep -e version -e commit
-# version: v1.0.14
-# commit: 
+# version: v1.0.15
+# commit: b9ccadb59ba761b1a2c3497cae141aa7bdacd7dc
 ```
 
 #### We initialize the node to create the necessary configuration files

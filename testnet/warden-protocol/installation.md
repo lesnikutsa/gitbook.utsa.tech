@@ -26,15 +26,23 @@ go version
 ## Node installation
 
 <pre class="language-shell"><code class="lang-shell">git clone https://github.com/warden-protocol/wardenprotocol &#x26;&#x26; cd wardenprotocol
-git checkout v0.7.0-rc3
+git checkout v0.7.1
 <strong>apt install -y just
-</strong>just wardend
+</strong>#just wardend
+
+go build -tags "netgo" -trimpath -ldflags "
+    -s -w
+    -X github.com/cosmos/cosmos-sdk/version.Name=warden
+    -X github.com/cosmos/cosmos-sdk/version.AppName=wardend
+    -X github.com/cosmos/cosmos-sdk/version.Version=v0.7.1
+    -X github.com/cosmos/cosmos-sdk/version.Commit=028207012cd43509ce9a60e31df22b476b00de1e" \
+    -o ./build/wardend ./cmd/wardend
 
 <strong>mv $HOME/wardenprotocol/build/wardend $HOME/go/bin/wardend
 </strong>
 wardend version --long | grep -e commit -e version
-# version: v0.7.0-rc3
-# commit: 74225da97ccf237cb917d8bab24f235b8eac5502
+# version: v0.7.1
+# commit: 028207012cd43509ce9a60e31df22b476b00de1e
 </code></pre>
 
 #### We initialize the node to create the necessary configuration files

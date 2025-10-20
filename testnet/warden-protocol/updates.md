@@ -24,19 +24,29 @@ curl -s localhost:$PORT/consensus_state | jq '.result.round_state.height_vote_se
 Updates are available for information. Boot via State sync or Snapshot to avoid installing all updates. In this case, you must use the actual version of the binary file and genesis
 {% endhint %}
 
-## UPD 🕊 on v(Update Height: )
+## UPD 🕊 on v0.7.0 (Update Height: 1233000)
 
 ```shell
 cd $HOME/wardenprotocol
-wget -O $HOME/wardenprotocol/wardend "https://github.com/warden-protocol/wardenprotocol/releases/download/v0.6.2/wardend-0.6.2-linux-amd64"
-chmod +x $HOME/wardenprotocol/wardend
-$HOME/wardenprotocol/wardend version --long | grep -e version -e commit
-# version: 
-# commit: 
+git pull
+git checkout v0.7.0
+#just wardend
+
+go build -tags "netgo" -trimpath -ldflags "
+    -s -w
+    -X github.com/cosmos/cosmos-sdk/version.Name=warden
+    -X github.com/cosmos/cosmos-sdk/version.AppName=wardend
+    -X github.com/cosmos/cosmos-sdk/version.Version=v0.7.0
+    -X github.com/cosmos/cosmos-sdk/version.Commit=bbb3d8ef4d6041827184a7b5a4d0de7ab6976e18" \
+    -o ./build/wardend ./cmd/wardend
+
+$HOME/wardenprotocol/build/wardend version --long | grep -e commit -e version
+# version: v0.7.0
+# commit: bbb3d8ef4d6041827184a7b5a4d0de7ab6976e18
 
 # AFTER STOPPING THE NETWORK ON THE REQUIRED BLOCK!
 systemctl stop wardend
-mv $HOME/wardenprotocol/wardend $(which wardend)
+mv $HOME/wardenprotocol/build/wardend $(which wardend)
 wardend version --long | grep -e version -e commit
 # version: 
 systemctl restart wardend && journalctl -u wardend -f -o cat

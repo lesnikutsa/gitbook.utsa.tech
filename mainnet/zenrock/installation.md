@@ -56,8 +56,8 @@ chmod +x zenrockd
 mv $HOME/zenrock/zenrockd $HOME/go/bin/
 
 zenrockd version --long | grep -e version -e commit
-# version: 6.54.0
-# commit: 6017dabc6b610b9e60900c729d024fa6ac79593b
+# version: 6.55.0
+# commit: 6848d9259103f87d48e53870a0ee43efc59bf478
 ```
 
 **Initialize the node to create the necessary configuration files**

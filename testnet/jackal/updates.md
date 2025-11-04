@@ -575,3 +575,23 @@ canined version --long | grep -e version -e commit
 
 systemctl restart canined &#x26;&#x26; journalctl -u canined -f -o cat
 </code></pre>
+
+## UPD 🕊 on v5.1.0-alpha.2 (Update Height: 16392500)
+
+<pre class="language-shell"><code class="lang-shell">cd
+rm -r canine-chain
+git clone https://github.com/JackalLabs/canine-chain &#x26;&#x26; cd canine-chain
+git checkout v5.1.0-alpha.2
+make build
+$HOME/canine-chain/build/canined version --long | grep -e version -e commit -e build
+#version: 5.1.0-alpha.2
+#commit: ae9a747f51a5ec1120a85e15ed23d383624e7dbd
+
+# AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
+<strong>systemctl stop canined
+</strong>mv $HOME/canine-chain/build/canined $(which canined)
+canined version --long | grep -e version -e commit
+# 
+
+systemctl restart canined &#x26;&#x26; journalctl -u canined -f -o cat
+</code></pre>

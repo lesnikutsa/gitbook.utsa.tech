@@ -364,7 +364,7 @@ mv $HOME/nibiru/nibid $HOME/go/bin/
 systemctl restart nibid && journalctl -u nibid -f -o cat
 ```
 
-## UPD 🕊 on 2.9.0 (Update Height: 32061789)
+## UPD 🕊 on 2.9.0 (Update Height: 32162336)
 
 ```shell
 cd $HOME/nibiru

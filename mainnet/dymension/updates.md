@@ -65,3 +65,34 @@ dymd version --long | grep -e version -e commit
 
 systemctl restart dymd && journalctl -u dymd -f -o cat
 ```
+
+## UPD 🕊 on v4.0.0 (Update Height: 10192266)
+
+```shell
+cd $HOME/dymension
+git pull
+git checkout v4.0.0
+make build
+$HOME/dymension/build/dymd version --long | grep -e version -e commit
+# version: 5bbee2a0c74474bc159bd28bd2f70782e2352dcd
+# commit: v4.0.0
+
+# AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
+systemctl stop dymd
+mv $HOME/dymension/build/dymd $(which dymd)
+dymd version --long | grep -e version -e commit
+# 
+
+# edit systemd
+nano /etc/systemd/system/dymd.service
+#WorkingDirectory=/root/.dymension
+
+# edit timeout
+timeout_propose="1.8s"
+timeout_commit="500ms"
+
+sed -i "s/^timeout_propose *=.*/timeout_propose = \"$timeout_propose\"/" $HOME/.dymension/config/config.toml
+sed -i "s/^timeout_commit *=.*/timeout_commit = \"$timeout_commit\"/" $HOME/.dymension/config/config.toml
+
+systemctl restart dymd && journalctl -u dymd -f -o cat
+```

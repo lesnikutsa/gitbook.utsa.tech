@@ -1,12 +1,12 @@
-# 𝐥𝐞𝐬𝐧𝐢𝐤 | 𝐔𝐓𝐒𝐀
+# 𝐔𝐓𝐒𝐀
 
 <figure><img src=".gitbook/assets/500x500.png" alt=""><figcaption></figcaption></figure>
 
-**lesnik | UTSA** - trustworthy and high performance validator
+**UTSA** - trustworthy and high performance validator
 
 In addition to protecting the networks in the mainnet through validation, we run IBC, provide RPC, API, Statesync, Addrbook, Explorer, write manuals, maintain high uptime and help the community
 
-**lesnik | UTSA** validator is ready for long-term cooperation and offers!
+**UTSA** validator is ready for long-term cooperation and offers!&#x20;
 
 ***
 
@@ -62,4 +62,4 @@ In addition to protecting the networks in the mainnet through validation, we run
 * **Twitter** - @lesnik13utsa
 * **Github** - [https://github.com/lesnikutsa](https://github.com/lesnikutsa)
 
-\
+<br>

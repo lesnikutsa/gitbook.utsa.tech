@@ -1,6 +1,6 @@
 # Table of contents
 
-* [𝐥𝐞𝐬𝐧𝐢𝐤 | 𝐔𝐓𝐒𝐀](README.md)
+* [𝐔𝐓𝐒𝐀](README.md)
 * [🌐 Cosmos WIKI](cosmos-wiki/README.md)
   * [🔧 Creating / Editing a Validator](cosmos-wiki/creating-editing-a-validator.md)
   * [📨 Cosmos / governance](cosmos-wiki/cosmos-governance.md)

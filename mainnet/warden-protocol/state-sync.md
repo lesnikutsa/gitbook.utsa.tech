@@ -29,12 +29,12 @@ mv $HOME/.warden/priv_validator_state.json.backup $HOME/.warden/data/priv_valida
 
 ```shell
 # add peer
-peers=""
+peers="6089ea41e8003ebf81e22f1f78d7558c5e20b302@144.76.29.90:61256"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.warden/config/config.toml
 ```
 
-<pre class="language-shell"><code class="lang-shell"><strong>#SNAP_RPC=https://t-warden.rpc.utsa.tech:443
-</strong>SNAP_RPC=https://rpc.barra.wardenprotocol.org:443
+```shell
+SNAP_RPC=https://m-warden.rpc.utsa.tech:443
 
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 2000)); \
@@ -46,7 +46,7 @@ sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
 s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.warden/config/config.toml
-</code></pre>
+```
 
 {% hint style="info" %}
 after echo <mark style="color:blue;">$LATEST\_HEIGHT $BLOCK\_HEIGHT $TRUST\_HASH</mark> you should see something like this

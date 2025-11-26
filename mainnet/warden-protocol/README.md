@@ -17,8 +17,8 @@
 ## Public services
 
 * **Guide (RU)**: [https://teletype.in/@lesnik13utsa/Pw2GAVJJ\_7y](https://teletype.in/@lesnik13utsa/Pw2GAVJJ_7y)
-* **RPC**: [https://t-warden.rpc.utsa.tech/](https://t-warden.rpc.utsa.tech/)
-* **API**: [https://t-warden.api.utsa.tech/](https://t-warden.api.utsa.tech/)
+* **RPC**: [https://m-warden.rpc.utsa.tech](https://m-warden.rpc.utsa.tech)
+* **API**: [https://m-warden.api.utsa.tech](https://m-warden.api.utsa.tech)
 * **Explorer**: [https://exp.utsa.tech/warden/staking](https://exp.utsa.tech/warden/staking)
 * **Restake**:&#x20;
 
@@ -27,7 +27,7 @@
 You can use peer **lesnik | UTSA** for fast connection or state sync
 
 ```shell
-peers=""
+peers="6089ea41e8003ebf81e22f1f78d7558c5e20b302@144.76.29.90:61256"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.warden/config/config.toml
 ```
 

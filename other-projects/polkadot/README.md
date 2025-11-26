@@ -8,6 +8,8 @@ description: Polkadot - Decentralized nodes
 
 * **Guide (RU)**: [https://teletype.in/@lesnik13utsa/NTqMZT4YBKa](https://teletype.in/@lesnik13utsa/NTqMZT4YBKa)
 * **Validator UTSA:** 15wnPRex2QwgWNCMRVSqgqp2syDn8Gf6LPGGabRhA8zoohpt
+* **RPC relay:** [https://polkadot.relay.utsa.tech](https://polkadot.relay.utsa.tech)
+* **Explorer relay:** [https://polkadot.js.org/apps/?rpc=wss://polkadot.relay.utsa.tech#/explorer](https://polkadot.js.org/apps/?rpc=wss://polkadot.relay.utsa.tech#/explorer)
 
 ## **Details**
 

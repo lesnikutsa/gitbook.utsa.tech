@@ -17,7 +17,7 @@ mkdir -p $HOME/.zrchain/sidecar/keys
 **Install the binary file**
 
 ```shell
-wget -O $HOME/.zrchain/sidecar/bin/zenrock-sidecar https://github.com/Zenrock-Foundation/zrchain/releases/download/v6.66.0/validator_sidecar
+wget -O $HOME/.zrchain/sidecar/bin/zenrock-sidecar https://github.com/Zenrock-Foundation/zrchain/releases/download/v6.73.0/validator_sidecar
 chmod +x $HOME/.zrchain/sidecar/bin/zenrock-sidecar
 ```
 

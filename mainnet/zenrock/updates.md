@@ -272,3 +272,24 @@ zenrockd version --long | grep -e version -e commit
 
 systemctl restart zenrockd && journalctl -u zenrockd -f -o cat
 ```
+
+## UPD 🕊 on v6.73.0 (Update Height: 5691580)
+
+```shell
+cd $HOME/zenrock
+wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v6.73.0/zenrockd.zip
+unzip zenrockd.zip
+chmod +x zenrockd
+$HOME/zenrock/zenrockd version --long | grep -e version -e commit
+# version: 6.73.0
+# commit: 11d7292a3cc6e8d0b6271962d156bfcdc922f04f
+
+#AFTER STOPPING THE NETWORK ON THE REQUIRED BLOCK!!!
+systemctl stop zenrockd
+mv $HOME/zenrock/zenrockd $(which zenrockd)
+zenrockd version --long | grep -e version -e commit
+#
+#
+
+systemctl restart zenrockd && journalctl -u zenrockd -f -o cat
+```

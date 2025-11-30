@@ -10,6 +10,8 @@ description: Polkadot - Decentralized nodes
 * **Validator UTSA:** 15wnPRex2QwgWNCMRVSqgqp2syDn8Gf6LPGGabRhA8zoohpt
 * **RPC relay:** [https://polkadot.relay.utsa.tech](https://polkadot.relay.utsa.tech)
 * **Explorer relay:** [https://polkadot.js.org/apps/?rpc=wss://polkadot.relay.utsa.tech#/explorer](https://polkadot.js.org/apps/?rpc=wss://polkadot.relay.utsa.tech#/explorer)
+* **RPC AssetHub:** https://polkadot.assethub.utsa.tech
+* **Explorer AssetHub:** https://polkadot.js.org/apps/?rpc=wss://polkadot.assethub.utsa.tech#/explorer
 
 ## **Details**
 

@@ -9,8 +9,9 @@ apt update && apt upgrade -y
 ```shell
 apt install curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev libgmp3-dev tar clang bsdmainutils ncdu unzip llvm libudev-dev make protobuf-compiler libclang-dev -y
 
-ufw allow 30335
 ufw allow 30333
+ufw allow 30334
+ufw allow 30335
 ```
 
 ## Installing&#x20;
@@ -26,11 +27,11 @@ mkdir /root/.tanssi-data/dancelight-data
 **Downloading the binary file**
 
 ```bash
-wget https://github.com/moondance-labs/tanssi/releases/download/v0.15.0-para/tanssi-node && chmod +x ./tanssi-node
+wget https://github.com/moondance-labs/tanssi/releases/download/v0.16.0-para/tanssi-node && chmod +x ./tanssi-node
 mv ./tanssi-node /root/.tanssi-data/bin
 
 /root/.tanssi-data/bin/tanssi-node --version
-#tanssi-node 0.15.0-fd3014ceef7
+#tanssi-node 0.16.0-11ebe106220
 ```
 
 **Downloading the genesis file**

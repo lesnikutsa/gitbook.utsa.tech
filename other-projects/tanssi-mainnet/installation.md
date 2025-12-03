@@ -26,11 +26,11 @@ mkdir /root/.tanssi-data/tanssi-data
 **Downloading the binary file**
 
 ```bash
-wget https://github.com/moondance-labs/tanssi/releases/download/v0.15.0-para/tanssi-node && chmod +x ./tanssi-node
+wget https://github.com/moondance-labs/tanssi/releases/download/v0.16.0-para/tanssi-node && chmod +x ./tanssi-node
 mv ./tanssi-node /root/.tanssi-data/bin
 
 /root/.tanssi-data/bin/tanssi-node --version
-#tanssi-node 0.15.0-fd3014ceef7
+#tanssi-node 0.16.0-11ebe106220
 ```
 
 **Downloading the genesis file**

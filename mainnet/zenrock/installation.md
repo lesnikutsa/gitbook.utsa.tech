@@ -48,18 +48,17 @@ mkdir -p zenrock && cd zenrock
 
 #### Install zenrock
 
-```bash
-cd $HOME/zenrock
-wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v6.73.0/zenrockd.zip
+<pre class="language-bash"><code class="lang-bash"><strong>cd $HOME/zenrock
+</strong>wget https://github.com/Zenrock-Foundation/zrchain/releases/download/v6.91.0/zenrockd.zip
 unzip zenrockd.zip
 
 chmod +x zenrockd
 mv $HOME/zenrock/zenrockd $HOME/go/bin/
 
 zenrockd version --long | grep -e version -e commit
-# version: 6.73.0
-# commit: 11d7292a3cc6e8d0b6271962d156bfcdc922f04f
-```
+# version: 6.91.0
+# commit: 1f9e27a90c6b7e6a945cfe6a791c340043113604
+</code></pre>
 
 **Initialize the node to create the necessary configuration files**
 

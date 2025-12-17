@@ -72,7 +72,7 @@ systemctl restart provenanced && journalctl -u provenanced -f -o cat
 
 ## UPD 🕊 on v1.24.0 (Update Height: 24410888)
 
-```
+```bash
 export PIO_HOME=~/.provenanced
 cd $HOME/provenance
 git pull
@@ -95,7 +95,7 @@ systemctl restart provenanced && journalctl -u provenanced -f -o cat
 
 ## UPD 🕊 on v1.25.1 (Update Height: 25098777)
 
-```
+```bash
 export PIO_HOME=~/.provenanced
 cd $HOME/provenance
 git pull
@@ -117,7 +117,7 @@ systemctl restart provenanced && journalctl -u provenanced -f -o cat
 
 ## UPD 🕊 on v1.26.0 (Update Height: 27859555)
 
-```
+```bash
 export PIO_HOME=~/.provenanced
 cd $HOME/provenance
 git pull
@@ -127,6 +127,28 @@ make build
 $HOME/provenance/build/provenanced version --long | grep -e version -e commit
 # v1.26.0
 # commit: 5db988ff
+
+# AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
+systemctl stop provenanced
+mv $HOME/provenance/build/provenanced $(which provenanced)
+provenanced version --long | grep -e version -e commit
+# 
+
+systemctl restart provenanced && journalctl -u provenanced -f -o cat
+```
+
+## UPD 🕊 on v1.27.0 (Update Height: 28136222)
+
+```bash
+export PIO_HOME=~/.provenanced
+cd $HOME/provenance
+git pull
+git checkout v1.27.0
+
+make build
+$HOME/provenance/build/provenanced version --long | grep -e version -e commit
+# v1.27.0
+# commit: 8aafd39d
 
 # AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
 systemctl stop provenanced

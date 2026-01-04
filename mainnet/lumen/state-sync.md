@@ -55,7 +55,7 @@ after echo <mark style="color:blue;">$LATEST\_HEIGHT $BLOCK\_HEIGHT $TRUST\_HASH
 
 ```shell
 # restart node
-systemctl restart canined && journalctl -u canined -f -o cat
+systemctl restart lumend && journalctl -u lumend -f -o cat
 ```
 
 

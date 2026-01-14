@@ -143,12 +143,12 @@ systemctl restart provenanced && journalctl -u provenanced -f -o cat
 export PIO_HOME=~/.provenanced
 cd $HOME/provenance
 git pull
-git checkout v1.27.0
+git checkout v1.27.1
 
 make build
 $HOME/provenance/build/provenanced version --long | grep -e version -e commit
-# v1.27.0
-# commit: 8aafd39d
+# v1.27.1
+# commit: 43b0da38
 
 # AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
 systemctl stop provenanced

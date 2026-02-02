@@ -108,12 +108,12 @@ wardend version --long | grep -e version -e commit
 systemctl restart wardend && journalctl -u wardend -f -o cat
 ```
 
-## UPD 🕊 on v0.7.4 (Update Height: 3265800)
+## UPD 🕊 on v0.7.4-2 (Update Height: 3265800)
 
 ```shell
 cd $HOME/wardenprotocol
 git pull
-git checkout v0.7.4
+git checkout v0.7.4-2
 #just wardend
 
 go build -tags "netgo" -trimpath -ldflags "

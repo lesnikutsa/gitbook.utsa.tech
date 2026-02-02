@@ -38,6 +38,36 @@ journalctl -u lumend -f -o cat
 
 At this point, a full node will be running on the server, and you can leave everything as is or make any necessary changes through the config files
 
+**To install the latest binary file, you need to do the following:**
+
+```bash
+systemctl stop lumend
+
+sudo sed -i 's|^ExecStart=/root/validator-kit/bin/lumend start --home /root/.lumen \\|ExecStart=/usr/local/bin/lumend start --home /root/.lumen \\|' /etc/systemd/system/lumend.service
+systemctl daemon-reload
+
+SEEDS="0a4bbe418246ca2b9d1dec063ea1cb8898c01763@77.42.72.251:26656,1a5cbd9d580f502f5af5ecc5762553da7a7c6584@65.21.253.43:26656,825673007163d80295eefc5c00ff54aee7b33a67@seed.blocksync.me:34656"
+
+sed -i \
+  -e "s/^seeds *=.*/seeds = \"$SEEDS\"/" \
+  -e "s/^pex *=.*/pex = true/" \
+  /root/.lumen/config/config.toml
+
+###
+curl -L https://github.com/network-lumen/blockchain/releases/download/v1.4.0/linux-amd64-v1.4.0 -o lumend
+
+chmod +x lumend
+mv -f lumend /usr/local/bin/lumend
+
+lumend version --long
+commit: 292a8fa
+version: v1.4.0
+
+systemctl restart lumend && journalctl -u lumend -f -o cat
+```
+
+
+
 **If the node can't find peers, update the address book**
 
 ```shell

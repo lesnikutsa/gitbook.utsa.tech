@@ -34,15 +34,15 @@ go build -tags "netgo" -trimpath -ldflags "
     -s -w
     -X github.com/cosmos/cosmos-sdk/version.Name=warden
     -X github.com/cosmos/cosmos-sdk/version.AppName=wardend
-    -X github.com/cosmos/cosmos-sdk/version.Version=v0.7.4
-    -X github.com/cosmos/cosmos-sdk/version.Commit=5fb2dc91b267f3ab39d19dcc72e5b5e721f916a6" \
+    -X github.com/cosmos/cosmos-sdk/version.Version=v1.0.0
+    -X github.com/cosmos/cosmos-sdk/version.Commit=c4ebc30dc4db02e7fcf551d43151781d10a9f184" \
     -o ./build/wardend ./cmd/wardend
 
 <strong>mv $HOME/wardenprotocol/build/wardend $HOME/go/bin/wardend
 </strong>
 wardend version --long | grep -e commit -e version
-# version: v0.7.4
-# commit: 5fb2dc91b267f3ab39d19dcc72e5b5e721f916a6
+# version: v1.0.0
+# commit: c4ebc30dc4db02e7fcf551d43151781d10a9f184
 </code></pre>
 
 #### We initialize the node to create the necessary configuration files

@@ -13,7 +13,7 @@ apt install curl iptables build-essential git wget jq make gcc nano tmux htop nv
 #### Install GO
 
 ```shell
-ver="1.21.13" && \
+ver="1.22.10" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
@@ -27,12 +27,12 @@ go version
 
 ```shell
 git clone https://github.com/atomone-hub/atomone && cd atomone
-git checkout v3.0.3
+git checkout v3.3.0
 make install
 
 atomoned version --long | grep -e version -e commit
-# version: v3.0.3
-# commit: a948052ffbe9b594070abe601b39f91ac1a8498c
+# version: v3.3.0
+# commit: 4631da0210859bfa0da25e3fbcc8fa33f0c6ffdc
 ```
 
 #### We initialize the node to create the necessary configuration files

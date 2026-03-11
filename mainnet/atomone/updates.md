@@ -85,3 +85,23 @@ atomoned version --long | grep -e version -e commit
 
 systemctl restart atomoned && journalctl -u atomoned -f -o cat
 ```
+
+## UPD 🕊 on  v3.3.0 (Update Height: )
+
+```shell
+cd $HOME/atomone
+git pull
+git checkout v3.3.0
+make build
+$HOME/atomone/build/atomoned version --long | grep -e version -e commit
+# version: v3.3.0
+# commit: 4631da0210859bfa0da25e3fbcc8fa33f0c6ffdc
+
+# AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
+systemctl stop atomoned
+mv $HOME/atomone/build/atomoned $(which atomoned)
+atomoned version --long | grep -e version -e commit
+#
+
+systemctl restart atomoned && journalctl -u atomoned -f -o cat
+```

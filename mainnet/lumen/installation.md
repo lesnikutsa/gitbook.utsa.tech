@@ -54,15 +54,14 @@ sed -i \
   /root/.lumen/config/config.toml
 
 ###
-curl -L https://github.com/network-lumen/blockchain/releases/download/v1.4.3/linux-amd64-v1.4.3 -o lumend
-
+cd /root/validator-kit
+curl -L https://github.com/network-lumen/blockchain/releases/download/v1.5.2/linux-amd64-v1.5.2 -o lumend
 chmod +x lumend
-mv -f lumend /usr/local/bin/lumend
+/root/validator-kit/lumend version --long
+# version: v1.5.2
+# commit: 94a79b6
 
-lumend version --long
-commit: 5d04af4
-version: v1.4.3
-
+mv /root/validator-kit/lumend /usr/local/bin/lumend
 systemctl restart lumend && journalctl -u lumend -f -o cat
 ```
 

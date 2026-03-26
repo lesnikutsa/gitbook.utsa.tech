@@ -12,7 +12,7 @@ description: >-
 ## Links
 
 * **Web**: [https://n8n.latanda.online/chain/](https://n8n.latanda.online/chain/)
-* **Discord**: [https://discord.gg/8dnJtQtkAp](https://discord.gg/8dnJtQtkAp)
+* **Discord**: [https://discord.gg/Ve9M2ZSYC2](https://discord.gg/Ve9M2ZSYC2)
 * **Github**: [https://github.com/INDIGOAZUL?tab=repositories](https://github.com/INDIGOAZUL?tab=repositories)
 
 ## **Details**

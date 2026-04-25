@@ -3,6 +3,7 @@ description: >-
   Jackal Protocol is the purpose-built blockchain for the everyday user. No more
   choosing between security or user-experience. With Jackal, protecting your
   valuable data has never been easier
+hidden: true
 ---
 
 # Jackal

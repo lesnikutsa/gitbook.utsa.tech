@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # 📬 Price feeder (✔️Oracle)
 
 Docs - [https://nibiru.fi/docs/run-nodes/validators/pricefeeder.html](https://nibiru.fi/docs/run-nodes/validators/pricefeeder.html)

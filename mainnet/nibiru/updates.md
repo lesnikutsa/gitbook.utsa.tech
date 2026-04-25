@@ -403,3 +403,23 @@ mv $HOME/nibiru/nibid $HOME/go/bin/
 ​
 systemctl restart nibid && journalctl -u nibid -f -o cat
 ```
+
+## UPD 🕊 on 2.12.0 (Update Height: 40511000) This is a chain update to version 2.12.0 with some security fixes and the end of Oracle support!!!
+
+```shell
+cd $HOME/nibiru
+wget https://github.com/NibiruChain/nibiru/releases/download/v2.12.0/nibid_2.12.0_linux_amd64.tar.gz
+tar -zxvf nibid_2.12.0_linux_amd64.tar.gz
+chmod +x ./nibid
+rm nibid_2.12.0_linux_amd64.tar.gz
+​
+$HOME/nibiru/nibid version --long | grep -e version -e commit
+# version: 2.12.0
+# commit: 0df195c00524feb98bcf9106f224d35c26871da8
+​
+# AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
+systemctl stop nibid
+mv $HOME/nibiru/nibid $HOME/go/bin/
+​
+systemctl restart nibid && journalctl -u nibid -f -o cat
+```

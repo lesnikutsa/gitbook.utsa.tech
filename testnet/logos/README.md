@@ -20,7 +20,7 @@ description: >-
 * Working directory: `logos`
 * Explorer: [https://testnet.blockchain.logos.co/web/explorer/](https://testnet.blockchain.logos.co/web/explorer/)
 * Info: [https://devnet.blockchain.logos.co/web/](https://devnet.blockchain.logos.co/web/)
-* Faucet: [https://devnet.blockchain.logos.co/web/faucet/](https://devnet.blockchain.logos.co/web/faucet/)
+* Faucet: [https://testnet.blockchain.logos.co/web/faucet/](https://testnet.blockchain.logos.co/web/faucet/)
 
 ## Public services
 

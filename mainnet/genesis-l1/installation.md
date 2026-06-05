@@ -29,13 +29,13 @@ go version
 
 ```shell
 git clone https://github.com/alpha-omega-labs/genesis-crypto && cd genesis-crypto
-git checkout v1.1.1
+git checkout v1.6.2
 go mod tidy
 make install
 
 genesisd version --long
-# 1.1.1
-# commit: bab909493ad4f56828b5ee30c21c97219fbb93c1
+# 1.6.2
+# commit: ee86be82183d4972c72a1a9acaaf0c9dc5c34787
 ```
 
 #### We initialize the node to create the necessary configuration files

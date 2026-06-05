@@ -63,3 +63,24 @@ genesisd version --long | grep -e version -e commit
 
 systemctl restart genesisd && journalctl -u genesisd -f -o cat
 ```
+
+## UPD 🕊 on 1.6.2 (Update Height: 13000000)
+
+```shell
+cd
+rm -r genesis-crypto/
+git clone https://github.com/GenesisL1/genesis-crypto && cd genesis-crypto
+git checkout v1.6.2
+make build
+$HOME/genesis-crypto/build/genesisd version --long | grep -e version -e commit
+# 1.6.2
+# commit: ee86be82183d4972c72a1a9acaaf0c9dc5c34787
+
+# AFTER THE NETWORK STOPS AT THE RIGHT BLOCK!!!
+systemctl stop genesisd
+mv $HOME/genesis-crypto/build/genesisd $(which genesisd)
+genesisd version --long | grep -e version -e commit
+# 
+
+systemctl restart genesisd && journalctl -u genesisd -f -o cat
+```

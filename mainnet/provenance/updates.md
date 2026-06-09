@@ -180,3 +180,25 @@ provenanced version --long | grep -e version -e commit
 
 systemctl restart provenanced && journalctl -u provenanced -f -o cat
 ```
+
+## UPD 🕊 on v1.29.0 (Update Height: 31593666)
+
+```bash
+export PIO_HOME=~/.provenanced
+cd $HOME/provenance
+git pull
+git checkout v1.29.0
+
+make build
+$HOME/provenance/build/provenanced version --long | grep -e version -e commit
+# v1.29.0
+# commit: d179a59e
+
+# AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
+systemctl stop provenanced
+mv $HOME/provenance/build/provenanced $(which provenanced)
+provenanced version --long | grep -e version -e commit
+# 
+
+systemctl restart provenanced && journalctl -u provenanced -f -o cat
+```

@@ -26,12 +26,12 @@ go version
 ## Node installation
 
 ```shell
-curl -s https://get.nibiru.fi/@v2.12.0! | bash
+curl -s https://get.nibiru.fi/@v2.14.0! | bash
 mv /usr/local/bin/nibid $HOME/go/bin
 ​
 nibid version --long | grep -e version -e commit
-# version: 2.12.0
-# commit: 0df195c00524feb98bcf9106f224d35c26871da8
+# version: 2.14.0
+# commit: 9fca51e7e5d80f734cb536b74c05624b6070067e
 ```
 
 #### We initialize the node to create the necessary configuration files

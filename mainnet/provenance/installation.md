@@ -40,7 +40,7 @@ provenanced version --long | grep -e version -e commit
 wget https://github.com/provenance-io/provenance/releases/download/v1.29.0/provenance-linux-amd64-v1.29.0.zip
 unzip provenance-linux-amd64-v1.29.0.zip
 
-cp ~/bin/libwasmvm.x86_64.so /root/go/bin/
+cp $HOME/provenance/bin/libwasmvm.x86_64.so /root/go/bin/
 ```
 
 #### We initialize the node to create the necessary configuration files

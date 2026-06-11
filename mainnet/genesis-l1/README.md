@@ -23,10 +23,13 @@ description: >-
 ## Public services
 
 * **Guide (RU)**: [https://teletype.in/@lesnik13utsa/6lS-dR6v\_FY](https://teletype.in/@lesnik13utsa/6lS-dR6v_FY)
-* **RPC**: [https://m-l1.rpc.utsa.tech/](https://m-l1.rpc.utsa.tech/)
-* **API**: [https://m-l1.api.utsa.tech/](https://m-l1.api.utsa.tech/)
+* RPC: [https://genesisl1.rpc.utsa.tech/](https://genesisl1.rpc.utsa.tech/)
+* API: [https://genesisl1.api.utsa.tech/](https://genesisl1.api.utsa.tech/)
+* EVM: [https://genesisl1.evm.utsa.tech/](https://genesisl1.evm.utsa.tech/)
+* WSS: wss://genesisl1.wss.utsa.tech
 * **Explorer**: [https://exp.utsa.tech/genesis/staking](https://exp.utsa.tech/genesis/staking)
-* **Restake**:&#x20;
+
+
 
 ## Peering
 

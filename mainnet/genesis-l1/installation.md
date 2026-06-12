@@ -13,7 +13,7 @@ apt install curl iptables build-essential git wget jq make gcc nano tmux htop nv
 #### Install GO
 
 ```shell
-ver="1.19.1"
+ver="1.26.0"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"

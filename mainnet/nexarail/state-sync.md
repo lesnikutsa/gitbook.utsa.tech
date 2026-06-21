@@ -16,26 +16,21 @@ Important - different blockchains need a different amount of RAM to successfully
 
 ```shell
 # stop the service and clear the database
-systemctl stop canined
-canined tendermint unsafe-reset-all --home $HOME/.canine
-```
-
-```shell
-# download wasm if necessary
-curl -L https://share.utsa.tech/jackal/wasm-jackal.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.canine --strip-components 2
+systemctl stop nexaraild
+canined tendermint unsafe-reset-all --home $HOME/.nexarail
 ```
 
 ```shell
 # add peer
-peers="0912e9993b2070b82945399aa3cb34cb8c02fdc6@144.76.29.90:60856"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.canine/config/config.toml
+peers="8c87ce08820b7f9d717da4d4a82eae1aac234911@144.76.29.90:60756"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.nexarail/config/config.toml
 ```
 
 ```shell
-SNAP_RPC=https://m-jackal.rpc.utsa.tech:443
+SNAP_RPC=https://m-nexarail.rpc.utsa.tech:443
 
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 2000)); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
 
 echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
@@ -44,7 +39,7 @@ sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
 s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.canine/config/config.toml
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.nexarail/config/config.toml
 ```
 
 {% hint style="info" %}
@@ -55,7 +50,7 @@ after echo <mark style="color:blue;">$LATEST\_HEIGHT $BLOCK\_HEIGHT $TRUST\_HASH
 
 ```shell
 # restart node
-systemctl restart canined && journalctl -u canined -f -o cat
+systemctl restart nexaraild && journalctl -u nexaraild -f -o cat
 ```
 
 

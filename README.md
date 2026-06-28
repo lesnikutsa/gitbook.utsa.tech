@@ -2,33 +2,47 @@
 
 <figure><img src=".gitbook/assets/500x500.png" alt=""><figcaption></figcaption></figure>
 
-**UTSA** - trustworthy and high performance validator
+## UTSA — multi-network validator & infrastructure provider
 
-In addition to protecting the networks in the mainnet through validation, we run IBC, provide RPC, API, Statesync, Addrbook, Explorer, write manuals, maintain high uptime and help the community
+UTSA is a multi-network validator and infrastructure provider focused on reliable node operations, public services, and practical ecosystem support.
 
-**UTSA** validator is ready for long-term cooperation and offers!&#x20;
+We operate validators across mainnets and testnets, provide RPC/API endpoints, snapshots, state-sync, addrbooks, explorers, IBC relaying, monitoring, and technical guides for validators and communities.
+
+We are open to long-term cooperation, early testnets, genesis validator programs, infrastructure partnerships, and ecosystem support.
 
 ***
 
-<mark style="color:orange;">**Our supported networks:**</mark>
+### What we provide
+
+* Validator operations
+* Public RPC / API endpoints
+* Snapshots, state-sync, addrbook
+* IBC relayers
+* Explorers and monitoring
+* Technical guides and documentation
+* Community and ecosystem support
+
+***
+
+<mark style="color:red;">Selected networks we support</mark><mark style="color:red;">**:**</mark>
 
 * [Atomone](https://exp.utsa.tech/atomone/staking/atonevaloper1982jsr4msdppq0azc3qhf80ngkrsjyqmgepkyk)
-* [Aura (Genesis validator)](https://exp.utsa.tech/aura/staking/auravaloper1vy9qvad4rpczx6r5rwlqvn43l4mkl283m8gk4p)
+* Autonity
+* Avail
 * [Canton Network](https://lighthouse.devnet.cantonloop.com/validator/UTSA-validator-1%3A%3A12206ca905c382c4df72fd9bbaa54648c88e7d5a45b06a873a3a70858d5c6a1d1965)
+* CrossFi
 * [Dora](https://exp.utsa.tech/dora/staking/doravaloper12yk434ut3un4wx0rult2aww89rsrel8nhmp387)
 * [Dymension (Genesis validator)](https://exp.utsa.tech/dymension/staking/dymvaloper1taava3hdv33ps7es7yvwjx7x08lzz3s2mqfp6v)
+* Espresso
 * [Gitopia (Genesis validator)](https://explorer.stavr.tech/gitopia-m/staking/gitopiavaloper1ae4aurwv0jeccztqgr0s2znyrqlm4jj8hxv908)
 * [HAQQ](https://ping.pub/haqq/staking/haqqvaloper1ld747ks23dqheenk3pjth57claqqpfnxax6cea)
-* [Jackal](https://explorer.nodestake.top/jackal/staking/jklvaloper1ejrn54x9wpxarmp7ux2a7mtgt4f8vp5xum9q4p)
-* [L1](https://exp.utsa.tech/genesis/staking/genesisvaloper1afvvw56w2uq64qmsurawkxdhu9r98e5ue2kthq)
+* [GenesisL1](https://exp.utsa.tech/genesis/staking/genesisvaloper1afvvw56w2uq64qmsurawkxdhu9r98e5ue2kthq)
+* NexaRail
 * [Nibiru (Genesis validator)](https://exp.utsa.tech/nibiru/staking/nibivaloper1he44du3wsg3qgysyj0wlclq20apj880k72m8ks)
-* [Qiucksilver](https://explorer.stavr.tech/quicksilver-mainnet/staking/quickvaloper1sztng2ln0wq7thqqyrjd02tc4hh6yu36m4l67x)
 * [Provenance](https://www.mintscan.io/provenance/validators/pbvaloper19r822ud3e6j7vv4llk569fxlt3778kw7ynlmve)
 * [Realio (Genesis validator)](https://explorer.stavr.tech/realio-mainnet/staking/realiovaloper1pgpx7sqfh5tnuktlhjj39u4hc85wc6jelk9t74)
-* [Somnia](https://testnet.somnia.exploreme.pro/validators/0x54f8a9012dac90dc2314bb1d00f2d6a73aef9557)
-* [Teritori (Genesis validator)](https://exp.utsa.tech/teritori/staking/torivaloper1kunzrdg6u8gql4faj33lstghhqdtp59e0xgggy)
 * [Uptick](https://exp.utsa.tech/uptick/staking/uptickvaloper1wfaarzcy2rpxr9564tlsyktcf9c75gf0zc57p2)
-* [Zenrock](https://exp.utsa.tech/zenrock/staking/zenvaloper13lk3aefur4847rvkgzzfje5ff9uwwmtkkl5sq9)
+* Warden Protocol
 
 
 
@@ -49,9 +63,8 @@ In addition to protecting the networks in the mainnet through validation, we run
 ### Different experience <a href="#paag" id="paag"></a>
 
 * **Minima** - admin [TG](https://t.me/minima_ru) and [Discord](https://discord.gg/Wj9zF49G46)
-* **Bounty Manager** - [cryptotalk](https://cryptotalk.org/profile/10901-lesnik_utsa/)
+* **Bounty Manager** - [Forum](https://www.altcoinstalks.com/index.php?board=43.0)
 * **Crowd Control** - Russian community manager [Discord](https://discord.gg/VFCTcUnSdW)
-* **Haqq** - tech support
 
 **Links:**
 
@@ -62,4 +75,3 @@ In addition to protecting the networks in the mainnet through validation, we run
 * **Twitter** - @lesnik13utsa
 * **Github** - [https://github.com/lesnikutsa](https://github.com/lesnikutsa)
 
-<br>

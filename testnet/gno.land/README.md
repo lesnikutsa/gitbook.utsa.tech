@@ -19,6 +19,7 @@
 * **Valopers:** [https://test13.testnets.gno.land/r/gnops/valopers](https://test13.testnets.gno.land/r/gnops/valopers)
 * **Active validators:** [https://test13.testnets.gno.land/r/sys/validators/v3](https://test13.testnets.gno.land/r/sys/validators/v3)
 * **Faucet:** https://faucet.gno.land/&#x20;
+* **TG bot:** @UTSAGNOTest13Bot
 
 
 

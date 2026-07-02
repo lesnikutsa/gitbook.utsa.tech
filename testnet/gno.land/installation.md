@@ -91,6 +91,7 @@ Environment=HOME=$HOME
 ExecStart=$(which gnoland) start \
   --chainid test-13 \
   --genesis $HOME/gno/genesis.json \
+  --log-level info \
   --skip-genesis-sig-verification
 Restart=on-failure
 RestartSec=5s

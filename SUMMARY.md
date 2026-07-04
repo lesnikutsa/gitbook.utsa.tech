@@ -143,19 +143,6 @@
   * [⚙️ Validator setup](other-projects/polkadot/validator-setup.md)
   * [⚙️ Validator migration](other-projects/polkadot/validator-migration.md)
   * [🛠️ Crunch bot](other-projects/polkadot/crunch-bot.md)
-* [Tangle Network](other-projects/tangle-network/README.md)
-  * [💻 Installation](other-projects/tangle-network/installation.md)
-  * [📬 Validator migration](other-projects/tangle-network/validator-migration.md)
-* [Tanssi mainnet](other-projects/tanssi-mainnet/README.md)
-  * [💻 Installation](other-projects/tanssi-mainnet/installation.md)
-  * [⌚ Snapshot](other-projects/tanssi-mainnet/snapshot.md)
-  * [📬 Validator migration](other-projects/tanssi-mainnet/validator-migration.md)
-* [Tanssi testnet](other-projects/tanssi-testnet/README.md)
-  * [💻 Installation](other-projects/tanssi-testnet/installation.md)
-* [UOMI (GPU)](other-projects/uomi-gpu/README.md)
-  * [💻 Installation](other-projects/uomi-gpu/installation.md)
-  * [⌚ Snapshot](other-projects/uomi-gpu/snapshot.md)
-  * [📬 Validator migration](other-projects/uomi-gpu/validator-migration.md)
 
 ## ARCHIVE
 

@@ -4,9 +4,9 @@
 
 ## Links
 
-* **Web**:&#x20;
-* **Discord**:&#x20;
-* **Github**:&#x20;
+* **Web**: [https://limonata.xyz/](https://limonata.xyz/)
+* **Discord**: [https://discord.gg/PauX77usMS](https://discord.gg/PauX77usMS)
+* **Github**: [https://github.com/Limonata-Blockchain/limonata](https://github.com/Limonata-Blockchain/limonata)
 
 ## **Details**
 

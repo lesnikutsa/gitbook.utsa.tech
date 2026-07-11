@@ -58,7 +58,7 @@ $HOME/limonata/build/evmd version --long | grep -e version -e commit
 
 # AFTER STOPPING THE NETWORK ON THE REQUIRED BLOCK!!!
 systemctl stop limonatad
-mv $HOME/limonata/build/evmd $(which limonatad)
+mv $HOME/limonata/build/evmd $HOME/go/bin/limonatad
 limonatad version --long | grep -e version -e commit
 #
 

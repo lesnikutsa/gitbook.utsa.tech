@@ -27,13 +27,13 @@ go version
 
 ```shell
 git clone https://github.com/Limonata-Blockchain/limonata.git && cd limonata
-git checkout limonata-v0.3.2
+git checkout limonata-v0.3.4
 make install
 mv $HOME/go/bin/evmd $HOME/go/bin/limonatad
 
 limonatad version --long
-# version: limonata-v0.3.2
-# commit: a322e874bb98baaadeaf67e55ceb6c1f95463896
+# version: limonata-v0.3.4
+# commit: 77fc357ffe8d790191e52fefc6a91418e61ef298
 ```
 
 ```shell

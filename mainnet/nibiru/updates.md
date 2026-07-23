@@ -492,8 +492,8 @@ chmod +x ./nibid
 rm nibid_2.17.0_linux_amd64.tar.gz
 ​
 $HOME/nibiru/nibid version --long | grep -e version -e commit
-# version: ""
-# commit: ""
+# version: 2.17.0-test.5
+# commit: 226a1a3443183f282c7e60d6e6cf45bf9aba28ec
 ​
 # AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
 systemctl stop nibid

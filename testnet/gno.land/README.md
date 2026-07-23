@@ -8,16 +8,15 @@
 
 ## **Details**
 
-* **Network Chain ID**: test-13
+* **Network Chain ID**: topaz-1
 * **Binary**: gnoland
 
 ## Public services
 
 * **Guide (RU)**: [https://teletype.in/@lesnik13utsa/65wu7A2kPfo](https://teletype.in/@lesnik13utsa/65wu7A2kPfo)
-* **RPC**: [https://rpc.test13.testnets.gno.land](https://rpc.test13.testnets.gno.land)
-* **Explorer**: [https://explorer-gnoland.oshvank.xyz/?v=g1lyt8fg7e987jgh7kxa3fn8zlcx295kdzuj7d8d](https://explorer-gnoland.oshvank.xyz/?v=g1lyt8fg7e987jgh7kxa3fn8zlcx295kdzuj7d8d)
-* **Valopers:** [https://test13.testnets.gno.land/r/gnops/valopers](https://test13.testnets.gno.land/r/gnops/valopers)
-* **Active validators:** [https://test13.testnets.gno.land/r/sys/validators/v3](https://test13.testnets.gno.land/r/sys/validators/v3)
+* **RPC**: [https://rpc.topaz.testnets.gno.land](https://rpc.topaz.testnets.gno.land)
+* **Explorer**: [https://exp.gno.utsa.tech/](https://exp.gno.utsa.tech/)
+* **Valopers:** [https://topaz.testnets.gno.land/r/gnops/valopers?page=1](https://topaz.testnets.gno.land/r/gnops/valopers?page=1)
 * **Faucet:** https://faucet.gno.land/&#x20;
 * **TG bot:** @UTSAGNOTest13Bot
 

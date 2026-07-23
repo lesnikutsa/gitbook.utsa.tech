@@ -27,11 +27,11 @@ go version
 
 ```shell
 git clone https://github.com/gnolang/gno && cd $HOME/gno
-git checkout chain/test13
+git checkout chain/topaz
 
 make -C gno.land install.gnoland install.gnokey
 gnoland version
-# gnoland version: chain/test13
+# gnoland version: chain/topaz
 gnokey --help
 ```
 
@@ -45,10 +45,10 @@ gnoland secrets init
 #### Download Genesis
 
 ```shell
-wget -O $HOME/gno/genesis.json "https://github.com/gnolang/gno/releases/download/chain/test13/genesis.json"
+wget -O $HOME/gno/gnoland-data/config/genesis.json "https://github.com/gnolang/gno/releases/download/chain/topaz/genesis.json"
 
-shasum -a 256 $HOME/gno/genesis.json
-# 56f56e135174feff9f93283d5ec7e4ec955cd5155108aff5009d4fd51c5adaf2
+shasum -a 256 $HOME/gno/gnoland-data/config/genesis.json
+# 2dd049f973b82858727440df9aff5722cb0b322fd00890f40f2b0688276898ff
 ```
 
 #### Setting up the node configuration
@@ -60,8 +60,9 @@ gnoland config set p2p.external_address "$SERVER_IP:26656"
 gnoland config set p2p.pex true
 
 # persistent peers (required)
+gnoland config set p2p.seeds g19q07ssuafhmg6r7ys7wp7rpc4jxc85cpvdy426@seed-1.topaz.testnets.gno.land:26656,g15k98e65gm8h7fdr3yr4tqn82lvch4a97a3sg3j@seed-2.topaz.testnets.gno.land:26656
 gnoland config set p2p.persistent_peers \
-"g1e3pftctakyx58mzapqs4syc4h0jcxwtnraq00c@185.248.24.16:47656,g13lg797wyweuultfxdntaz3v9yuchl5p9aexj4k@178.124.192.147:26656,g1z3mavstqrfewltrw886d35fufq6v7eg63xjcet@88.198.46.55:32556,g1j3ylvtrdfzckh5979kvhpznvgy6e0ytwhzrja5@149.50.96.58:41656,g1xjx0hcg67jwqfsmuzjz4uqfhh5ma4rf6n7yg2k@38.246.115.151:26656,g13gumehh3euchv3hp29gsj72pt0ssezaapqu5qd@138.201.240.155:17656,g17su28ydtj8jsdqt2c7m3jn3mysqlz6n57vxd5t@62.210.125.225:26656,g1tsdm60z0akzxtwxkfamt02m6e8fqk0y9h25vks@135.181.78.21:17656,g1xmnn74a2fcc9qnmk6zdlgr5n446em44378c5n3@142.132.158.158:26656,g16ueudzsm5t2v5t2hdr2tr8n2fzj2x6mekx6pvy@192.155.100.132:26656,g1lxkf9gn7kddrr26c640ww5wg3ezsm22we8cjpc@99.81.240.125:26656,g1ghkxmz46w46562yl8capdfqvlypp6zcp55qx7t@185.144.99.19:26656,g1ghl8lhhdnhwwvp94z0gsadvz3c03et30cqyhu2@117.1.104.188:26656,g1wfu406mz57cv2cq68agrkefd4g6pw0ew4kyvlu@65.109.22.211:54656,g1cw4ajr026320c3a6rfm2d77tr94yglh5namap9@149.50.110.40:22656,g17qp5xc8a607svp77h3ttl05mg4fuzyl5fyvc2r@37.60.255.34:27656,g1zz2yvc23ts7uk05gemxmj9dlrhdt7w8pxtcdy5@62.210.207.58:26656,g1pzyfmmtxlla7ay90rfx62cc3rq6hq3jk48cjqz@146.19.24.32:26656,g142k7zc2qym3c0u6jmkf6rv26llgr2f4nakmlmt@54.145.44.95:26656,g1v5unyq7fsndekzegp2xh0tw45nsxpkx5qsgy8u@135.181.232.179:26656,g1dlu8z4kxq8hekht2vmn6z3qqzrea4u37js727a@176.9.3.249:26656,g16f7dlfvrk6qugcdmaq5npw0sjhlf79vrz7ge6c@5.9.8.148:30800,g12gxe0qpq90vhhpp5gtavafgr2nl9cntntvrjkj@186.233.184.95:37656,g1uycj5lkvu97jddywjttd8xq53u3p6eyhh2js25@62.210.124.8:26656"
+"g10zqystndwphs4aumuj8fujmh0z5ep9lmx9fnpl@38.49.212.137:36656,g138usej2c7hvcqec6wzsqwaw2zexnngx0hrpele@208.76.222.122:36656,g1393shc3547t6yyva69hnpwmqnc0psxkyhknljw@152.53.245.124:26656,g15k98e65gm8h7fdr3yr4tqn82lvch4a97a3sg3j@108.132.15.161:26656,g163g9pyzc8l83ta5qmedmckfywrtzhvknxlsmks@85.195.116.219:26680,g17d5epdngr7yt7n5tn9xx0xm38s870475c6gnsk@46.224.197.243:55656,g17mkvewp957pvcu2n5m7y2cpmpl7fdzlajhqm53@149.202.68.156:26676,g17qp5xc8a607svp77h3ttl05mg4fuzyl5fyvc2r@152.53.253.167:55656,g17t7vlg7hjvsldqj06zenkxpktzntkp62thg9a7@65.109.106.214:55656,g18ahqzryula7y9j6w4v7fnkc0l6djn3rvguhld8@135.181.17.54:26656"
 
 # consensus settings
 gnoland config set application.prune_strategy syncable
@@ -72,6 +73,7 @@ gnoland config set p2p.flush_throttle_timeout 10ms
 # performance
 gnoland config set mempool.size 10000
 gnoland config set p2p.max_num_outbound_peers 40
+
 ```
 
 #### Create a service file
@@ -89,8 +91,8 @@ WorkingDirectory=$HOME/gno
 Environment=GNOROOT=$HOME/gno
 Environment=HOME=$HOME
 ExecStart=$(which gnoland) start \
-  --chainid test-13 \
-  --genesis $HOME/gno/genesis.json \
+  --chainid topaz-1 \
+  --genesis $HOME/gno/gnoland-data/config/genesis.json \
   --log-level info \
   --skip-genesis-sig-verification
 Restart=on-failure
@@ -135,7 +137,7 @@ Use the faucet https://faucet.gno.land/ and request tokens for your g1xxx addres
 Balance Check
 
 ```bash
-gnokey query --remote "https://rpc.test13.testnets.gno.land" auth/accounts/<ADDRESS>
+gnokey query --remote "https://rpc.topaz.testnets.gno.land" auth/accounts/<ADDRESS>
 #gnokey query --remote "http://127.0.0.1:26657" auth/accounts/<ADDRESS>
 ```
 
@@ -169,9 +171,9 @@ gnokey maketx call \
   --args "OPERATOR_ADDRESS" \
   --args "VAL_PUBKEY" \
   --gas-fee 1000000ugnot \
-  --gas-wanted 50000000 \
-  --chainid test-13 \
-  --remote https://rpc.test13.testnets.gno.land \
+  --gas-wanted 60000000 \
+  --chainid topaz-1 \
+  --remote https://rpc.topaz.testnets.gno.land \
   --broadcast \
   WALLETNAME
 ```
@@ -186,7 +188,7 @@ gnokey maketx call \
 | `WALLETNAME`       | Key name from `gnokey list`                                        |
 
 > ℹ️ After a successful transaction you can view your profile at:\
-> [https://test13.testnets.gno.land/r/gnops/valopers](https://test13.testnets.gno.land/r/gnops/valopers)
+> [https://topaz.testnets.gno.land/r/gnops/valopers](https://test13.testnets.gno.land/r/gnops/valopers)
 
 #### Update Description (Optional)
 
@@ -199,9 +201,9 @@ gnokey maketx call \
   --args "YOUR-G1-OPERATOR-ADDRESS" \
   --args "YOUR-NEW-DESCRIPTION" \
   --gas-fee 1000000ugnot \
-  --gas-wanted 50000000 \
-  --chainid test-13 \
-  --remote https://rpc.test13.testnets.gno.land \
+  --gas-wanted 60000000 \
+  --chainid topaz-1 \
+  --remote https://rpc.topaz.testnets.gno.land \
   --broadcast \
   WALLETNAME
 ```

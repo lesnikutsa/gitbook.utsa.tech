@@ -65,3 +65,23 @@ limonatad version --long | grep -e version -e commit
 systemctl restart limonatad && journalctl -u limonatad -f -o cat
 ```
 
+## UPD 🕊 on limonata-v0.3.5  (Update Height: 998735)
+
+```shell
+cd $HOME/limonata
+git pull
+git checkout limonata-v0.3.5
+make build
+
+$HOME/limonata/build/evmd version --long | grep -e version -e commit
+# version: limonata-v0.3.5
+# commit: d6df6bb5c9c26a291e78ae61b5d9f1d48ae8760c
+
+# AFTER STOPPING THE NETWORK ON THE REQUIRED BLOCK!!!
+systemctl stop limonatad
+mv $HOME/limonata/build/evmd $HOME/go/bin/limonatad
+limonatad version --long | grep -e version -e commit
+#
+
+systemctl restart limonatad && journalctl -u limonatad -f -o cat
+```

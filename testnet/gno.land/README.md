@@ -8,17 +8,16 @@
 
 ## **Details**
 
-* **Network Chain ID**: topaz-1
+* **Network Chain ID**: sapphire-1
 * **Binary**: gnoland
 
 ## Public services
 
 * **Guide (RU)**: [https://teletype.in/@lesnik13utsa/65wu7A2kPfo](https://teletype.in/@lesnik13utsa/65wu7A2kPfo)
-* **RPC**: [https://rpc.topaz.testnets.gno.land](https://rpc.topaz.testnets.gno.land)
 * **Explorer**: [https://exp.gno.utsa.tech/](https://exp.gno.utsa.tech/)
-* **Valopers:** [https://topaz.testnets.gno.land/r/gnops/valopers?page=1](https://topaz.testnets.gno.land/r/gnops/valopers?page=1)
+* **Valopers:** [https://sapphire.testnets.gno.land/r/gnops/valopers](https://sapphire.testnets.gno.land/r/gnops/valopers)
 * **Faucet:** https://faucet.gno.land/&#x20;
-* **TG bot:** @UTSAGNOTest13Bot
+* **TG bot:** @UTSAGNOBot
 
 
 

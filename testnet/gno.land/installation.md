@@ -25,13 +25,13 @@ go version
 
 ## Node installation
 
-```shell
+```bash
 git clone https://github.com/gnolang/gno && cd $HOME/gno
-git checkout chain/topaz
+git checkout chain/sapphire
 
 make -C gno.land install.gnoland install.gnokey
 gnoland version
-# gnoland version: chain/topaz
+# gnoland version: chain/xxx
 gnokey --help
 ```
 
@@ -45,10 +45,10 @@ gnoland secrets init
 #### Download Genesis
 
 ```shell
-wget -O $HOME/gno/gnoland-data/config/genesis.json "https://github.com/gnolang/gno/releases/download/chain/topaz/genesis.json"
+wget -O $HOME/gno/gnoland-data/config/genesis.json "https://github.com/gnolang/gno/releases/download/chain/sapphire/genesis.json"
 
 shasum -a 256 $HOME/gno/gnoland-data/config/genesis.json
-# 2dd049f973b82858727440df9aff5722cb0b322fd00890f40f2b0688276898ff
+# d511e0e5b767d4e53f5c1afeeea1bc61d2c7b2118146c820f1f3e4296f67498e
 ```
 
 #### Setting up the node configuration
@@ -60,9 +60,9 @@ gnoland config set p2p.external_address "$SERVER_IP:26656"
 gnoland config set p2p.pex true
 
 # persistent peers (required)
-gnoland config set p2p.seeds g19q07ssuafhmg6r7ys7wp7rpc4jxc85cpvdy426@seed-1.topaz.testnets.gno.land:26656,g15k98e65gm8h7fdr3yr4tqn82lvch4a97a3sg3j@seed-2.topaz.testnets.gno.land:26656
+gnoland config set p2p.seeds g10xll77gz6yzg43v9mdalj8360ng6sunt2vvvhf@seed-1.sapphire.testnets.gno.land:26656,g1gw2d7qsmrg06p204ty2qs8ygzd32t2c7p46te0@seed-2.sapphire.testnets.gno.land:26656
 gnoland config set p2p.persistent_peers \
-"g10zqystndwphs4aumuj8fujmh0z5ep9lmx9fnpl@38.49.212.137:36656,g138usej2c7hvcqec6wzsqwaw2zexnngx0hrpele@208.76.222.122:36656,g1393shc3547t6yyva69hnpwmqnc0psxkyhknljw@152.53.245.124:26656,g15k98e65gm8h7fdr3yr4tqn82lvch4a97a3sg3j@108.132.15.161:26656,g163g9pyzc8l83ta5qmedmckfywrtzhvknxlsmks@85.195.116.219:26680,g17d5epdngr7yt7n5tn9xx0xm38s870475c6gnsk@46.224.197.243:55656,g17mkvewp957pvcu2n5m7y2cpmpl7fdzlajhqm53@149.202.68.156:26676,g17qp5xc8a607svp77h3ttl05mg4fuzyl5fyvc2r@152.53.253.167:55656,g17t7vlg7hjvsldqj06zenkxpktzntkp62thg9a7@65.109.106.214:55656,g18ahqzryula7y9j6w4v7fnkc0l6djn3rvguhld8@135.181.17.54:26656"
+"g1z700tjus883ku3y282pndyluvjavxh5zqe9xya@54.155.249.122:26656,g10xll77gz6yzg43v9mdalj8360ng6sunt2vvvhf@54.224.10.49:26656,g1yr6l8qz095yz7dlvfs6cjfw3s026ksxwx7wgx5@1.36.239.11:28756,g1277y5mdwmg68cx7ryx3txdwdmjl6z5p72xfqcd@44.199.26.207:26656,g1tuuuxxn8rjlr860hm4qxm4tjv77fl2vffayga3@100.59.119.139:26656,g1nazs9uqecsxszksmsjjjy5rc8l849hgvg9a03q@135.181.17.54:26656,g1gw2d7qsmrg06p204ty2qs8ygzd32t2c7p46te0@34.246.18.165:26656,g1kres5ar5mcqrannxnxu02q8q5wydt0aezqspe2@100.62.129.64:26656"
 
 # consensus settings
 gnoland config set application.prune_strategy syncable
@@ -73,7 +73,6 @@ gnoland config set p2p.flush_throttle_timeout 10ms
 # performance
 gnoland config set mempool.size 10000
 gnoland config set p2p.max_num_outbound_peers 40
-
 ```
 
 #### Create a service file
@@ -91,7 +90,7 @@ WorkingDirectory=$HOME/gno
 Environment=GNOROOT=$HOME/gno
 Environment=HOME=$HOME
 ExecStart=$(which gnoland) start \
-  --chainid topaz-1 \
+  --chainid sapphire-1 \
   --genesis $HOME/gno/gnoland-data/config/genesis.json \
   --log-level info \
   --skip-genesis-sig-verification
@@ -132,12 +131,12 @@ Don't forget to save the seed!!!
 
 #### **Faucet**
 
-Use the faucet https://faucet.gno.land/ and request tokens for your g1xxx address.
+Use the faucet and request tokens for your g1xxx address.
 
 Balance Check
 
 ```bash
-gnokey query --remote "https://rpc.topaz.testnets.gno.land" auth/accounts/<ADDRESS>
+gnokey query --remote "https://rpc.sapphire.testnets.gno.land" auth/accounts/<ADDRESS>
 #gnokey query --remote "http://127.0.0.1:26657" auth/accounts/<ADDRESS>
 ```
 
@@ -172,8 +171,8 @@ gnokey maketx call \
   --args "VAL_PUBKEY" \
   --gas-fee 1000000ugnot \
   --gas-wanted 60000000 \
-  --chainid topaz-1 \
-  --remote https://rpc.topaz.testnets.gno.land \
+  --chainid sapphire-1 \
+  --remote https://rpc.sapphire.testnets.gno.land \
   --broadcast \
   WALLETNAME
 ```
@@ -187,8 +186,7 @@ gnokey maketx call \
 | `VAL_PUBKEY`       | `pub_key` from `cd /root/gno && gnoland secrets get validator_key` |
 | `WALLETNAME`       | Key name from `gnokey list`                                        |
 
-> ℹ️ After a successful transaction you can view your profile at:\
-> [https://topaz.testnets.gno.land/r/gnops/valopers](https://test13.testnets.gno.land/r/gnops/valopers)
+> ℹ️ After a successful transaction you can view your profile at: [https://sapphire.testnets.gno.land/r/gnops/valopers](https://sapphire.testnets.gno.land/r/gnops/valopers)<br>
 
 #### Update Description (Optional)
 
@@ -202,8 +200,8 @@ gnokey maketx call \
   --args "YOUR-NEW-DESCRIPTION" \
   --gas-fee 1000000ugnot \
   --gas-wanted 60000000 \
-  --chainid topaz-1 \
-  --remote https://rpc.topaz.testnets.gno.land \
+  --chainid sapphire-1 \
+  --remote https://rpc.sapphire.testnets.gno.land \
   --broadcast \
   WALLETNAME
 ```

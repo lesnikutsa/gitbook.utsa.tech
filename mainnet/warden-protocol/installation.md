@@ -26,15 +26,15 @@ go version
 ## Node installation
 
 <pre class="language-shell"><code class="lang-shell"><strong>git clone https://github.com/warden-protocol/wardenprotocol &#x26;&#x26; cd wardenprotocol
-</strong>git checkout v1.0.0
+</strong>git checkout v1.0.2
 apt install -y just
 just wardend
 
 mv $HOME/wardenprotocol/build/wardend $HOME/go/bin/wardend
 
 wardend version --long | grep -e commit -e version
-# version: v1.0.0
-# commit: c4ebc30dc4db02e7fcf551d43151781d10a9f184
+# version: v1.0.2
+# commit: 754adbe10fa7cf4341741809684e294215c0f54d
 </code></pre>
 
 #### We initialize the node to create the necessary configuration files

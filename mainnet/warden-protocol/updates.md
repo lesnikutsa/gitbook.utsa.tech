@@ -108,3 +108,30 @@ wardend version --long | grep -e version -e commit
 systemctl restart wardend && journalctl -u wardend -f -o cat
 ```
 
+## UPD 🕊 on v1.0.2 (Update Height: 10136086)
+
+```shell
+cd $HOME/wardenprotocol
+git pull
+git checkout v1.0.2
+#just wardend
+
+go build -tags "netgo" -trimpath -ldflags "
+    -s -w
+    -X github.com/cosmos/cosmos-sdk/version.Name=warden
+    -X github.com/cosmos/cosmos-sdk/version.AppName=wardend
+    -X github.com/cosmos/cosmos-sdk/version.Version=v1.0.2
+    -X github.com/cosmos/cosmos-sdk/version.Commit=754adbe10fa7cf4341741809684e294215c0f54d" \
+    -o ./build/wardend ./cmd/wardend
+
+$HOME/wardenprotocol/build/wardend version --long | grep -e commit -e version
+# version: v1.0.2
+# commit: 754adbe10fa7cf4341741809684e294215c0f54d
+
+# AFTER STOPPING THE NETWORK ON THE REQUIRED BLOCK!
+systemctl stop wardend
+mv $HOME/wardenprotocol/build/wardend $(which wardend)
+wardend version --long | grep -e version -e commit
+# version: 
+systemctl restart wardend && journalctl -u wardend -f -o cat
+```

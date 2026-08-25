@@ -209,3 +209,33 @@ provenanced version --long | grep -e version -e commit
 
 systemctl restart provenanced && journalctl -u provenanced -f -o cat
 ```
+
+## UPD 🕊 on v1.30.0 (Update Height: 33094666)
+
+```bash
+export PIO_HOME=~/.provenanced
+cd $HOME/provenance
+git pull
+git checkout v1.30.0
+
+make build
+$HOME/provenance/build/provenanced version --long | grep -e version -e commit
+# v1.30.0
+# commit: e5b95072
+
+# LIBWASM
+wget https://github.com/provenance-io/provenance/releases/download/v1.30.0/provenance-linux-amd64-v1.30.0.zip
+unzip provenance-linux-amd64-v1.30.0.zip
+
+# AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
+systemctl stop provenanced
+cp $HOME/provenance/bin/libwasmvm.x86_64.so /root/go/bin/
+mv $HOME/provenance/build/provenanced $(which provenanced)
+provenanced version --long | grep -e version -e commit
+# 
+
+rm -r $HOME/provenance/bin
+rm provenance-linux-amd64-v1.30.0.zip
+
+systemctl restart provenanced && journalctl -u provenanced -f -o cat
+```

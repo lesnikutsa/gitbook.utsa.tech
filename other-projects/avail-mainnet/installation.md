@@ -32,6 +32,24 @@ avail --version
 # avail 2.3.4-92228be58bc
 ```
 
+or build
+
+```bash
+git clone https://github.com/availproject/avail && cd avail
+git checkout 2.3.6.0-hotfix
+
+cargo build --locked --release
+
+mv $HOME/avail/target/release/avail-node /usr/bin/avail
+avail --version
+# avail 2.3.4-a4bdfe2609f
+```
+
+```bash
+mkdir -p $HOME/.avail_mainnet/wasm
+wget -O $HOME/.avail_mainnet/wasm/v54.wasm https://github.com/availproject/avail/releases/download/2.3.6.0-hotfix/v54.wasm
+```
+
 
 
 {% hint style="warning" %}
@@ -62,7 +80,8 @@ ExecStart=/usr/bin/avail \
   --rpc-port 9993 \
   --prometheus-port 9695 \
   --validator \
-  --name '$yourname'
+  --name '$yourname' \
+  --wasm-runtime-overrides /root/.avail_mainnet/wasm
 [Install]
 WantedBy=multi-user.target
 EOF

@@ -36,7 +36,7 @@ or build
 
 ```bash
 git clone https://github.com/availproject/avail && cd avail
-git checkout 2.3.6.0-hotfix
+git checkout v2.3.6.0
 
 cargo build --locked --release
 

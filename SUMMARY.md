@@ -117,6 +117,11 @@
   * [⌚ State sync](testnet/xrpl-evm/state-sync.md)
   * [⌚ Snapshots](testnet/xrpl-evm/snapshots.md)
   * [📬 Updates](testnet/xrpl-evm/updates.md)
+* [Worrell](testnet/worrell/README.md)
+  * [💻 Installation](testnet/worrell/installation.md)
+  * [📡 Creating a validator](testnet/worrell/creating-a-validator.md)
+  * [⌚ State sync](testnet/worrell/state-sync.md)
+  * [📬 Updates](testnet/worrell/updates.md)
 
 ## OTHER PROJECTS
 

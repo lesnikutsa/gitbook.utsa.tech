@@ -26,12 +26,12 @@ go version
 ## Node installation
 
 ```shell
-curl -s https://get.nibiru.fi/@v2.17.0! | bash
+curl -s https://get.nibiru.fi/@v2.19.0! | bash
 mv /usr/local/bin/nibid $HOME/go/bin
 ​
 $HOME/nibiru/nibid version --long | grep -e version -e commit
-# version: 2.17.0-test.5
-# commit: 226a1a3443183f282c7e60d6e6cf45bf9aba28ec
+# version: 2.19.0
+# commit: a1bf3a6f0529c4fc47e7a582fb1edbe5d3e1b176
 ```
 
 #### We initialize the node to create the necessary configuration files
@@ -64,6 +64,18 @@ sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.025unibi\"/;"
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.nibid/config/config.toml
 </code></pre>
+
+For successful synchronization, configure the following in app.toml
+
+`iavl-disable-fastnode = true`
+
+Enable pebbledb
+
+```
+sed -i -E 's|^[[:space:]]*db_backend[[:space:]]*=.*$|db_backend = "pebbledb"|' $HOME/.nibid/config/config.toml || echo "ERROR config.toml"
+
+sed -i -E 's|^[[:space:]]*app-db-backend[[:space:]]*=.*$|app-db-backend = "pebbledb"|' $HOME/.nibid/config/app.toml || echo "ERROR app.toml"
+```
 
 #### (OPTIONAL) Set up pruning
 

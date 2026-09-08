@@ -501,3 +501,27 @@ mv $HOME/nibiru/nibid $HOME/go/bin/
 ​
 systemctl restart nibid && journalctl -u nibid -f -o cat
 ```
+
+## UPD 🕊 on 2.19.0 (Update Height: 45830488)
+
+From this update, binaries only support pebbledb!!!
+
+```shell
+cd $HOME/nibiru
+
+wget https://github.com/NibiruChain/nibiru/releases/download/hotfix/v2.19.0/nibid_2.19.0_linux_amd64.tar.gz
+tar -zxvf nibid_2.19.0_linux_amd64.tar.gz
+chmod +x ./nibid
+rm nibid_2.19.0_linux_amd64.tar.gz
+
+$HOME/nibiru/nibid version --long | grep -e version -e commit
+# version: 2.19.0
+# commit: a1bf3a6f0529c4fc47e7a582fb1edbe5d3e1b176
+​
+# AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
+systemctl stop nibid
+mv $HOME/nibiru/nibid $HOME/go/bin/
+​
+systemctl restart nibid && journalctl -u nibid -f -o cat
+```
+

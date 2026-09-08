@@ -18,7 +18,7 @@
 * **Guide (RU)**: [https://teletype.in/@lesnik13utsa/5gAx-5RmEOD](https://teletype.in/@lesnik13utsa/5gAx-5RmEOD)
 * **RPC**: [https://t-worrell.rpc.utsa.tech/](https://t-worrell.rpc.utsa.tech/)
 * **API**: [https://t-worrell.api.utsa.tech/](https://t-worrell.api.utsa.tech/)
-* **Explorer UTSA**: [https://explorer.utsa.tech/networks/worrell-testnet](https://explorer.utsa.tech/networks/warrell-testnet)
+* **Explorer UTSA**: [https://explorer.utsa.tech/networks/worrell-testnet](https://explorer.utsa.tech/networks/worrell-testnet)
 * **Docs:** [https://explorer.utsa.tech/networks/worrell-testnet](https://explorer.utsa.tech/networks/warrell-testnet)
 * **Faucet:** `curl -X POST` [`http://164.68.98.186:4500`](http://164.68.98.186:4500) `\ -H "Content-Type: application/json" \ -d '{"address":"worrell1..."}'`
 

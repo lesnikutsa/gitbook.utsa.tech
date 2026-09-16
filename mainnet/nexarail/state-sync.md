@@ -22,7 +22,7 @@ canined tendermint unsafe-reset-all --home $HOME/.nexarail
 
 ```shell
 # add peer
-peers="8c87ce08820b7f9d717da4d4a82eae1aac234911@144.76.29.90:60756"
+peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.nexarail/config/config.toml
 ```
 

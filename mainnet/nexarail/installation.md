@@ -31,8 +31,9 @@ git clone https://github.com/Bookings-cpu/nexarail && cd nexarail
 #make build
 #cp ./build/nexaraild $HOME/go/bin/
 
-wget https://github.com/Bookings-cpu/nexarail/releases/download/v0.1.0-rc1-validator-recovery-hotfix/nexaraild-linux-amd64
+wget nexaraild https://github.com/Bookings-cpu/nexarail/releases/download/mainnet-genesis-nexarail-mainnet-2/nexaraild-linux-amd64
 cp $HOME/nexarail/nexaraild-linux-amd64 $HOME/go/bin/nexaraild
+chmod +x $HOME/go/bin/nexaraild
 
 nexaraild version
 # ABCI: 1.0.0
@@ -41,40 +42,40 @@ nexaraild version
 # Tendermint: 0.37.16
 
 sha256sum $HOME/go/bin/nexaraild
-# cdb03d84e2d998e3581f368cc3440fce179c34010398c7343298e94a3d82112c
+# 892c08fd802440b9767a4c1b04bca028cdc42ac51614386184493a85872a73c6
 ```
 
 #### We initialize the node to create the necessary configuration files
 
 ```shell
-nexaraild init UTSA_guide --chain-id nexarail-mainnet-1
+nexaraild init UTSA_guide --chain-id nexarail-mainnet-2
 ```
 
 #### Download Genesis
 
 ```shell
-wget -O $HOME/.nexarail/config/genesis.json "https://github.com/Bookings-cpu/nexarail/releases/download/mainnet-genesis-nexarail-mainnet-1/genesis.json"
+wget -O $HOME/.nexarail/config/genesis.json "https://github.com/Bookings-cpu/nexarail/releases/download/mainnet-genesis-nexarail-mainnet-2/genesis.json"
 
 # Проверим генезис
 sha256sum ~/.nexarail/config/genesis.json
-#f84f5f03d4d54945153c3f68e20e9864fc03c7f35dbeec2b40274f18d152db32
+#d2d6933fbdf2fed1727c9906dfb41024871c3c20636a6b366ae8414d5af54d62
 ```
 
 #### At this stage, we can download the address book
 
 ```shell
-wget -O $HOME/.nexarail/config/addrbook.json "https://share.utsa.tech/nexarail/addrbook.json"
+#wget -O $HOME/.nexarail/config/addrbook.json "https://share.utsa.tech/nexarail/addrbook.json"
 ```
 
 #### Set up node configuration
 
 ```shell
-sed -i.bak -e "s/^chain-id *=.*/chain-id = \"nexarail-mainnet-1\"/;" ~/.nexarail/config/client.toml
+sed -i.bak -e "s/^chain-id *=.*/chain-id = \"nexarail-mainnet-2\"/;" ~/.nexarail/config/client.toml
 sed -i.bak -e "s/^keyring-backend *=.*/keyring-backend = \"os\"/;" ~/.nexarail/config/client.toml
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.025unxrl\"/;" ~/.nexarail/config/app.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.nexarail/config/config.toml
-peers="96e659f9a87723304dcd614e3ca89d9b6daf26cc@bore.pub:32656"
+peers="1af9139d59677cc42ff2924c89f9cf9e0c980246@5.161.85.160:26656,d91372d5918d870c7861a2eb3e99b90d7c5882ca@5.161.103.203:26656,8776e496483fefbbc4dc17749f5ec80ab121fe2c@5.161.99.76:26656,45668d1ae375f39fce47dfa96e76db7946da7188@5.161.94.47:26656,bbd2b07264da053541128a0677540bc95bf415c6@5.161.72.48:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.nexarail/config/config.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.nexarail/config/config.toml
 ```

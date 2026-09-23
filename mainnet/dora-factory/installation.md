@@ -33,12 +33,12 @@ go version
 
 ```shell
 git clone https://github.com/DoraFactory/doravota && cd doravota
-git checkout 0.4.3
+git checkout 0.5.0
 make install
 
 dorad version --long | grep -e version -e commit -e build
-# version: 0.4.3
-# commit: 
+# version: 0.5.0
+# commit: ""
 ```
 
 #### We initialize the node to create the necessary configuration files

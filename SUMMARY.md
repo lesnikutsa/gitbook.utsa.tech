@@ -34,7 +34,7 @@
   * [📬 Updates](mainnet/genesis-l1/updates.md)
 * [Gno.land](mainnet/gno.land/README.md)
   * [💻 Installation](mainnet/gno.land/installation.md)
-  * [⌚ Snapshot TESTNET](mainnet/gno.land/snapshot-testnet.md)
+  * [⌚ Snapshot](mainnet/gno.land/snapshot.md)
   * [📬 Updates](mainnet/gno.land/updates.md)
 * [Lumen](mainnet/lumen/README.md)
   * [💻 Installation](mainnet/lumen/installation.md)

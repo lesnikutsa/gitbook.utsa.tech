@@ -1,11 +1,11 @@
-# ⌚ Snapshot TESTNET
+# ⌚ Snapshot
 
 {% hint style="success" %}
 ### Snapshot
 
 **Every** `6 hours`; **db\_backend:** pebbledb
 
-🌐 [**https://share118.utsa.tech/gno\_test/**](https://share118.utsa.tech/gno_test/)
+🌐 [**https://share.utsa.tech/gno\_main/**](https://share.utsa.tech/gno_main/)
 {% endhint %}
 
 ```shell
@@ -16,7 +16,7 @@ systemctl stop gnoland 2>/dev/null || pkill -f "gnoland start" 2>/dev/null || tr
 rm -rf ~/gno/gnoland-data/db ~/gno/gnoland-data/wal
 
 # download snapshot
-curl -o - -L https://share118.utsa.tech/gno_test/gno-test-snapshot.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/gno/gnoland-data/
+curl -o - -L https://share.utsa.tech/gno_main/gno.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/gno/gnoland-data/
 ```
 
 ```shell

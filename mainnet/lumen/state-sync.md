@@ -27,12 +27,12 @@ rm -rf $HOME/.lumen/data/{application.db,evidence.db,snapshots,tx_index.db,block
 
 ```shell
 # add peer
-peers="546d284c7b7f7a717b06d17002f28ee746ded36f@144.76.29.90:26656"
+peers=""
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.lumen/config/config.toml
 ```
 
 ```shell
-SNAP_RPC=https://m-lumen.rpc.utsa.tech:443
+SNAP_RPC=https://:443
 
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \

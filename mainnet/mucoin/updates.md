@@ -24,17 +24,16 @@ curl -s localhost:$PORT/consensus_state | jq '.result.round_state.height_vote_se
 Updates are available for information. Boot via State sync or Snapshot to avoid installing all updates. In this case, you must use the actual version of the binary file and genesis
 {% endhint %}
 
-## UPD 🕊 on v (Update Height: )
+## UPD 🕊 on rewards-v0.9.0 (Update Height: 771000)
 
 ```shell
 cd $HOME/mucoin
-git pull
-git checkout v
-make build
-$HOME/mucoin/build/mucoind version --long | grep -e version -e commit
-# 
-# commit: 
+mkdir -p $HOME/mucoin/build
 
+CGO_ENABLED=0 GOBIN=$HOME/mucoin/build make install
+$HOME/mucoin/build/mucoind version --long | grep -e version -e commit
+# version: rewards-v0.9.0
+# commit: 9c38055e493d2beb0b0bb94e2360b13abd431ae7
 
 # AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
 systemctl stop mucoind

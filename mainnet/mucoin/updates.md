@@ -37,7 +37,7 @@ $HOME/mucoin/build/mucoind version --long | grep -e version -e commit
 
 # AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
 systemctl stop mucoind
-mv $HOME/XXX $(which mucoind)
+mv $HOME/mucoin/build/mucoind $(which mucoind)
 mucoind version --long | grep -e version -e commit
 # 
 

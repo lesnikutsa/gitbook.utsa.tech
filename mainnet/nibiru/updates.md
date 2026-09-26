@@ -525,3 +525,24 @@ mv $HOME/nibiru/nibid $HOME/go/bin/
 systemctl restart nibid && journalctl -u nibid -f -o cat
 ```
 
+## UPD 🕊 on 2.20.0 (Update Height: 46828562)
+
+pebbledb!!!
+
+```shell
+cd $HOME/nibiru
+
+wget https://github.com/NibiruChain/nibiru/releases/download/v2.20.0/nibid_2.20.0_linux_amd64.tar.gz
+tar -zxvf nibid_2.20.0_linux_amd64.tar.gz
+chmod +x ./nibid
+rm nibid_2.20.0_linux_amd64.tar.gz
+
+$HOME/nibiru/nibid version --long | grep -e version -e commit
+# version: 2.20.0
+# commit: 6bb685391e578c811b1012ec4e2e4044800e5e60
+
+systemctl stop nibid
+mv $HOME/nibiru/nibid $HOME/go/bin/
+
+systemctl restart nibid && journalctl -u nibid -f -o cat
+```

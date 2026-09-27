@@ -184,7 +184,8 @@ gnokey maketx call \
 | `VAL_PUBKEY`       | `pub_key` from `cd /root/gno && gnoland secrets get validator_key` |
 | `WALLETNAME`       | Key name from `gnokey list`                                        |
 
-> ℹ️ After a successful transaction you can view your profile at: [https://sapphire.testnets.gno.land/r/gnops/valopers](https://sapphire.testnets.gno.land/r/gnops/valopers)<br>
+> ℹ️ After a successful transaction you can view your profile at: \
+> [https://gno.land/r/gnops/valopers](https://gno.land/r/gnops/valopers)
 
 #### Update Description (Optional)
 

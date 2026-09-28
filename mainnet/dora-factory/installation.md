@@ -33,12 +33,17 @@ go version
 
 ```shell
 git clone https://github.com/DoraFactory/doravota && cd doravota
-git checkout 0.5.0
-make install
+#git checkout 0.5.0
+#make install
+
+mkdir -p $HOME/doravota/build
+wget -O $HOME/doravota/build/dorad "https://df-node-dump.s3.ap-southeast-1.amazonaws.com/vota/0.5.0/dorad-0.5.0-linux-amd64"
+chmod +x $HOME/doravota/build/dorad
+mv $HOME/doravota/build/dorad $(which dorad)
 
 dorad version --long | grep -e version -e commit -e build
 # version: 0.5.0
-# commit: ""
+# commit: 8a4313d2b338eb5e5090dd5cdfe5b0f54203c426
 ```
 
 #### We initialize the node to create the necessary configuration files

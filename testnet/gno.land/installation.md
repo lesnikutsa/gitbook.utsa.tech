@@ -25,15 +25,14 @@ go version
 
 ## Node installation
 
-```bash
-git clone https://github.com/gnolang/gno && cd $HOME/gno
-git checkout chain/sapphire
+<pre class="language-bash"><code class="lang-bash">git clone https://github.com/gnolang/gno &#x26;&#x26; cd $HOME/gno
+git checkout v1.5.0
 
 make -C gno.land install.gnoland install.gnokey
-gnoland version
-# gnoland version: chain/xxx
+<strong>gnoland version
+</strong># gnoland version: v1.5.0
 gnokey --help
-```
+</code></pre>
 
 #### We initialize the node to create the necessary configuration files
 
@@ -45,10 +44,10 @@ gnoland secrets init
 #### Download Genesis
 
 ```shell
-wget -O $HOME/gno/gnoland-data/config/genesis.json "https://github.com/gnolang/gno/releases/download/chain/sapphire/genesis.json"
+wget -O $HOME/gno/gnoland-data/config/genesis.json "https://github.com/gnolang/gno/releases/download/chain/onyx/genesis.json"
 
 shasum -a 256 $HOME/gno/gnoland-data/config/genesis.json
-# d511e0e5b767d4e53f5c1afeeea1bc61d2c7b2118146c820f1f3e4296f67498e
+# 4b006fd7ccdec052865accc84dd29b2b76f8b57b2560789a15eedaa88f0e26c5
 ```
 
 #### Setting up the node configuration
@@ -60,9 +59,9 @@ gnoland config set p2p.external_address "$SERVER_IP:26656"
 gnoland config set p2p.pex true
 
 # persistent peers (required)
-gnoland config set p2p.seeds g10xll77gz6yzg43v9mdalj8360ng6sunt2vvvhf@seed-1.sapphire.testnets.gno.land:26656,g1gw2d7qsmrg06p204ty2qs8ygzd32t2c7p46te0@seed-2.sapphire.testnets.gno.land:26656
+#gnoland config set p2p.seeds 
 gnoland config set p2p.persistent_peers \
-"g1z700tjus883ku3y282pndyluvjavxh5zqe9xya@54.155.249.122:26656,g10xll77gz6yzg43v9mdalj8360ng6sunt2vvvhf@54.224.10.49:26656,g1yr6l8qz095yz7dlvfs6cjfw3s026ksxwx7wgx5@1.36.239.11:28756,g1277y5mdwmg68cx7ryx3txdwdmjl6z5p72xfqcd@44.199.26.207:26656,g1tuuuxxn8rjlr860hm4qxm4tjv77fl2vffayga3@100.59.119.139:26656,g1nazs9uqecsxszksmsjjjy5rc8l849hgvg9a03q@135.181.17.54:26656,g1gw2d7qsmrg06p204ty2qs8ygzd32t2c7p46te0@34.246.18.165:26656,g1kres5ar5mcqrannxnxu02q8q5wydt0aezqspe2@100.62.129.64:26656"
+"g1x5mlj5ava0dw9vkf4j6admjlzswm6f06p44krn@seed-1.onyx.testnets.gno.land:26656,g1grq5zswt0dlwwe7clr4359w70k2ewgse0gcwck@seed-2.onyx.testnets.gno.land:26656"
 
 # consensus settings
 gnoland config set application.prune_strategy syncable
@@ -80,7 +79,7 @@ gnoland config set p2p.max_num_outbound_peers 40
 ```shell
 tee /etc/systemd/system/gnoland.service > /dev/null <<EOF
 [Unit]
-Description=Gnoland
+Description=Gnoland-testnet
 After=network-online.target
 Wants=network-online.target
 
@@ -90,7 +89,7 @@ WorkingDirectory=$HOME/gno
 Environment=GNOROOT=$HOME/gno
 Environment=HOME=$HOME
 ExecStart=$(which gnoland) start \
-  --chainid sapphire-1 \
+  --chainid onyx-1 \
   --genesis $HOME/gno/gnoland-data/config/genesis.json \
   --log-level info \
   --skip-genesis-sig-verification
@@ -136,7 +135,7 @@ Use the faucet and request tokens for your g1xxx address.
 Balance Check
 
 ```bash
-gnokey query --remote "https://rpc.sapphire.testnets.gno.land" auth/accounts/<ADDRESS>
+gnokey query --remote "https://rpc.onyx.testnets.gno.land" auth/accounts/<ADDRESS>
 #gnokey query --remote "http://127.0.0.1:26657" auth/accounts/<ADDRESS>
 ```
 
@@ -171,8 +170,8 @@ gnokey maketx call \
   --args "VAL_PUBKEY" \
   --gas-fee 1000000ugnot \
   --gas-wanted 60000000 \
-  --chainid sapphire-1 \
-  --remote https://rpc.sapphire.testnets.gno.land \
+  --chainid onyx-1 \
+  --remote https://rpc.onyx.testnets.gno.land \
   --broadcast \
   WALLETNAME
 ```
@@ -186,7 +185,8 @@ gnokey maketx call \
 | `VAL_PUBKEY`       | `pub_key` from `cd /root/gno && gnoland secrets get validator_key` |
 | `WALLETNAME`       | Key name from `gnokey list`                                        |
 
-> ℹ️ After a successful transaction you can view your profile at: [https://sapphire.testnets.gno.land/r/gnops/valopers](https://sapphire.testnets.gno.land/r/gnops/valopers)<br>
+> ℹ️ After a successful transaction you can view your profile at: \
+> https://onyx.testnets.gno.land/r/gnops/valopers
 
 #### Update Description (Optional)
 
@@ -200,8 +200,8 @@ gnokey maketx call \
   --args "YOUR-NEW-DESCRIPTION" \
   --gas-fee 1000000ugnot \
   --gas-wanted 60000000 \
-  --chainid sapphire-1 \
-  --remote https://rpc.sapphire.testnets.gno.land \
+  --chainid onyx-1 \
+  --remote https://rpc.onyx.testnets.gno.land \
   --broadcast \
   WALLETNAME
 ```

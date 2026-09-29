@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # ⌚ Snapshot
 
 {% hint style="success" %}

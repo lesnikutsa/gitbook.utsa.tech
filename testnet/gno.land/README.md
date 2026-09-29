@@ -8,14 +8,14 @@
 
 ## **Details**
 
-* **Network Chain ID**: sapphire-1
+* **Network Chain ID**: onyx-1
 * **Binary**: gnoland
 
 ## Public services
 
-* **Guide (RU)**: [https://teletype.in/@lesnik13utsa/65wu7A2kPfo](https://teletype.in/@lesnik13utsa/65wu7A2kPfo)
+* **Guide (RU)**:&#x20;
 * **Explorer**: [https://exp.gno.utsa.tech/](https://exp.gno.utsa.tech/)
-* **Valopers:** [https://sapphire.testnets.gno.land/r/gnops/valopers](https://sapphire.testnets.gno.land/r/gnops/valopers)
+* **Valopers:**&#x20;
 * **Faucet:** https://faucet.gno.land/&#x20;
 * **TG bot:** @UTSAGNOBot
 

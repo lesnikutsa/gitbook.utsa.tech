@@ -25,7 +25,7 @@ description: >-
 * **Guide (RU)**:&#x20;
 * **RPC**:&#x20;
 * **API**: [h](https://m-atomone.api.utsa.tech/)
-* **Explorer**: [https://explorer.whenmoonwhenlambo.money/atomone-testnet/uptime](https://explorer.whenmoonwhenlambo.money/atomone-testnet/uptime)
+* **Explorer**: [https://explorer.utsa.tech/networks/atomone-testnet](https://explorer.utsa.tech/networks/atomone-testnet)
 * **Restake**:&#x20;
 
 ## Peering

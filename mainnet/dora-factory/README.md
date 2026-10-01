@@ -20,7 +20,7 @@
 * **Guide (RU)**: [https://teletype.in/@lesnik13utsa/ZT0Mq5hkUqQ](https://teletype.in/@lesnik13utsa/ZT0Mq5hkUqQ)
 * **RPC**: [https://m-dora.rpc.utsa.tech/](https://m-dora.rpc.utsa.tech/)
 * **API**: [https://m-dora.api.utsa.tech/](https://m-dora.api.utsa.tech/)
-* **Explorer**: [https://exp.utsa.tech/dora](https://exp.utsa.tech/dora)
+* **Explorer**: [https://explorer.utsa.tech/networks/doravota-mainnet](https://explorer.utsa.tech/networks/doravota-mainnet)
 
 ## Peering
 

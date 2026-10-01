@@ -22,7 +22,7 @@ description: The Business Grade Multi-Chain NFT Infrastructure for Web 3.0
 * **Guide (RU)**: [https://teletype.in/@lesnik13utsa/q6eQOF4Xsd5](https://teletype.in/@lesnik13utsa/q6eQOF4Xsd5)
 * **RPC**: [https://m-uptick.rpc.utsa.tech/](https://m-uptick.rpc.utsa.tech/)
 * **API**: [https://m-uptick.api.utsa.tech/](https://m-uptick.api.utsa.tech/)
-* **Explorer**: [https://exp.utsa.tech/uptick](https://exp.utsa.tech/uptick)
+* **Explorer**: [https://explorer.utsa.tech/networks/uptick-mainnet](https://explorer.utsa.tech/networks/uptick-mainnet)
 * **Restake**:&#x20;
 
 ## Peering

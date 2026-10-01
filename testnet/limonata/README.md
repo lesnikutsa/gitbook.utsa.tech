@@ -20,8 +20,7 @@
 * **Guide (RU)**: [https://teletype.in/@lesnik13utsa/RD3eEH50Zdv](https://teletype.in/@lesnik13utsa/RD3eEH50Zdv)
 * **RPC**: [https://t-limonata.rpc.utsa.tech/](https://t-limonata.rpc.utsa.tech/)
 * **API**: [https://t-limonata.api.utsa.tech/](https://t-limonata.api.utsa.tech/)
-* **Explorer**: [https://explorer.limonata.xyz/](https://explorer.limonata.xyz/)
-* **Explorer**: [https://exp.utsa.tech/limonata-test/staking](https://exp.utsa.tech/limonata-test/staking)
+* **Explorer**: [https://explorer.utsa.tech/networks/limonata-testnet](https://explorer.utsa.tech/networks/limonata-testnet)
 
 ## Peering
 

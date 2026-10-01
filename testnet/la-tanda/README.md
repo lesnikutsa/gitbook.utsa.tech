@@ -27,7 +27,7 @@ description: >-
 * **Guide (RU)**:&#x20;
 * **RPC**: [https://t-latanda.rpc.utsa.tech/](https://t-latanda.rpc.utsa.tech/)
 * **API**: [https://t-latanda.api.utsa.tech/](https://t-latanda.api.utsa.tech/)
-* **Explorer**: [https://exp.utsa.tech/latanda/staking](https://exp.utsa.tech/latanda/staking)
+* **Explorer**: [https://explorer.utsa.tech/networks/latanda-testnet](https://explorer.utsa.tech/networks/latanda-testnet)
 
 ## Peering
 

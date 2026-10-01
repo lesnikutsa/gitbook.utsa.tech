@@ -19,7 +19,7 @@
 * **Guide (RU)**:&#x20;
 * **RPC**: [https://rpc.mucoin.org](https://rpc.mucoin.org)
 * **API**: [https://rest.mucoin.org](https://rest.mucoin.org)
-* **Explorer**: [https://explorer.vinjan-inc.com/mucoin/staking](https://explorer.vinjan-inc.com/mucoin/staking)
+* **Explorer**: [https://explorer.utsa.tech/networks/mucoin-mainnet](https://explorer.utsa.tech/networks/mucoin-mainnet)
 
 ## Peering
 

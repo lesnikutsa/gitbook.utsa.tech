@@ -25,7 +25,7 @@ description: >-
 * **Guide (RU)**: [https://teletype.in/@lesnik13utsa/hqE5JY9G2fn](https://teletype.in/@lesnik13utsa/hqE5JY9G2fn)
 * **RPC**: [https://m-nibiru.rpc.utsa.tech/ ](https://m-nibiru.rpc.utsa.tech/)
 * **API**: [https://m-nibiru.api.utsa.tech/](https://m-nibiru.api.utsa.tech/)
-* **Explorer**: [https://exp.utsa.tech/nibiru](https://exp.utsa.tech/nibiru)
+* **Explorer**: [https://explorer.utsa.tech/networks/nibiru-mainnet](https://explorer.utsa.tech/networks/nibiru-mainnet)
 * **Restake**:&#x20;
 
 ## Peering

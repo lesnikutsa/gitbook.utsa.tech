@@ -27,7 +27,7 @@ description: >-
 * **API:** [https://genesisl1.api.utsa.tech/](https://genesisl1.api.utsa.tech/)
 * **EVM:** [https://genesisl1.evm.utsa.tech/](https://genesisl1.evm.utsa.tech/)
 * **WSS:** wss://genesisl1.wss.utsa.tech
-* **Explorer**:&#x20;
+* **Explorer**: [https://explorer.utsa.tech/networks/genesisl1-mainnet](https://explorer.utsa.tech/networks/genesisl1-mainnet)
 
 
 

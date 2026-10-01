@@ -24,7 +24,7 @@ The Dymension Hub is the calculated protocol layer and acts as a decentralized s
 * **Guide (RU)**: [https://teletype.in/@lesnik13utsa/cItIcj\_gkgF](https://teletype.in/@lesnik13utsa/cItIcj_gkgF)
 * **RPC**: [https://m-dymension.rpc.utsa.tech/](https://m-dymension.rpc.utsa.tech/)
 * **API**: [https://m-dymension.api.utsa.tech/](https://m-dymension.api.utsa.tech/)
-* **Explorer**: [https://exp.utsa.tech/dymension](https://exp.utsa.tech/dymension)
+* **Explorer**: [https://explorer.utsa.tech/networks/dymension-mainnet](https://explorer.utsa.tech/networks/dymension-mainnet)
 * **Restake**:&#x20;
 
 ## Peering

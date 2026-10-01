@@ -19,7 +19,7 @@
 * **Guide (RU)**: [https://teletype.in/@lesnik13utsa/Pw2GAVJJ\_7y](https://teletype.in/@lesnik13utsa/Pw2GAVJJ_7y)
 * **RPC**: [https://m-warden.rpc.utsa.tech](https://m-warden.rpc.utsa.tech)
 * **API**: [https://m-warden.api.utsa.tech](https://m-warden.api.utsa.tech)
-* **Explorer**: [https://exp.utsa.tech/warden/staking](https://exp.utsa.tech/warden/staking)
+* **Explorer**: [https://explorer.utsa.tech/networks/warden-mainnet](https://explorer.utsa.tech/networks/warden-mainnet)
 * **Restake**:&#x20;
 
 ## Peering

@@ -25,7 +25,7 @@ description: >-
 * **Guide (RU)**: [https://teletype.in/@lesnik13utsa/yhwoF4hhHxP](https://teletype.in/@lesnik13utsa/yhwoF4hhHxP)
 * **RPC**: [https://m-atomone.rpc.utsa.tech/](https://m-atomone.rpc.utsa.tech/)
 * **API**: [https://m-atomone.api.utsa.tech/](https://m-atomone.api.utsa.tech/)
-* **Explorer**: [https://exp.utsa.tech/atomone/staking](https://exp.utsa.tech/atomone/staking)
+* **Explorer**: [https://explorer.utsa.tech/networks/atomone-mainnet](https://explorer.utsa.tech/networks/atomone-mainnet)
 * **Restake**:&#x20;
 
 ## Peering

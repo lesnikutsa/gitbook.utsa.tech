@@ -18,7 +18,7 @@
 * **Guide (RU)**: [https://teletype.in/@lesnik13utsa/plulCZ4CZaN](https://teletype.in/@lesnik13utsa/plulCZ4CZaN)
 * **RPC**:&#x20;
 * **API**:&#x20;
-* **Explorer**:&#x20;
+* **Explorer**: [https://explorer.utsa.tech/networks/provenance-mainnet](https://explorer.utsa.tech/networks/provenance-mainnet)
 * **Restake**:&#x20;
 
 ## Peering

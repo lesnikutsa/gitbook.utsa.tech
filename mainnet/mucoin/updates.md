@@ -44,4 +44,26 @@ mucoind version --long | grep -e version -e commit
 systemctl restart mucoind && journalctl -u mucoind -f -o cat
 ```
 
-##
+## UPD 🕊 on v0.10.0 (Update Height: 820700)
+
+```shell
+cd $HOME/mucoin
+git fetch origin --tags
+git checkout v0.10.0
+git describe --tags --exact-match
+git rev-parse HEAD
+
+CGO_ENABLED=0 GOBIN=$HOME/mucoin/build make install
+
+$HOME/mucoin/build/mucoind version --long | grep -e version -e commit
+# version: v0.10.0
+# commit: 0fc7e73420ff8435389582dec8ab3cef94d88d07
+
+# AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
+systemctl stop mucoind
+mv $HOME/mucoin/build/mucoind $(which mucoind)
+mucoind version --long | grep -e version -e commit
+# 
+
+systemctl restart mucoind && journalctl -u mucoind -f -o cat
+```

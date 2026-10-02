@@ -43,12 +43,12 @@ go version
 
 ```shell
 git clone https://github.com/dasgrid/mucoin && cd mucoin
-git checkout rewards-v0.9.0
+git checkout v0.10.0
 make install
 
 mucoind version --long
-# version: rewards-v0.9.0
-# commit: 9c38055e493d2beb0b0bb94e2360b13abd431ae7
+# version: v0.10.0
+# commit: 0fc7e73420ff8435389582dec8ab3cef94d88d07
 ```
 
 #### We initialize the node to create the necessary configuration files

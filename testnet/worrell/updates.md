@@ -24,23 +24,23 @@ curl -s localhost:$PORT/consensus_state | jq '.result.round_state.height_vote_se
 Updates are available for information. Boot via State sync or Snapshot to avoid installing all updates. In this case, you must use the actual version of the binary file and genesis
 {% endhint %}
 
-## UPD 🕊 on v (Update Height: )
+## UPD 🕊 on v0.1.3 (Update Height: 1186000)
 
-```shell
-cd $HOME/worrell
+<pre class="language-shell"><code class="lang-shell"><strong>cd $HOME/worrell
+</strong>mkdir -p $HOME/worrell/build
 git pull
-git checkout v0.1.2
-make build
+git checkout v0.1.3
+GOTOOLCHAIN=go1.26.5 GOBIN=$HOME/worrell/build make install
 
-$HOME/worrell/build/evmd version --long | grep -e version -e commit
-# version: 
-# commit: 
+$HOME/worrell/build/worrelld version --long | grep -e version -e commit
+# version: v0.1.3
+# commit: a914f444004df7514ee909c4fa2e66a942059ca6
 
 # AFTER STOPPING THE NETWORK ON THE REQUIRED BLOCK!!!
 systemctl stop worrelld
-mv $HOME/worrell/build/evmd $HOME/go/bin/worrelld
+mv $HOME/worrell/build/worrelld $HOME/go/bin/worrelld
 worrelld version --long | grep -e version -e commit
 #
 
-systemctl restart worrelld && journalctl -u worrelld -f -o cat
-```
+systemctl restart worrelld &#x26;&#x26; journalctl -u worrelld -f -o cat
+</code></pre>

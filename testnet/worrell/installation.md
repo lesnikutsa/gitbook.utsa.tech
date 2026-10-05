@@ -43,12 +43,12 @@ go version
 
 ```shell
 git clone https://github.com/worrellchain/worrell && cd worrell
-git checkout v0.1.2
+git checkout v0.1.3
 make install
 
 worrelld version --long
-# version: v0.1.2
-# commit: 2d849e1a33f6204952412a14e7b12cb5ef3870dd
+# version: v0.1.3
+# commit: a914f444004df7514ee909c4fa2e66a942059ca6
 ```
 
 #### We initialize the node to create the necessary configuration files

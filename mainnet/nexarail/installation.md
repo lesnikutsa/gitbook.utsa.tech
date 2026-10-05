@@ -31,7 +31,7 @@ git clone https://github.com/Bookings-cpu/nexarail && cd nexarail
 #make build
 #cp ./build/nexaraild $HOME/go/bin/
 
-wget nexaraild https://github.com/Bookings-cpu/nexarail/releases/download/mainnet-genesis-nexarail-mainnet-2/nexaraild-linux-amd64
+wget nexaraild https://github.com/Bookings-cpu/nexarail/releases/download/v0.1.1-mainnet2-fundsafety/nexaraild-linux-amd64
 cp $HOME/nexarail/nexaraild-linux-amd64 $HOME/go/bin/nexaraild
 chmod +x $HOME/go/bin/nexaraild
 
@@ -42,7 +42,7 @@ nexaraild version
 # Tendermint: 0.37.16
 
 sha256sum $HOME/go/bin/nexaraild
-# 892c08fd802440b9767a4c1b04bca028cdc42ac51614386184493a85872a73c6
+# 068aee2853e452a055de2b4082259ff4ccf42573362310f609f22940399b26ca
 ```
 
 #### We initialize the node to create the necessary configuration files
@@ -78,6 +78,8 @@ sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:2
 peers="1af9139d59677cc42ff2924c89f9cf9e0c980246@5.161.85.160:26656,d91372d5918d870c7861a2eb3e99b90d7c5882ca@5.161.103.203:26656,8776e496483fefbbc4dc17749f5ec80ab121fe2c@5.161.99.76:26656,45668d1ae375f39fce47dfa96e76db7946da7188@5.161.94.47:26656,bbd2b07264da053541128a0677540bc95bf415c6@5.161.72.48:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.nexarail/config/config.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.nexarail/config/config.toml
+
+sed -i 's/^timeout_commit = .*/timeout_commit = "1400ms"/' $HOME/.nexarail/config/config.toml
 ```
 
 #### (OPTIONAL) Set up pruning

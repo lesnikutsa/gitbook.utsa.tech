@@ -2,10 +2,6 @@
 
 ##
 
-{% hint style="success" %}
-###
-{% endhint %}
-
 
 
 **UPD 🕊**

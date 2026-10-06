@@ -28,17 +28,17 @@ go version
 ```shell
 export PIO_HOME=~/.provenanced
 git clone https://github.com/provenance-io/provenance.git && cd provenance
-git checkout tags/v1.30.0 -b v1.30.0
+git checkout tags/v1.31.0 -b v1.31.0
 make golangci-lint
 make clean
 make install
 provenanced version --long | grep -e version -e commit
-# v1.30.0
-# commit: e5b95072
+# v1.31.0
+# commit: d9c53c8e
 
 # LIBWASM
-wget https://github.com/provenance-io/provenance/releases/download/v1.30.0/provenance-linux-amd64-v1.30.0.zip
-unzip provenance-linux-amd64-v1.30.0.zip
+wget https://github.com/provenance-io/provenance/releases/download/v1.31.0/provenance-linux-amd64-v1.31.0.zip
+unzip provenance-linux-amd64-v1.31.0.zip
 
 cp $HOME/provenance/bin/libwasmvm.x86_64.so /root/go/bin/
 ```

@@ -24,23 +24,27 @@ curl -s localhost:$PORT/consensus_state | jq '.result.round_state.height_vote_se
 Updates are available for information. Boot via State sync or Snapshot to avoid installing all updates. In this case, you must use the actual version of the binary file and genesis
 {% endhint %}
 
-## UPD 🕊 on v (Update Height: )
+### UPD 🕊 on v0.1.1-mainnet2-fundsafety (Update Height: 990000)
 
 ```shell
 cd $HOME/nexarail
-git pull
-git checkout v
-make build
-$HOME/nexarail/build/nexaraild version --long | grep -e version -e commit
-# 
-# commit: 
+mkdir -p $HOME/nexarail/build
 
+wget -O $HOME/nexarail/build/nexaraild "https://github.com/Bookings-cpu/nexarail/releases/download/v0.1.1-mainnet2-fundsafety/nexaraild-linux-amd64"
+chmod +x $HOME/nexarail/build/nexaraild
+$HOME/nexarail/build/nexaraild version
+# version: ABCI: 1.0.0
 
-# AFTER THE NETWORK IS STOPPED ON THE REQUIRED BLOCK!!!
+sha256sum $HOME/nexarail/build/nexaraild
+# 068aee2853e452a055de2b4082259ff4ccf42573362310f609f22940399b26ca
+
+# AFTER STOPPING THE NETWORK ON THE REQUIRED BLOCK!!!
 systemctl stop nexaraild
-mv $HOME/XXX $(which nexaraild)
-nexaraild version --long | grep -e version -e commit
-# 
+mv $HOME/nexarail/build/nexaraild $HOME/go/bin/nexaraild
+nexaraild version
+#
+sha256sum $HOME/go/bin/nexaraild
+#
 
 systemctl restart nexaraild && journalctl -u nexaraild -f -o cat
 ```

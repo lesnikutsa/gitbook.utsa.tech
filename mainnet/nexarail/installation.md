@@ -27,19 +27,11 @@ go version
 
 ```shell
 git clone https://github.com/Bookings-cpu/nexarail && cd nexarail
-#git checkout v0.1.0-rc1-validator-recovery-hotfix
-#make build
-#cp ./build/nexaraild $HOME/go/bin/
-
-wget nexaraild https://github.com/Bookings-cpu/nexarail/releases/download/v0.1.1-mainnet2-fundsafety/nexaraild-linux-amd64
-cp $HOME/nexarail/nexaraild-linux-amd64 $HOME/go/bin/nexaraild
+wget -O $HOME/go/bin/nexaraild "https://github.com/Bookings-cpu/nexarail/releases/download/v0.1.1-mainnet2-fundsafety/nexaraild-linux-amd64"
 chmod +x $HOME/go/bin/nexaraild
 
 nexaraild version
 # ABCI: 1.0.0
-# BlockProtocol: 11
-# P2PProtocol: 8
-# Tendermint: 0.37.16
 
 sha256sum $HOME/go/bin/nexaraild
 # 068aee2853e452a055de2b4082259ff4ccf42573362310f609f22940399b26ca

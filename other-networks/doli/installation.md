@@ -35,7 +35,7 @@ git clone https://github.com/doli-network/doli && cd $HOME/doli
 git checkout main
 git pull
 grep '^version' Cargo.toml | head -1
-# version = "6.43.0"
+# version = "6.44.2"
 
 cargo build --release -p doli-node -p doli-cli
 
@@ -45,8 +45,8 @@ chmod +x /usr/local/bin/doli-node /usr/local/bin/doli
 
 doli-node --version
 doli --version
-# doli-node 6.43.0 (e5a513f7)
-# doli 6.43.0 (e5a513f7)
+# doli-node 6.44.2 (b4cff010)
+# doli 6.44.2 (b4cff010)
 ```
 
 #### Initialize the data directory

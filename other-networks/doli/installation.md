@@ -32,10 +32,10 @@ ufw allow 30301/udp
 ```shell
 cd 
 git clone https://github.com/doli-network/doli && cd $HOME/doli
-git checkout main
+git checkout v6.45.0
 git pull
 grep '^version' Cargo.toml | head -1
-# version = "6.44.2"
+# version = "6.45.0"
 
 cargo build --release -p doli-node -p doli-cli
 
@@ -45,8 +45,8 @@ chmod +x /usr/local/bin/doli-node /usr/local/bin/doli
 
 doli-node --version
 doli --version
-# doli-node 6.44.2 (b4cff010)
-# doli 6.44.2 (b4cff010)
+# doli-node 6.45.0 (718a36ff)
+# doli 6.45.0 (718a36ff)
 ```
 
 #### Initialize the data directory

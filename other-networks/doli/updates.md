@@ -4,16 +4,16 @@
 
 
 
-**UPD 🕊**
+**UPD 🕊 v6.45.0**
 
-**Height 🕊**
+**Height 🕊 up to 806859**
 
 ```shell
 systemctl stop doli
 
 cd $HOME/doli
 git fetch --all --tags
-git checkout v6.44.2
+git checkout v6.45.0
 
 cargo build --release -p doli-node -p doli-cli
 

@@ -23,5 +23,22 @@ gnoland version
 systemctl restart gnoland && journalctl -u gnoland -f -o cat
 ```
 
+**UPD 🕊** v1.7.0-rc.1
 
+**Height 🕊 754000**
+
+```bash
+systemctl stop gnoland
+
+cd $HOME/gno
+git fetch origin
+git checkout v1.7.0-rc.1
+
+make -C gno.land install.gnoland install.gnokey
+
+gnoland version
+# gnoland version: v1.7.0-rc.1
+
+systemctl restart gnoland && journalctl -u gnoland -f -o cat
+```
 

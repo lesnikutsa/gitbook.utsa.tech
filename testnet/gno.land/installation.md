@@ -26,11 +26,11 @@ go version
 ## Node installation
 
 <pre class="language-bash"><code class="lang-bash">git clone https://github.com/gnolang/gno &#x26;&#x26; cd $HOME/gno
-git checkout v1.6.0-rc.1
+git checkout v1.7.0-rc.1
 
 make -C gno.land install.gnoland install.gnokey
 <strong>gnoland version
-</strong># gnoland version: v1.6.0-rc.1
+</strong># gnoland version: v1.7.0-rc.1
 gnokey --help
 </code></pre>
 

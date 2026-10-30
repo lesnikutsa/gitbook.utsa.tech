@@ -44,5 +44,24 @@ gnoland version
 systemctl restart gnoland && journalctl -u gnoland -f -o cat
 ```
 
+#### UPD 🕊 v1.7.0
 
+**Height:** **1183200**
+
+<pre class="language-shell"><code class="lang-shell">systemctl stop gnoland
+
+cd $HOME/gno
+git fetch --all --tags
+git checkout v1.7.0
+
+<strong>git rev-parse HEAD
+</strong>#e4c2e7d9fe0f6f7aeeda54885ca1fe5cea991319
+
+make -C gno.land install.gnoland install.gnokey
+
+gnoland version
+# gnoland version: v1.7.0
+
+systemctl restart gnoland &#x26;&#x26; journalctl -u gnoland -f -o cat
+</code></pre>
 

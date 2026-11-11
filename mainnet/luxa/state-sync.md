@@ -27,7 +27,7 @@ sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.l
 ```
 
 ```shell
-SNAP_RPC=https://rpc.com:443
+SNAP_RPC=https://t-luxa.rpc.utsa.tech:443
 
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \

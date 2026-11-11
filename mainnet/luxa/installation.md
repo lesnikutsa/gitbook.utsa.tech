@@ -68,7 +68,7 @@ sha256sum ~/.luxa/config/genesis.json
 
 #### At this stage, we can download the address book
 
-<pre class="language-shell"><code class="lang-shell"><strong>#wget -O $HOME/.luxa/config/addrbook.json "https://share103.utsa.tech/luggom/addrbook.json"
+<pre class="language-shell"><code class="lang-shell"><strong>wget -O $HOME/.luxa/config/addrbook.json "https://share.utsa.tech/luxa/addrbook.json"
 </strong></code></pre>
 
 #### Set up node configuration

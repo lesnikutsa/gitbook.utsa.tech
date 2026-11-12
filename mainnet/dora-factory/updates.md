@@ -154,4 +154,27 @@ mv $HOME/doravota/build/dorad $(which dorad)
 dorad version --long | grep -e version -e commit
 # 
 
+systemctl restart dorad && journalctl -u dorad -f -o cat
+```
+
+## UPD 🕊 on v1.1.0 (Update Height: 18223900)
+
+```shell
+cd
+rm -rf doravota
+git clone https://github.com/DoraFactory/doravota && cd doravota
+git checkout v1.1.0
+make build
+
+$HOME/doravota/build/dorad version --long
+# version: 1.1.0
+# commit: ""
+
+# ПОСЛЕ ОСТАНОВКИ СЕТИ НА НУЖНОМ БЛОКЕ!!!
+systemctl stop dorad
+mv $HOME/doravota/build/dorad $(which dorad)
+dorad version --long | grep -e version -e commit
+# 
+
+systemctl restart dorad && journalctl -u dorad -f -o cat
 ```

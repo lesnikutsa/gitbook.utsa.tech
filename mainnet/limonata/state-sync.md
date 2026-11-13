@@ -22,12 +22,12 @@ limonatad comet unsafe-reset-all --home $HOME/.evmd --keep-addr-book
 
 ```shell
 # add peer
-peers="4bcab578e66bee865dbcf8fc046bab8f21546b13@65.108.206.118:60856"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.evmd/config/config.toml
+peers=""
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.limonata-mainnet/config/config.toml
 ```
 
 ```shell
-SNAP_RPC=https://t-limonata.rpc.utsa.tech:443
+SNAP_RPC=https://:443
 
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
@@ -39,7 +39,7 @@ sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
 s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.evmd/config/config.toml
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.limonata-mainnet/config/config.toml
 ```
 
 {% hint style="info" %}

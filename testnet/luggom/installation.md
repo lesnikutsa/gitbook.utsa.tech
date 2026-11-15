@@ -42,31 +42,31 @@ go version
 ## Node installation
 
 ```shell
-git clone --branch testnet-2026-10-29 --depth 1 https://github.com/Luggom/Luggom
-cd Luggom
+git clone https://github.com/Luggom/Luggom && cd /root/Luggom
+git checkout 7fa7dfcb7e48a3660bdfeae92255d40d63bc72d6
 
-go mod download
-go mod verify
-make install
+make install VERSION=testnet-2026-11-19
 
 luggomd version --long
-# version: testnet-2026-10-29
-# commit: 985e586341cc81ea5d267f0ef8c0d48e43f5204a
+# version: testnet-2026-11-19
+# commit: 7fa7dfcb7e48a3660bdfeae92255d40d63bc72d6
+sha256sum /root/go/bin/luggomd
+#801a589e0d7c69c0de46bf3459584b4c40192c7e539176981db0d4716b22ead0
 ```
 
 #### We initialize the node to create the necessary configuration files
 
 ```shell
-luggomd init UTSA_guide --chain-id luggom-test
+luggomd init UTSA_guide --chain-id luggom-test01
 ```
 
 #### Download Genesis
 
 ```shell
-wget -O $HOME/.luggom/config/genesis.json "https://luggom.com/downloads/genesis.json"
+wget -O $HOME/.luggom/config/genesis.json ""
 
 sha256sum ~/.luggom/config/genesis.json
-#27a0c15b71bf2e8c8efa96eaefbf0393eca1a52428ffb18c0306336b1fdece88
+#
 ```
 
 #### At this stage, we can download the address book
@@ -77,7 +77,7 @@ sha256sum ~/.luggom/config/genesis.json
 #### Set up node configuration
 
 ```shell
-sed -i.bak -e "s/^chain-id *=.*/chain-id = \"luggom-test\"/;" ~/.luggom/config/client.toml
+sed -i.bak -e "s/^chain-id *=.*/chain-id = \"luggom-test01\"/;" ~/.luggom/config/client.toml
 sed -i.bak -e "s/^keyring-backend *=.*/keyring-backend = \"os\"/;" ~/.luggom/config/client.toml
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"1uluggom\"/;" ~/.luggom/config/app.toml
 external_address=$(wget -qO- eth0.me)

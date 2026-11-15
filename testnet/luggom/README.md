@@ -14,7 +14,7 @@ description: >-
 
 ## **Details**
 
-* **Network Chain ID**: luggom-test
+* **Network Chain ID**: luggom-test01
 * **Binary**: luggomd
 * **Denom**: uluggom
 * **Working directory**: .luggom

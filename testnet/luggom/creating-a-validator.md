@@ -46,7 +46,7 @@ nano $HOME/.luggom/validator.json
 }
   
   # send transaction
-luggomd tx staking create-validator $HOME/.luggom/validator.json --from <wallet_name> --chain-id luggom-test --gas auto --gas-adjustment 1.3 --gas-prices 1uluggom -y
+luggomd tx staking create-validator $HOME/.luggom/validator.json --from <wallet_name> --chain-id luggom-test01 --gas auto --gas-adjustment 1.3 --gas-prices 1uluggom -y
 ```
 
 {% hint style="danger" %}

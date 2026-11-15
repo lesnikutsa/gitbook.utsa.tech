@@ -27,11 +27,11 @@ go version
 
 ```bash
 git clone https://github.com/gnolang/gno && cd $HOME/gno
-git checkout e75fef82c02876a4df92ad6e325c5479b9532168
+git checkout v1.7.1
 
-make -C gno.land install.gnoland install.gnokey
+VERSION=v1.7.1 make -C gno.land install.gnoland install.gnokey
 gnoland version
-# gnoland version: HEAD.3444+e75fef82c
+# gnoland version: v1.7.1
 gnokey --help
 ```
 

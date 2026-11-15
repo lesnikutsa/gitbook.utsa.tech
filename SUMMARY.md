@@ -78,6 +78,11 @@
 
 ## TESTNET
 
+* [Atlas](testnet/atlas/README.md)
+  * [💻 Installation](testnet/atlas/installation.md)
+  * [📡 Creating a validator](testnet/atlas/creating-a-validator.md)
+  * [⌚ State sync](testnet/atlas/state-sync.md)
+  * [📬 Updates](testnet/atlas/updates.md)
 * [Atomone](testnet/atomone/README.md)
   * [💻 Installation](testnet/atomone/installation.md)
   * [📬 Updates](testnet/atomone/updates.md)

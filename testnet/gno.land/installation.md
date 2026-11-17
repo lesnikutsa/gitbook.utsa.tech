@@ -25,14 +25,15 @@ go version
 
 ## Node installation
 
-<pre class="language-bash"><code class="lang-bash">git clone https://github.com/gnolang/gno &#x26;&#x26; cd $HOME/gno
+```bash
+git clone https://github.com/gnolang/gno && cd $HOME/gno
 git checkout v1.8.0-rc.1
 
-make -C gno.land install.gnoland install.gnokey
-<strong>gnoland version
-</strong># gnoland version: v1.8.0-rc.1
+VERSION=v1.8.0-rc.1 make -C gno.land install.gnoland install.gnokey
+gnoland version
+# gnoland version: v1.8.0-rc.1
 gnokey --help
-</code></pre>
+```
 
 #### We initialize the node to create the necessary configuration files
 

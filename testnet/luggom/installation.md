@@ -43,15 +43,13 @@ go version
 
 ```shell
 git clone https://github.com/Luggom/Luggom && cd /root/Luggom
-git checkout 7fa7dfcb7e48a3660bdfeae92255d40d63bc72d6
-
-make install VERSION=testnet-2026-11-19
-
+wget -O $HOME/go/bin/luggomd https://github.com/Luggom/Luggom/releases/download/testnet-2026-11-19/luggomd
 luggomd version --long
 # version: testnet-2026-11-19
-# commit: 7fa7dfcb7e48a3660bdfeae92255d40d63bc72d6
-sha256sum /root/go/bin/luggomd
-#801a589e0d7c69c0de46bf3459584b4c40192c7e539176981db0d4716b22ead0
+# commit: 7fa7dfc
+
+sha256sum $HOME/go/bin/luggomd
+#3daae139402537890967ec6c67a3b9ab43b8d0e1d2a3911feaf4fd5f41eda7b2
 ```
 
 #### We initialize the node to create the necessary configuration files
@@ -63,10 +61,11 @@ luggomd init UTSA_guide --chain-id luggom-test01
 #### Download Genesis
 
 ```shell
-wget -O $HOME/.luggom/config/genesis.json ""
+wget -O $HOME/.luggom/config/genesis.json "https://github.com/Luggom/Luggom/releases/download/testnet-2026-11-19/genesis.json"
 
+# Проверим генезис
 sha256sum ~/.luggom/config/genesis.json
-#
+#ef2db215d3b79336e536e95ab71542bed33cc3e00375455cd05a1447e480134b
 ```
 
 #### At this stage, we can download the address book
@@ -82,9 +81,9 @@ sed -i.bak -e "s/^keyring-backend *=.*/keyring-backend = \"os\"/;" ~/.luggom/con
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"1uluggom\"/;" ~/.luggom/config/app.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.luggom/config/config.toml
-peers="1530baa7b3a07e0cab8dc81c9c08fccc51a47471@62.146.183.122:26656"
+peers="1530baa7b3a07e0cab8dc81c9c08fccc51a47471@62.146.183.122:26656,fe916a088ca2a5dc8193a73362545e915a471c55@192.168.2.244:26656,59078bfe531e91a286c533becccd7c64331a4ea6@65.108.229.19:26656,9fc59941ca96128890d7daf4b3c6d1275fa10d02@95.216.102.253:26656,5cb0e89a7478a8ac20c02dec1351b3ba5a455581@65.108.70.106:26606,6fc6df16aec87e4bc61c26caa96893f2b2125189@95.217.43.94:23656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.luggom/config/config.toml
-seeds="1530baa7b3a07e0cab8dc81c9c08fccc51a47471@62.146.183.122:26656"
+seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.luggom/config/config.toml
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.luggom/config/config.toml
 ```

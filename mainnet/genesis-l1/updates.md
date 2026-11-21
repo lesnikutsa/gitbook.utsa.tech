@@ -84,3 +84,26 @@ genesisd version --long | grep -e version -e commit
 
 systemctl restart genesisd && journalctl -u genesisd -f -o cat
 ```
+
+## UPD 🕊 on 1.6.2.1 (Update Height: 14122000)
+
+Set the Go version to somewhere between go1.23 and go1.25
+
+```shell
+cd
+rm -r genesis-crypto/
+git clone https://github.com/GenesisL1/genesis-crypto && cd genesis-crypto
+git checkout v1.6.2.1
+make build
+$HOME/genesis-crypto/build/genesisd version --long | grep -e version -e commit
+# version: 1.6.2.1
+# commit: eee48391c34ca84b81c80018f95f7b502510b844
+
+# AFTER THE NETWORK STOPS AT THE RIGHT BLOCK!!!
+systemctl stop genesisd
+mv $HOME/genesis-crypto/build/genesisd $(which genesisd)
+genesisd version --long | grep -e version -e commit
+# 
+
+systemctl restart genesisd && journalctl -u genesisd -f -o cat
+```

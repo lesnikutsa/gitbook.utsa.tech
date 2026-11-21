@@ -30,7 +30,7 @@
   * [📬 Updates](mainnet/espresso/updates.md)
 * [Genesis L1](mainnet/genesis-l1/README.md)
   * [💻 Installation](mainnet/genesis-l1/installation.md)
-  * [⌚ State sync](mainnet/genesis-l1/state-sync.md)
+  * [⌚ Snapshots](mainnet/genesis-l1/snapshots.md)
   * [📬 Updates](mainnet/genesis-l1/updates.md)
 * [Gno.land](mainnet/gno.land/README.md)
   * [💻 Installation](mainnet/gno.land/installation.md)
